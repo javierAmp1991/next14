@@ -1,0 +1,13 @@
+.main {
+    color: var(--colorMiddleSpix);
+    font-size: 1.5rem;
+    padding: 0 .2rem;
+}
+
+.number {
+    position: relative;
+}
+
+.main:hover {
+    text-decoration: underline;
+}

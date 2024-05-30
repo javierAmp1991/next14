@@ -1,0 +1,68 @@
+.main{
+    display: grid;
+    gap: 1rem;
+    padding: 1.6rem 3.6rem;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 1fr 36rem;
+    align-items: center;
+    position: relative;
+}
+
+.gridTitleDescription {
+    display: grid;
+    gap: .6rem;
+}
+
+.title, .description{
+    color: black;
+    width: 100%;
+}
+
+.title {
+    font-size: 2.1rem;
+}
+
+.button{
+    width: 20rem!important;
+    padding: 1rem 0!important;
+}
+
+.closeContainer {
+    width: 3.2rem;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: .8rem;
+    border-radius: 50%;
+    border: .1rem solid rgb(215, 215, 215);
+    cursor: pointer;
+}
+
+.closeContainer:hover{
+    background: rgb(238, 238, 238);
+}
+
+.close{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.close:before, .close:after{
+    content: "";
+    width: .2rem;
+    height: 100%;
+    top: 0;
+    left: calc(50% - .1rem);
+    background: rgb(130, 130, 130);
+    position: absolute;
+    rotate: 45deg;
+}
+
+.close::before{
+    rotate: -45deg;
+}

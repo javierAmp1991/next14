@@ -1,0 +1,59 @@
+.mainContainer {
+    display: grid;
+    gap: .8rem;
+}
+
+.gridButtons {
+    display: grid;
+    gap: .8rem;
+    grid-template-columns: repeat(2, 14rem);
+}
+
+.noBorder {
+    padding-bottom: 2.4rem;
+    border-bottom: var(--separationLineT)
+}
+
+.defaultContainerReadOnly {
+    display: grid;
+    gap: 1rem;
+}
+
+.mainContainerAction {
+    display: grid;
+    gap: .8rem;
+}
+
+.button {
+    padding: .8rem 1.6rem !important;
+    margin-top: .8rem !important;
+}
+
+.card {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem 1.6rem;
+    box-shadow: var(--boxShadowMainCardMobileTiny);
+    border-radius: .8rem;
+    position: relative;
+}
+
+.gridRadOnlyModal {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: .3rem;
+}
+
+.gridImage {
+    grid-template-columns: max-content 1fr;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+@media (min-width: 1280px) {
+    .card {
+        gap: 2.4rem;
+        padding: 2.4rem;
+    }
+}

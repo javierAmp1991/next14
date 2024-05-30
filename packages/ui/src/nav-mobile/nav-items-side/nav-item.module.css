@@ -1,0 +1,70 @@
+.main {
+    width: 100%;
+    text-align: start;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0 .8rem;
+    z-index: 100;
+    height: 56px;
+    align-content: center;
+    transition: var(--defaultTransition);
+    color: white;
+    opacity: .9;
+    border-radius: .4rem;
+}
+
+.mainIpad {
+    padding: 0 1.6rem;
+}
+
+.icon {
+    width: 2.4rem;
+    aspect-ratio: 1/1;
+    position: relative;
+    margin: auto;
+}
+
+.iconIpad {
+    width: 3.2rem;
+}
+
+.name {
+    margin-top: .1rem;
+    transition: var(--defaultTransition);
+    overflow: hidden;
+    width: 100%;
+    padding-left: 1.2rem;
+    white-space: nowrap;
+}
+
+.opacity {
+    opacity: 0;
+    padding-left: 0;
+    width: 0;
+}
+
+.noSelected {
+}
+
+.noSelected:hover {
+    background: #eff4f8;
+    background: rgba(255, 255, 255, .20);
+    background: var(--bgNavSelected);
+    opacity: 1;
+}
+
+.selected {
+    color: white;
+    opacity: 1;
+}
+
+.blue {
+    color: var(--colorMiddleSpix);
+}
+
+
+

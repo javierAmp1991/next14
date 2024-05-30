@@ -1,0 +1,38 @@
+.main{
+    display: grid;
+    gap: .8rem;
+    padding: .8rem 1.6rem;
+}
+
+.gridTitleDescription {
+    display: grid;
+    gap: .6rem;
+}
+
+.title, .description{
+    color: var(--colorTextTitle);
+    width: 100%;
+}
+
+.title {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.description{
+    font-size: 1.4rem;
+    line-height: 20px;
+}
+
+.clamp3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.seeMore{
+    color: var(--colorTextLink);
+    text-align: left;
+}

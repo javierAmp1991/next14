@@ -1,0 +1,21 @@
+.main {
+    --colorOutSideCard: #e6e6e6;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+    border: .1rem solid var(--colorOutSideCard);
+    box-shadow: 0 0 .2rem var(--colorOutSideCard);
+    border-radius: .4rem;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+}
+
+.main3 {
+    grid-template-rows: repeat(2, max-content) 1fr;
+}
+
+.main2 {
+    grid-template-rows: max-content 1fr;
+}

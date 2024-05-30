@@ -1,0 +1,7 @@
+.main{
+    width: 100%;
+    padding: .6rem 1rem;
+    border-radius: .4rem;
+    border: var(--defaultOutsideLine);
+    color: var(--colorTextDetails);
+}

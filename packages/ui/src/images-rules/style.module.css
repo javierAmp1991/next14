@@ -1,0 +1,88 @@
+.main {
+    display: grid;
+    box-shadow: var(--defaultBoxShadow);
+    position: relative;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    height: 100%;
+    grid-template-rows: max-content 1fr;
+}
+
+.contTitle {
+    background: white;
+    position: relative;
+    background: var(--backgroundMenu);
+    padding: 2.4rem .8rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+    box-shadow: 0 0 .4rem gray;
+}
+
+.title {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    z-index: 10000;
+}
+
+.ruleIcon {
+    width: 2.1rem;
+    aspect-ratio: 1/1;
+    position: relative;
+    margin: auto;
+    z-index: 1000;
+}
+
+.recomendation {
+    padding: 2.4rem 1.6rem;
+    display: grid;
+    gap: 2rem;
+    align-content: start;
+    overflow: scroll;
+    font-weight: 500;
+    background: white;
+    height: 100%;
+}
+
+.rule {
+    position: relative;
+    padding-left: 1.8rem;
+}
+
+.rule:before {
+    content: "";
+    position: absolute;
+    width: .8rem;
+    aspect-ratio: 1/1;
+    background: orange;
+    border-radius: 50%;
+    left: 0;
+    top: .6rem;
+}
+
+.gridImages {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1.6rem;
+    padding: 1.6rem;
+    height: 100%;
+}
+
+.popUp{
+    width: 90vw;
+    max-width: 32.5rem;
+    height: 90vh;
+    max-height: 36rem;
+    overflow: hidden;
+}
+
+.rules {
+    color: var(--colorTextLink);
+    width: max-content;
+}
+
+.rules:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,85 @@
+.mainDiv {
+    --boxShadowModal: 0 0 1.6rem rgba(0, 0, 0, .4);
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    justify-items: center;
+    border-radius: 2rem;
+    align-content: center;
+    z-index: 1000000000000000;
+}
+
+.blackScreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .6);
+    z-index: 100;
+}
+
+.renderDiv {
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 10000000000000;
+    border-radius: 1.6rem;
+    background: white;
+}
+
+.bgTransparent {
+    background: transparent;
+    box-shadow: none;
+}
+
+.positionDeleteIcon {
+    box-shadow: 0 0 .3rem gray;
+    padding: .6rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    background: white;
+    transition: var(--defaultTransition);
+    z-index: 5000000000;
+    cursor: pointer;
+}
+
+.positionDeleteIcon:hover {
+    transform: scale(1.1);
+}
+
+.deleteIcon {
+    margin: auto;
+    width: 1.2rem;
+    height: 1.2rem;
+    z-index: 500000;
+    position: relative;
+}
+
+.deleteIcon:before, .deleteIcon:after {
+    content: "";
+    width: .2rem;
+    position: absolute;
+    left: .5rem;
+    background: gray;
+    height: 100%;
+    top: 0;
+    rotate: -45deg;
+}
+
+.deleteIcon:before {
+    rotate: 45deg;
+}
+
+.opacity {
+    opacity: .7;
+}
+
+.cursorNormal{
+    cursor: initial;
+}

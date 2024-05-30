@@ -1,0 +1,46 @@
+.contInformation {
+    padding: 1.6rem 1rem;
+    display: grid;
+    gap: .8rem;
+    width: 100%;
+    border-bottom: var(--defaultOutsideLine);
+}
+
+.contInformation2 {
+    padding: 1.6rem;
+    display: grid;
+    gap: .8rem;
+    width: 100%;
+    animation: ani .2s ease-out;
+    border-bottom: var(--defaultOutsideLine);
+}
+
+.mainContainerInformation {
+    display: grid;
+    background: white;
+    position: sticky;
+    width: 100%;
+    left: 0;
+    overflow: hidden;
+}
+
+@keyframes ani {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.mainGridInformation {
+    display: grid;
+    grid-template-columns: 100vw 1fr;
+    touch-action: pan-y;
+}
+
+.black {
+    background: white;
+    width: 100%;
+}

@@ -1,0 +1,11 @@
+.main {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: .6rem;
+}
+
+.error {
+    color: red;
+}

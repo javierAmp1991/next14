@@ -1,0 +1,63 @@
+.main {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding: 0 1.2rem;
+    width: 100%;
+    position: relative;
+    height: 80px;
+    justify-items: left;
+    text-align: left;
+}
+
+.gridEdit {
+    display: grid;
+    gap: .4rem;
+    align-items: center;
+    text-align: left;
+    border-radius: 3.6rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: .4rem 1.4rem;
+    box-shadow: 0 .1rem .2rem rgb(202, 202, 202);
+    border: var(--defaultOutsideLine);
+    background: white;
+}
+
+.blue{
+    background: var(--colorMiddleSpix);
+    color: white;
+    box-shadow: none;
+    border: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: .8rem;
+    align-items: center;
+}
+
+.space {
+    padding-left: 3rem;
+}
+
+.clamp2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.image{
+    width: 3.6rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.icon{
+    border-radius: 0!important;
+}

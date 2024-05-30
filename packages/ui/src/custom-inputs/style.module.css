@@ -1,0 +1,75 @@
+.main {
+    display: grid;
+    gap: 1.2rem;
+    --colorError: #f53838;
+}
+
+.isObligatory {
+    color: var(--colorError);
+}
+
+.contInput,
+.contInputLine {
+    border: var(--defaultOutsideLine);
+    border-radius: .4rem;
+    overflow: hidden;
+    padding: .6rem 1rem;
+    width: 100%;
+    position: relative;
+    background: white;
+    display: grid;
+    align-items: center;
+}
+
+.contInputLine {
+    padding: 0 .4rem 0 0;
+    border-radius: 0;
+    border: none;
+    border-bottom: .1rem solid #1f1f1f;
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+    font-size: 1.4rem;
+
+}
+
+.prefixColor {
+        color: var(--prefixColor);
+    font-size: 1.4rem;
+}
+
+.errorCont {
+    background: var(--colorError);
+    width: 1.4rem;
+    height: 1.4rem;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    font-weight: 700;
+    cursor: pointer;
+    position: absolute;
+    right: .8rem;
+    top: calc(50% - .7rem);
+}
+
+.prefix {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: .4rem;
+}
+
+.disable {
+    background: #f6f6f6;
+    border: var(--defaultOutsideLine);
+}
+
+.title{
+    color: var(--colorTextTitle);
+        font-size: 1.4rem;
+        font-weight: 600;
+}
+

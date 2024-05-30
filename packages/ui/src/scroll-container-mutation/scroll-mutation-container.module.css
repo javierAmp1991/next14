@@ -1,0 +1,40 @@
+.main {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    display: grid;
+    position: relative;
+    align-content: start;
+    padding-bottom: 5.8rem;
+}
+
+.contChildren {
+    width: 100%;
+    height: max-content;
+    overflow: hidden;
+}
+
+.gridButton {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: .8rem;
+    padding: 1.2rem .8rem;
+    background: white;
+    z-index: 900000;
+    box-shadow: 0 0 .3rem var(--colorBoxShadowMobile);
+    transition: .4s;
+}
+
+.confirmButton {
+    padding: .8rem 1.6rem;
+    font-size: 1.5rem;
+    margin: auto;
+    z-index: 100000;
+}

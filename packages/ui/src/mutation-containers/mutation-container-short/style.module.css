@@ -1,0 +1,26 @@
+.main{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+
+.subMain {
+    display: grid;
+    align-content: start;
+    gap: 2.4rem;
+    max-width: 75rem;
+    padding: 1.6rem 3.6rem;
+    position: relative;
+}
+
+.noPadding{
+    padding: 0 3.6rem;
+}
+
+.short {
+    max-width: 65rem;
+}
+
+.large {
+    max-width: 90rem;
+}

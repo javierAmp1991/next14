@@ -1,0 +1,192 @@
+.main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 4rem 1fr;
+    overflow: hidden;
+    position: relative;
+}
+
+.mainGrid {
+    display: grid;
+    position: relative;
+    scroll-behavior: smooth;
+    overflow: scroll;
+}
+
+.mainHeader {
+    height: 4rem;
+    border-bottom: var(--separationLine);
+    border-top: var(--separationLine);
+}
+
+.contHeader {
+    width: 100%;
+    overflow: hidden;
+}
+
+.contFilter {
+    display: grid;
+    place-items: center;
+    padding-left: .8rem;
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+    height: 40px;
+    background: white;
+    border-bottom: var(--separationLineT);
+    gap: .5rem;
+    align-content: center;
+}
+
+.contFilter:before {
+    width: .8rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background: linear-gradient(-90deg, gray 0%, transparent 100%);
+    opacity: .15;
+}
+
+.gridHeader {
+    display: grid;
+    background: var(--gradientHeaderTables2);
+    height: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+    border-bottom: var(--separationLineT);
+}
+
+.left, .right {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+}
+
+.contChildren {
+    width: 100%;
+}
+
+.sticky {
+    position: sticky;
+    right: 0;
+    z-index: 100000;
+}
+
+.filters {
+    width: 100vw;
+    height: 100vw;
+}
+
+.returnCont {
+    width: 3.2rem;
+    aspect-ratio: 1/1;
+    padding: 1.1rem;
+    position: absolute;
+    bottom: 1.6rem;
+    left: calc(50% - 1.6rem);
+    z-index: 100000;
+    box-shadow: var(--boxShadowMainCardMobileTinySelected);
+    border-radius: 50%;
+    overflow: hidden;
+    transition: .4s ease-out;
+    transform: translateY(200%);
+    background: var(--backgroundButtons);
+}
+
+.enter {
+    transform: translateY(0);
+}
+
+.return {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.return:before, .return:after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: .3rem;
+    background: gray;
+    top: -.2rem;
+    transform-origin: bottom;
+    border-radius: .6rem;
+}
+
+.return:before {
+    left: -.25rem;
+    rotate: 40deg;
+}
+
+.return:after {
+    right: -.25rem;
+    rotate: -40deg;
+}
+
+.sensibility {
+    position: absolute;
+    left: 1.6rem;
+    bottom: 1.6rem;
+    height: 3.6rem;
+    width: 3.6rem;
+    padding: 1rem;
+    border-radius: 50%;
+    background: var(--backgroundButtons);
+    box-shadow: var(--boxShadowMainCardMobileTinySelected);
+    z-index: 100000;
+}
+
+.configIcon {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: .8;
+}
+
+.test{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: var(--separationLineT);
+}
+
+.first, .second, .third {
+    width: 1.4rem;
+    height: .1rem;
+    background: var(--colorMiddleSpix);
+    position: relative;
+    scale: 1.1;
+}
+
+.first:before, .second:before, .third:before {
+    content: "";
+    position: absolute;
+    width: .3rem;
+    height: .3rem;
+    border: .1rem solid var(--colorMiddleSpix);
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+    top: -.2rem;
+}
+
+.first:before {
+    left: .1rem;
+}
+
+.second:before {
+    right: .1rem;
+}
+
+.third:before {
+    left: .2rem;
+}
+

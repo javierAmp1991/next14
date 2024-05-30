@@ -1,0 +1,20 @@
+.bgWhite {
+    background: white;
+}
+
+.bgGray {
+    background: var(--backgroundHeaderTables);
+}
+
+.main {
+    display: grid;
+    width: 100%;
+    border-bottom: var(--borderHeaderTables);
+    z-index: 10000;
+    position: absolute;
+    cursor: pointer;
+}
+
+.empty {
+    border: none;
+}

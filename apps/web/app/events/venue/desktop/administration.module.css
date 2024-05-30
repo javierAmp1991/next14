@@ -1,0 +1,13 @@
+.grid {
+    grid-template-columns: repeat(2, 1.5fr) repeat(2, 1fr) 12rem;
+}
+
+.button {
+    padding: 1.2rem 1.6rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.6rem;
+    width: 20rem;
+}
+
+

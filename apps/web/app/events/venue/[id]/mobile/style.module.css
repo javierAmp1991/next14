@@ -1,0 +1,23 @@
+.gridImages {
+    display: grid;
+    grid-template-columns: repeat(5, 10rem);
+    overflow: scroll;
+    gap: .8rem;
+    padding: .8rem 0;
+    border-bottom: var(--defaultOutsideLine);
+    border-top: var(--defaultOutsideLine);
+}
+
+.cont{
+    display: grid;
+    gap: 1.6rem;
+    /* padding: 1.2rem; */
+    /* border: var(--defaultOutsideLine); */
+    /* border-radius: .8rem; */
+    /* overflow: hidden; */
+}
+
+.grid{
+    gap: 1.6rem;
+    padding: 1.6rem 1.2rem;
+}

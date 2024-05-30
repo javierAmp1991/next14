@@ -1,0 +1,17 @@
+.main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-content: start;
+    gap: 1.6rem;
+    padding: 1.6rem;
+    height: 100%;
+    overflow: scroll;
+}
+.grid{
+    grid-template-columns: 2fr 1fr!important;
+    padding: 1.6rem 3.6rem!important;
+}
+
+
+
+

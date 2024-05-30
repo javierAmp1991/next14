@@ -1,0 +1,65 @@
+.mainGrid {
+    display: grid;
+    margin: auto;
+    width: 100%;
+    overflow: scroll;
+    height: 3.2rem;
+    position: sticky;
+    background: white;
+    scroll-behavior: smooth;
+    transition: 1s;
+    z-index: 1000000;
+    top: 0;
+    --colorTabUtilities: var(--colorTextTabSelected);
+}
+
+.gridOut{
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    overflow: hidden;
+    border-bottom: var(--defaultOutsideLine);
+    width: 100vw;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 1.6rem;
+    height: 3.2rem;
+    position: relative;
+    overflow: scroll;
+    width: 100%;
+}
+
+.main {
+    cursor: pointer;
+    width: max-content;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: grid;
+    padding-top: .4rem;
+}
+
+.selected {
+    color: var(--colorTabUtilities);
+}
+
+
+.line {
+    position: absolute;
+    bottom: .1rem;
+    left: 0;
+    width: 100px;
+    height: .2rem;
+    background: var(--colorTabUtilities);
+    transition: .3s;
+}
+
+.empty{
+    height: 100%;
+    background: white;
+    width: 1.6rem;
+}

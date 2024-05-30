@@ -1,0 +1,48 @@
+.bgGray {
+    background: var(--gradientHeaderTables2);
+}
+
+.bgWhite {
+    background: white;
+}
+
+.mainGrid {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    top: 0;
+    position: absolute;
+}
+
+.noScroll {
+    transition: none;
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+    height: 80px;
+    position: relative;
+    z-index: 10000;
+    border-bottom: var(--separationLine);
+}
+
+.test {
+    height: 100px;
+    background: red;
+    animation: test .3s ease-out;
+}
+
+.expandable {
+    height: max-content;
+}
+
+
+/*@keyframes test {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}*/

@@ -1,0 +1,63 @@
+.main {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    gap: .8rem;
+    padding: .6rem 1rem .6rem 1.6rem;
+    overflow: hidden;
+    background: white;
+    height: max-content;
+    position: relative;
+    border-top: var(--defaultOutsideLine);
+    border-bottom: var(--defaultOutsideLine);
+}
+
+.padding2 {
+    padding-left: 2.6rem;
+}
+
+.input {
+    width: 100%;
+    background: transparent;
+}
+
+.close {
+    position: absolute;
+    width: .8rem;
+    height: .8rem;
+    top: calc(50% - .4rem);
+    left: 1.2rem;
+    opacity: .5;
+}
+
+.glassIcon {
+    height: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.contButton {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background: rgb(255, 149, 0);
+    box-shadow: 0 0 .2rem rgb(184, 184, 184);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.sizeButton {
+    width: 1.2rem;
+    height: 1.2rem;
+    position: relative;
+}
+
+.searchBarGrid {
+    display: grid;
+    grid-template-columns: 40rem 1fr;
+    padding: 0 3.6rem 1.6rem 3.6rem;
+    align-items: center;
+    gap: 1.6rem;
+}

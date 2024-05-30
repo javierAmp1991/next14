@@ -1,0 +1,91 @@
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, max-content) 1fr repeat(1, max-content);
+    gap: 3.2rem;
+    padding: 0 1.6rem;
+    height: 7.6rem;
+    align-items: center;
+    z-index: 1000;
+    position: relative;
+    margin: auto;
+    background: var(--backgroundMenu);
+
+}
+
+.sizeLogo {
+    height: 2.6rem;
+    aspect-ratio: 4/1;
+    position: relative;
+}
+
+.gridImageText {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: .6rem;
+    color: white;
+    position: relative;
+}
+
+.cartNumber {
+    position: absolute;
+    top: -.1rem;
+    left: 1.3rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    color: #0ed7c4;
+}
+
+.sizeIcons {
+    height: 2.8rem;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.contText {
+    color: #fefefe;
+}
+
+.iconLocation {
+    height: 2.4rem;
+    width: 2rem;
+    position: relative;
+}
+
+.firstText {
+    font-size: 1.2rem;
+}
+
+.secondText {
+    font-weight: 600;
+    color: #fefefe;
+}
+
+.gridSearchBar {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    background: white;
+    border-radius: 4.8rem;
+    overflow: hidden;
+    padding: .3rem .4rem .3rem 1.6rem;
+}
+
+.contGlassIcon {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 3.2rem;
+    aspect-ratio: 1/1;
+    position: relative;
+    background: #ff9900;
+
+    border-radius: 50%;
+}
+
+.glassIcon {
+    width: 1.6rem;
+    aspect-ratio: 1/1;
+    position: relative;
+}

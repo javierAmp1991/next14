@@ -1,0 +1,30 @@
+.main {
+    width: 100%;
+    background: var(--gradientHeaderTables2);
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    gap: .4rem;
+    justify-content: center;
+}
+
+.text {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-clamp: 1;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.icon {
+    width: 1rem;
+    aspect-ratio: 1/1;
+    position: relative;
+    opacity: .6;
+}

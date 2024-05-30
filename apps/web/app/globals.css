@@ -1,25 +1,56 @@
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --backgroundMenu: #2c3844;
+  --colorOutSideTable: #e6e6e6;
+  --borderOutsideTable: .1rem solid var(--colorOutSideTable);
+  --backgroundHeaderTables: rgba(245,245,245);
+  --borderHeaderTables: .1rem solid var(--colorOutSideTable);
+  --defaultOutsideLineColor: #f1f1f1;
+  --defaultOutsideLineColor: #dddddd;
+  --defaultOutsideLine: .1rem solid var(--defaultOutsideLineColor);
+  --prefixColor: #74767c;
+  --colorBoxShadow: #c4c4c4;
+  --colorBoxShadowSelected: #adacac;
+  --defaultBoxShadow: 0 .1rem .4rem var(--colorBoxShadow);
+  --defaultBoxShadowSelected: 0 .1rem .4rem var(--colorBoxShadowSelected);
+  --defaultTransition: .3s;
 
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --colorMiddleSpix: #2e8dec;
+  --colorDarkSpix: #1D9BF0;
+  --colorLightSpix: #0674e3;
+  --colorHoverLink: #0a68f5;
 
-  --callout-rgb: 20, 20, 20;
-  --callout-border-rgb: 108, 108, 108;
-  --card-rgb: 100, 100, 100;
-  --card-border-rgb: 200, 200, 200;
+  --fontSizeNormal: 1.4rem;
+  --fontWeightNormal: 400;
+  --colorTextNormal: #3d3e41;
+      
+  --fontSizeDetails: 1.4rem;
+  --fontWeightDetails: 400;
+  --colorTextDetails: #74767c;
+      
+  --fontSizeMenu: 1.5rem;
+  --fontWeightMenu: 400;
+  --colorTextMenu: white;
+      
+  --fontSizeTitle: 2rem;
+  --fontWeightTitle: 500;
+  --colorTextTitle: black;
+      
+  --fontSizeSubTitle: 1.5rem;
+  --fontWeightSubTitle: 600;
+  --colorTextSubTitle: #1f1f1f;
+      
+  --fontFamilyTabs: Roboto;
+  --fontSizeTabs: 1.4rem;
+  --fontWeightTabs: 500;
+  --colorTextTabs: #3d3e41;
+  --colorTextTabSelected: #f38304;
+  --colorTextTabSelectedHover: #e56a05;
+      
+  --fontSizeLink: 1.4rem;
+  --fontWeightLink: 400;
+  --colorTextLink: var(--colorMiddleSpix);
+  --colorTextLinkHover: #0a68f5;
 
-  --glow-conic: conic-gradient(
-    from 180deg at 50% 50%,
-    #2a8af6 0deg,
-    #a853ba 180deg,
-    #e92a67 360deg
-  );
 }
 
 * {
@@ -30,21 +61,47 @@
 
 html,
 body {
+  width: 100dvw;
+  height: 100dvh;
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: sans-serif!important;
+  font-size: 62.5%;
+  zoom: 1 !important;
+  background: white;
+  overscroll-behavior: none !important;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+ font-size: 1.4rem;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+  border: none;
+  width: 100%;
+  resize: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  background: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  -webkit-appearance: none;
+  width: 0;
+  background: transparent;
 }
