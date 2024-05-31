@@ -95,7 +95,9 @@ export const ENCLOSURE_OPTIONS = [
 
 export const VenueTable = () => {
   const [Venue, setVenue] = useState<VenueRowTable[]>(getVenues());
+
   const total = Venue.length;
+
   const rowRender = (index: number, key: string, style: CSSProperties) => {
     const item = Venue[index];
     if (item === undefined)

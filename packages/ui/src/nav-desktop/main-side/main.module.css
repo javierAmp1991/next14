@@ -10,6 +10,7 @@
     transition: var(--defaultTransition);
     background: var(--backgroundSideMenu);
     background: var(--backgroundMenu);
+    z-index: 10000000;
     color: white;
     --border: .1rem solid rgba(255, 255, 255, .4);
     --backgroundSideMenu: var(--backgroundSide);

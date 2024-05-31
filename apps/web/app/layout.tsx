@@ -1,7 +1,6 @@
 "use client";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import style from "./style.module.css";
 import { HeaderPage, HeaderPageMobile } from "@repo/ui/mainHeader";
 import { ID_PORTAL } from "@repo/ui/const";
 import Script from "next/script";
@@ -39,10 +38,7 @@ export default function RootLayout({
         {RangeView === EnumTypeView.Loading ? (
           <></>
         ) : RangeView === EnumTypeView.Desktop ? (
-          <div className={style.main}>
-            <HeaderPage />
-            {children}
-          </div>
+          <HeaderPage>{children}</HeaderPage>
         ) : (
           <HeaderPageMobile>{children}</HeaderPageMobile>
         )}
