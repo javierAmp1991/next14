@@ -174,7 +174,7 @@ overflow: scroll;
     width: 100%;
     padding: .1rem;
     height: max-content;
-    gap: .8rem;
+    gap: 1.6rem;
 }
 
 .flag{
