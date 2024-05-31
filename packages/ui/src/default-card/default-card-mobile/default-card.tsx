@@ -1,11 +1,20 @@
 //@ts-ignore
 import style from "./style.module.css";
-import { CHECK_ICON_GREEN } from "../../icons";
+import {
+  CHECK_ICON_GREEN,
+  RIGHT_ARROW_ORANGE,
+  RIGHT_ARROW_BLACK,
+} from "../../icons";
 import Image from "next/image";
 import { IDefaultCard } from "../default-card";
-import { RIGHT_ARROW_Blue } from "../../icons";
 
-export const DefaultCardMobile = ({ props }: { props: IDefaultCard }) => {
+export const DefaultCardMobile = ({
+  props,
+  useBlack,
+}: {
+  props: IDefaultCard;
+  useBlack?: boolean;
+}) => {
   const styleHover = props.NoHover
     ? style.noHover
     : props.Selected
@@ -23,7 +32,13 @@ export const DefaultCardMobile = ({ props }: { props: IDefaultCard }) => {
           <div className={style.sku}>{props.Second}</div>
         </div>
         <div className={style.arrow}>
-          <Image width={14} height={14} alt="" src={RIGHT_ARROW_Blue} />
+          <Image
+            className={`${useBlack && style.gray}`}
+            width={14}
+            height={14}
+            alt=""
+            src={useBlack ? RIGHT_ARROW_BLACK : RIGHT_ARROW_ORANGE}
+          />
         </div>
       </div>
       {props.Selected && (

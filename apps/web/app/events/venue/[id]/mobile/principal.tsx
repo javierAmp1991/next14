@@ -80,6 +80,12 @@ export default function Principal() {
     Subtitle: "Busque en el mapa la direccion del recinto",
   };
 
+  const titleCheck: IContainerWidthTitle = {
+    Title: "Utilizacion del recinto",
+    DontUseSpace: true,
+    IsObligatory: true,
+  };
+
   return (
     <>
       <InputText props={inputName} />
@@ -96,13 +102,13 @@ export default function Principal() {
         </div>
       </ContainerWidthTitle>
 
+      <InputCheckbox props={inputPublic} />
+
       <ContainerWidthTitle props={titleMap}>
         <div style={{ width: "100%", aspectRatio: "1/1" }}>
           <Map props={mapProps} />
         </div>
       </ContainerWidthTitle>
-
-      <InputCheckbox props={inputPublic} />
     </>
   );
 
