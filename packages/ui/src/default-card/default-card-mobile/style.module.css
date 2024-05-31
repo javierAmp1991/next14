@@ -76,6 +76,7 @@
     display: grid;
     gap: .8rem;
     align-content: center;
+    padding: .8rem;
 }
 
 .contRating {
