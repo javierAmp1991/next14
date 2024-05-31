@@ -60,7 +60,7 @@
     position: relative;
     z-index: 100;
     border: .3em solid white;
-    box-shadow: 0 0 .2rem gray, 0 0 .1rem gray;
+    box-shadow: var(--defaultBoxShadow);
     padding: .3rem;
     background: linear-gradient(0deg, #a3a8b6 0%, #8e948d 33%, #b9a7b8 66%, #ad9d9d 100%);
     background: linear-gradient(0deg, orangered 0%, #e14725 50%, orange 100%);
