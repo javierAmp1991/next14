@@ -26,7 +26,8 @@
     "./windowDimention": "./src/window-dimention/index.ts",
     "./chargingPage" : "./src/charging-page/index.ts",
     "./popUpContainer": "./src/popup-container/index.ts",
-    "./scrollContainerMobile": "./src/scroll-container-mutation/index.ts"
+    "./scrollContainerMobile": "./src/scroll-container-mutation/index.ts",
+    "./globalEnums" : "./src/global-enums/index.ts"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

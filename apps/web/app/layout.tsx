@@ -17,7 +17,7 @@ export default function RootLayout({
   const { RangeView } = useWindowDimensions();
   return (
     <html lang="en">
-      <Head>
+      <head>
         <Script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js" />
         <link
           href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"
@@ -33,7 +33,8 @@ export default function RootLayout({
           href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.4.0/mapbox-gl-draw.css"
           type="text/css"
         />
-      </Head>
+      </head>
+
       <body className={inter.className}>
         {RangeView === EnumTypeView.Loading ? (
           <></>
