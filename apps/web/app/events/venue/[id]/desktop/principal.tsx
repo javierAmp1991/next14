@@ -16,13 +16,15 @@ import { EnumTypeResource } from "@repo/ui/resourceTabContainer";
 import { ImageRulesPopUp } from "@repo/ui/imagesRules";
 import { UploadResources, IUploadResources } from "@repo/ui/uploadResources";
 import style from "./style.module.css";
+import {useVenueContext} from "../provider";
 
 import { useState } from "react";
 export default function Principal() {
+  const {Venue, VenueHandlers} = useVenueContext();
   const containerProps: IMutationContainerGrid = {};
   const inputName: IInputText = {
     Name: "inputName",
-    Value: "",
+    Value: Venue.Name,
     IsObligatory: true,
     Placeholder: "Ingrese un nombre",
     TitleInput: "Nombre del recinto",
@@ -30,10 +32,9 @@ export default function Principal() {
   };
   const inputPublic: IInputCheckbox = {
     Name: "",
-    Value: true,
-    Label:
-      "¿Este recinto puede ser utilizado por otros productores de eventos?",
-    OnChange: HandleIsPublic,
+    Value: Venue.IsPublic,
+    Label: "¿Este recinto puede ser utilizado por otros productores de eventos?",
+    OnChange: VenueHandlers.HandleIsPublic,
   };
   const [Enclosure, setEnclosure] = useState({ Address: undefined });
   const mapProps: IMapbox = {

@@ -42,7 +42,7 @@ export default function ServiceTable() {
     TotalRows: total,
     FilterSelected: undefined,
     GridHeader: css.grid!,
-    Width: 1050,
+    Width: 930,
     OnRowEnd: () => {},
     RowRender: RowRender,
   };

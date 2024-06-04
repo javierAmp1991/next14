@@ -1,3 +1,3 @@
 .grid{
-    grid-template-columns: repeat(2, 22rem) repeat(3, 16rem) 5rem;
+    grid-template-columns: repeat(2, 20rem) repeat(3, 16rem) 5rem;
 }

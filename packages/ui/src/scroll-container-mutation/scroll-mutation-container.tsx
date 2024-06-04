@@ -48,7 +48,7 @@ export const ScrollMutationContainerMobile = ({props, children}: { props: IScrol
         if (refContainer.current) {
             if (refContainer.current.scrollTop > limitScroll) refContainer.current.scrollTop = limitScroll;
         }
-    }, [props.Dependency])
+    }, [children])
 
     return (
         <div id={"idContainerMobile"} ref={refContainer} onScroll={handleScroll} className={`${style.main} ${props.Style}`}>

@@ -6,5 +6,5 @@ export default function Blueprint({ e }: { e: any }) {
     Second: `${e.Sections} ${e.Sections === 1 ? "Seccion" : "Secciones"}`,
     Image: e.CoverImage,
   };
-  return <DefaultCardMobile props={props} useBlack={true} />;
+  return <DefaultCardMobile props={props}/>;
 }

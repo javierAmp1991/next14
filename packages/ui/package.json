@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
+    "./custom-hook": "./src/custom-hooks/index.ts",
     "./mainContainer": "./src/main-container-desktop/index.ts",
     "./headerDesktop": "./src/header-desktop/index.ts",
     "./mainHeader": "./src/header-page/index.ts",

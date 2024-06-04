@@ -9,3 +9,4 @@ export const ACCEPT: string = "Aceptar";
 export const ADD_NEW_A: string = "Agregar nueva";
 export const ADD_NEW_O: string = "Agregar nuevo";
 export const APPLY_CHANGES: string = "Aplicar cambios";
+export const SOMETHING_WENT_WRONG: string = "Oops... algo ha salido mal.";

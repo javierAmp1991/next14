@@ -1,6 +1,5 @@
 .main {
     width: 100%;
-    background: var(--gradientHeaderTables2);
     display: grid;
     grid-template-columns: max-content;
     grid-auto-columns: max-content;

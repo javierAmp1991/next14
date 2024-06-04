@@ -1,16 +1,11 @@
-import {
-  IMutationContainerGrid,
-  MutationContainerGrid,
-  SubmutationContainerLeft,
-  SubmutationContainerRight,
-} from "@repo/ui/mutationContainers";
+import {  IMutationContainerGrid} from "@repo/ui/mutationContainers";
 import {
   InputText,
   IInputText,
   IInputCheckbox,
   InputCheckbox,
 } from "@repo/ui/customInputs";
-import { ContainerWidthTitle, IContainerWidthTitle } from "@repo/ui/misc";
+import { ContainerWidthTitle, IContainerWidthTitle, SeparationLine } from "@repo/ui/misc";
 import { Map, IMapbox } from "@repo/ui/mapbox";
 import { EnumTypeResource } from "@repo/ui/resourceTabContainer";
 import { ImageRulesPopUp } from "@repo/ui/imagesRules";
@@ -103,6 +98,8 @@ export default function Principal() {
       </ContainerWidthTitle>
 
       <InputCheckbox props={inputPublic} />
+
+      <SeparationLine/>
 
       <ContainerWidthTitle props={titleMap}>
         <div style={{ width: "100%", aspectRatio: "1/1" }}>

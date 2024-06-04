@@ -9,12 +9,8 @@ import Image from "next/image";
 import { IDefaultCard } from "../default-card";
 
 export const DefaultCardMobile = ({
-  props,
-  useBlack,
-}: {
-  props: IDefaultCard;
-  useBlack?: boolean;
-}) => {
+  props}: {
+  props: IDefaultCard}) => {
   const styleHover = props.NoHover
     ? style.noHover
     : props.Selected
@@ -33,11 +29,11 @@ export const DefaultCardMobile = ({
         </div>
         <div className={style.arrow}>
           <Image
-            className={`${useBlack && style.gray}`}
+            className={`${style.gray}`}
             width={14}
             height={14}
             alt=""
-            src={useBlack ? RIGHT_ARROW_BLACK : RIGHT_ARROW_ORANGE}
+            src={RIGHT_ARROW_BLACK}
           />
         </div>
       </div>
