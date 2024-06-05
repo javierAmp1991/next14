@@ -1,10 +1,12 @@
 import React, { createContext, useContext, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ENCLOSURE_OPTIONS } from "../data";
+import {  IUseSearch,  useSearch} from "@repo/ui/searchBar";
 
 export interface IVenueProvider {
   Venues: VenueRowTable[];
   HandleMutation: (id?: string) => void;
+  Search: IUseSearch
 }
 
 //@ts-ignore
@@ -30,11 +32,14 @@ export function useVenueProvider() {
 export const VenueProvider = ({ children }: { children: React.ReactNode }) => {
   const [venues, setVenues] = useState<VenueRowTable[]>(getVenues());
   const { push } = useRouter();
+  const searchProps = useSearch(onSearch, onDeleteSearch);
 
   const provider: IVenueProvider = {
     Venues: venues,
     HandleMutation: handleMutation,
+    Search: searchProps
   };
+
   return (
     <VenueProviderContext.Provider value={provider}>
       {children}
@@ -63,4 +68,7 @@ export const VenueProvider = ({ children }: { children: React.ReactNode }) => {
     if (id) push(`/events/venue/${id}`);
     else push(`/events/venue/create`);
   }
+
+  function onSearch() {}
+  function onDeleteSearch() {}  
 };

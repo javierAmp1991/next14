@@ -1,36 +1,23 @@
 "use client";
-import {
-  MainContainerDesktop,
-  IMainContainerDesktop,
-  EnumMainContainerDesktop,
-} from "@repo/ui/mainContainer";
+import {  MainContainerDesktop,  IMainContainerDesktop,  EnumMainContainerDesktop} from "@repo/ui/mainContainer";
 import { HeaderDesktop, IHeaderDesktop } from "@repo/ui/headerDesktop";
-import {
-  ISearchBar,
-  SearchBar,
-  useSearch,
-  SearchBarGrid,
-} from "@repo/ui/searchBar";
 import { CSSProperties } from "react";
 import { VenueTable } from "./table";
 import { useVenueProvider } from "../provider";
+import {SEARCHBAR_PROPS, TITLE, DESCRIPTION} from "../const";
+import {  SearchBar,  SearchBarGrid} from "@repo/ui/searchBar";
+import {ADD_NEW_O} from "@repo/ui/const";
 
 export default function Page() {
-  const { HandleMutation } = useVenueProvider();
+  const { HandleMutation, Search } = useVenueProvider();
   const containerProps: IMainContainerDesktop = {
     Type: EnumMainContainerDesktop.Use3,
   };
   const headerProps: IHeaderDesktop = {
-    Title: "Administracion de recintos",
-    Description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    Button: { Text: "Crear nuevo", OnClick: onCreateNew },
+    Title: TITLE,
+    Description: DESCRIPTION,
+    Button: { Text: ADD_NEW_O, OnClick: onCreateNew },
   };
-  const searchBarProps: ISearchBar = {
-    Name: "searchVenue",
-    Placeholder: "Buscar por nombre o direccion",
-  };
-  const searchProps = useSearch(onSearch, onDeleteSearch);
   const s: CSSProperties = {
     width: "100%",
     height: "100%",
@@ -40,18 +27,15 @@ export default function Page() {
     <MainContainerDesktop props={containerProps}>
       <HeaderDesktop props={headerProps} />
       <SearchBarGrid>
-        <SearchBar props={searchProps} searchBarProps={searchBarProps} />
+        <SearchBar props={Search} searchBarProps={SEARCHBAR_PROPS} />
       </SearchBarGrid>
       <div style={s}>
         <VenueTable />
       </div>
     </MainContainerDesktop>
   );
+
   function onCreateNew() {
     HandleMutation();
   }
-
-  function onSearch() {}
-
-  function onDeleteSearch() {}
 }

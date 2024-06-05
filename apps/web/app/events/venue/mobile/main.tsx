@@ -1,27 +1,23 @@
 import {HeaderMobile, IHeaderMobile} from "@repo/ui/headerDesktop";
 import Table from "./table";
-import {ISearchBar, SearchBarMobile, useSearch} from "@repo/ui/searchBar";
+import {SearchBarMobile} from "@repo/ui/searchBar";
 import {DefaulContainerMobile} from "@repo/ui/mutationContainers";
+import {useVenueProvider} from "../provider/index";
+import {SEARCHBAR_PROPS, TITLE, DESCRIPTION} from "../const";
 
 export default function Main(){
+    const {Search} = useVenueProvider();
     const headerProps: IHeaderMobile = {
-      Title: "Administracion de recintos",
-      Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      Title: TITLE,
+      Description: DESCRIPTION
     };
-    const searchBarProps: ISearchBar = {
-      Name: "searchVenue",
-      Placeholder: "Buscar por nombre o direccion",
-    };
-    const searchProps = useSearch(onSearch, onDeleteSearch);
-    
+   
     return(
         <DefaulContainerMobile>
             <HeaderMobile props={headerProps}/>
-            <SearchBarMobile props={searchProps} searchBarProps={searchBarProps}/>
+            <SearchBarMobile props={Search} searchBarProps={SEARCHBAR_PROPS}/>
             <Table/>
         </DefaulContainerMobile>
     )
 
-    function onSearch() {}
-    function onDeleteSearch() {}
 }
