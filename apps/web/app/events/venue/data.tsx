@@ -1,4 +1,4 @@
-import { EnumTypeResource } from "@repo/ui/globalEnums";
+import { EnumTypeResource } from "@repo/ui/uploadResources";
 export const ENCLOSURE_OPTIONS = [
   {
     Name: "Club Night Valparaiso ",
