@@ -111,9 +111,7 @@
 }
 
 .selected {
-    color: #f08804;
-    color: var(--colorMiddleSpix);
-    /*border-bottom: .1rem solid #f08804;*/
+    color: var(--colorTextTabSelected);
     opacity: 1;
 }
 
@@ -121,7 +119,7 @@
     content: "";
     width: 100%;
     height: .1rem;
-    background: var(--colorMiddleSpix);
+    background: var(--colorTextTabSelected);
     position: absolute;
     bottom: -.1rem;
     left: 0;

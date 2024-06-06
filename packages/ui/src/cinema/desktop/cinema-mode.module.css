@@ -154,7 +154,6 @@
 }
 
 .selected {
-    color: var(--colorMiddleSpix);
     color: var(--colorTextTabSelected);
     opacity: 1;
     position: relative;

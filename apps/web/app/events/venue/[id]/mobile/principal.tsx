@@ -15,7 +15,6 @@ import {useVenueContext} from "../provider";
 import {CINEMA_TITLE} from "../const";
 
 
-import { useState } from "react";
 export default function Principal() {
   const {Venue, VenueHandlers} = useVenueContext();
   const {CinemaState, HandleCloseCinema, HandleShowCinema, CinemaProps} = UseCinemaHook(CINEMA_TITLE);
@@ -34,7 +33,6 @@ export default function Principal() {
     Label: "¿Este recinto puede ser utilizado por otros productores de eventos?",
     OnChange: VenueHandlers.HandleIsPublic
   };
-  const [Enclosure, setEnclosure] = useState({ Address: undefined });
   
   const mapProps: IMapbox = {
     IsActiveClickMap: true,
