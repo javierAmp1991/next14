@@ -63,7 +63,7 @@ const DEFAULT_VENUE: Venue = {
   Blueprints: [],
   Events: [],
   IsPublic: false,
-  Resource: undefined,
+  Resource: [],
   ViewPort: undefined
 }
 
