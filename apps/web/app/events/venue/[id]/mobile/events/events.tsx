@@ -1,26 +1,12 @@
 import { GridDefaultCardMobile2 } from "@repo/ui/defaultCard";
 import Event from "./event";
+import { useVenueContext } from "../../provider";
 
 export default function Events() {
-  const Enclosure = {
-    Events: [
-      {
-        Id: "idEvent001",
-        Name: "Elektro Panic",
-        Enclosure: "Club Night Valpo",
-        CoverImage: "/venue-images/nightClub3.jpg",
-      },
-      {
-        Id: "idEvent002",
-        Name: "Wanderers vs Everton",
-        Enclosure: "Estadio Sausalito",
-        CoverImage: "/venue-images/sausalito3.jpg",
-      },
-    ],
-  };
+  const { Venue } = useVenueContext();
   return (
     <GridDefaultCardMobile2>
-      {Enclosure.Events.map((e) => (
+      {Venue.Events.map((e) => (
         <Event e={e} />
       ))}
     </GridDefaultCardMobile2>

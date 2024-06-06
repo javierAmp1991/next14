@@ -1,6 +1,7 @@
 import {DefaultCard, IDefaultCard} from "@repo/ui/defaultCard";
+import {EventResume} from "../../provider";
 
-export default function Event({e}: { e: any }) {
-    const props: IDefaultCard = {First: e.Name,Second: e.Enclosure, Image: e.CoverImage};
+export default function Event({e}: { e: EventResume }) {
+    const props: IDefaultCard = {First: e.Name,Second: e.Venue, Image: e.Image};
     return <DefaultCard props={props}/>
 }

@@ -3,6 +3,8 @@ import {useHandlePosition, useCreateEditHook, IUseHandlePositionReturn, ICreateE
 import {INITIAL_POSITION_MUTATION} from "./const";
 import {ENCLOSURE_OPTIONS} from "../data";
 import {Resource} from "@repo/ui/uploadResources";
+import {InputTextChangeEvent} from "@repo/ui/customInputs";
+import { Address } from "@repo/ui/mapbox";
 
 export interface VenueContextProps {
      Venue: Venue,
@@ -16,6 +18,13 @@ export interface EventResume {
   Id: string;
   Image: string;
   Venue: string;
+}
+
+export interface BlueprintResume{
+  Name: string,
+  Id: string
+  Image: string
+  Sections: number
 }
 
 export interface Blueprint {
@@ -39,26 +48,31 @@ export enum EnumBlueprintType {
 export interface Venue {
   Id: string;
   Image: string;
-  Address: string;
+  Address: Address;
   Name: string;
   Resource: Resource[];
   ViewPort: any;
   Events: EventResume[];
-  Blueprints: Blueprint[];
+  Blueprints: BlueprintResume[];
   IsPublic: boolean;
 }
 
 interface VenueHandlers{
-  HandleName: (name: string)=>void
+  HandleName: (e: InputTextChangeEvent)=>void
   HandleIsPublic: ()=>void
   HandleAddResource: (resource: Resource)=>void
   HandleDeleteResource: (id: string)=>void
+  HandlAddress: (a: Address)=>void
 }
 
 const DEFAULT_VENUE: Venue = {
   Id: "",
   Image: "",
-  Address: "",
+  Address: {
+    Lat: 0,
+    Lng: 0,
+    Location: ""
+  },
   Name: "",
   Blueprints: [],
   Events: [],
@@ -84,7 +98,8 @@ export default function Provider ({children, id}:{children: React.ReactNode, id:
       HandleIsPublic: handleIsPublic,
       HandleName: handleName,
       HandleAddResource: handleAddResource,
-      HandleDeleteResource: handleDeleteResource
+      HandleDeleteResource: handleDeleteResource,
+      HandlAddress: handleAddress
     };
     const provider: VenueContextProps = {
         Venue: venue,
@@ -108,7 +123,7 @@ export default function Provider ({children, id}:{children: React.ReactNode, id:
                 Id: newLocation.Id,
                 Resource: newLocation.Resource,
                 ViewPort: newLocation.ViewPort,
-                Events: [],
+                Events: newLocation.Events,
                 Blueprints: newLocation.Blueprints,
                 IsPublic: newLocation.IsPublic
             };
@@ -124,10 +139,6 @@ export default function Provider ({children, id}:{children: React.ReactNode, id:
 
     return <VenueContext.Provider value={provider}>{children}</VenueContext.Provider> 
 
-    function handleName(){
-
-    }
-
     function handleIsPublic(){
       const newVenue = {...venue, IsPublic: !venue.IsPublic}
       setVenue(newVenue)
@@ -141,5 +152,13 @@ export default function Provider ({children, id}:{children: React.ReactNode, id:
     function handleDeleteResource(id: string){
       const newResources = venue.Resource.filter(r=>r.Id  !== id);
       setVenue({...venue, Resource: newResources})
+    }
+
+    function handleName(e: InputTextChangeEvent){
+      setVenue({...venue, Name: e.Event.target.value})
+    }
+
+    function handleAddress(a: Address){
+      setVenue({...venue, Address: a})
     }
 }

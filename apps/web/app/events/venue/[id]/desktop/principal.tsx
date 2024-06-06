@@ -23,7 +23,6 @@ import {CINEMA_TITLE} from "../const";
 import { useState } from "react";
 export default function Principal() {
   const {Venue, VenueHandlers} = useVenueContext();
-  const [Enclosure, setEnclosure] = useState({ Address: undefined });
   const containerProps: IMutationContainerGrid = {};
   const {CinemaState, HandleCloseCinema, HandleShowCinema, CinemaProps} = UseCinemaHook(CINEMA_TITLE);
   const inputName: IInputText = {
@@ -32,7 +31,7 @@ export default function Principal() {
     IsObligatory: true,
     Placeholder: "Ingrese un nombre",
     TitleInput: "Nombre del recinto",
-    OnChange: handleChange,
+    OnChange: VenueHandlers.HandleName,
   };
   const inputPublic: IInputCheckbox = {
     Name: "",
@@ -47,8 +46,13 @@ export default function Principal() {
     IsActiveGeolocate: true,
     GetData: getDataFromMap,
     ReRender: true,
-    ViewPort: undefined,
-    Address: Enclosure.Address,
+    ViewPort: {
+      Lat: Venue.Address.Lat,
+      Lng: Venue.Address.Lng,
+      Zoom: 15
+    },
+    Address: Venue.Address,
+    GetAddress: VenueHandlers.HandlAddress
   };
   const inputUpload: IUploadResources = {
     Id: "",
@@ -97,10 +101,7 @@ export default function Principal() {
     </>
   );
 
-  function handleChange() {}
-
   function getDataFromMap(data: any) {
-    setEnclosure({ Address: data.features[0].place_name });
     /*
       data.features[0].place_name,
       data.features[0].center[0],

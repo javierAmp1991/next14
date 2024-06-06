@@ -26,7 +26,7 @@ export default function Principal() {
      IsObligatory: true,
      Placeholder: "Ingrese un nombre",
      TitleInput: "Nombre del recinto",
-     OnChange: handleChange,
+     OnChange: VenueHandlers.HandleName,
   };
   const inputPublic: IInputCheckbox = {
     Name: "",
@@ -43,8 +43,13 @@ export default function Principal() {
     IsActiveGeolocate: true,
     GetData: getDataFromMap,
     ReRender: true,
-    ViewPort: undefined,
+    ViewPort: {
+      Lat: Venue.Address.Lat,
+      Lng: Venue.Address.Lng,
+      Zoom: 15
+    },
     Address: Enclosure.Address,
+    GetAddress: VenueHandlers.HandlAddress
   };
 
   const inputUpload: IUploadResources = {
@@ -94,9 +99,7 @@ export default function Principal() {
       <SeparationLine/>
 
       <ContainerWidthTitle props={titleMap}>
-        <div style={{ width: "100%", aspectRatio: "1/1" }}>
           <Map props={mapProps} />
-        </div>
       </ContainerWidthTitle>
 
       {CinemaState && <CinemaMobile onClose={HandleCloseCinema} item={CinemaProps}/>}

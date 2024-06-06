@@ -17,17 +17,24 @@ export interface IMapbox {
   Polygons?: any[];
   ViewPort?: MapViewPortProps;
   GetData?: Function;
+  GetAddress?: (address: Address)=>void
   GetPolygon?: Function;
   ReRender: boolean;
   ActiveDeletePolygon?: boolean;
   ActiveInitialDraw?: boolean;
-  Address?: string
+  Address?: Address
 }
 
 export interface MapViewPortProps {
   Lng: number;
   Lat: number;
   Zoom?: number;
+}
+
+export interface Address{
+    Lng: number,
+    Lat: number,
+    Location: string
 }
 
 const defaultViewPort: MapViewPortProps = {
@@ -171,6 +178,12 @@ export const Mapbox = ({props}: { props: IMapbox }) => {
             getDataFromMapBox(lng, lat)
                 .then(data => {
                     if (props.GetData !== undefined) props.GetData(data, lng, lat);
+                    if (props.GetAddress) {
+                        const newAddress: Address = {
+                            Lat: lat, Lng: lng, Location: data.features[0].place_name 
+                        };
+                        props.GetAddress(newAddress)
+                    }
                 })
                 .catch(error => {
                     console.error(error);

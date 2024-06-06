@@ -7,7 +7,7 @@ export const Map = ({props}:{props: IMapbox})=>{
     return (
       <div className={style.mapContainer}>
         <Mapbox props={props} />
-        <div className={style.address}>{props.Address? props.Address : SELECT_ADDRESS}</div>
+        <div className={style.address}>{props.Address? props.Address.Location : SELECT_ADDRESS}</div>
       </div>
     );
     

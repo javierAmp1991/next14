@@ -52,7 +52,7 @@ export const VenueProvider = ({ children }: { children: React.ReactNode }) => {
       const newItem: VenueRowTable = {
         Id: ENCLOSURE_OPTIONS[i]!.Id,
         Name: ENCLOSURE_OPTIONS[i]!.Name,
-        Address: ENCLOSURE_OPTIONS[i]!.Address,
+        Address: ENCLOSURE_OPTIONS[i]!.Address.Location,
         PendentServices: ENCLOSURE_OPTIONS[i]!.ServicePendent.length,
         RealizeServices: ENCLOSURE_OPTIONS[i]!.ServiceRealized.length,
         Image: ENCLOSURE_OPTIONS[i]!.Image,

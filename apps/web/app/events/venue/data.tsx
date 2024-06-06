@@ -1,9 +1,14 @@
 import { EnumTypeResource } from "@repo/ui/uploadResources";
+
 export const ENCLOSURE_OPTIONS = [
   {
     Name: "Club Night Valparaiso ",
     Id: "idEnclosure001",
-    Address: "12 Nte. 940, Viña del Mar, Valparaíso",
+    Address: {
+      Location: "12 Nte. 940, Viña del Mar, Valparaíso",
+      Lng: -71.546162,
+      Lat: -33.011784
+    },
     ServiceRealized: ["idPerformer001", "idPerformer002", "idPerformer003"],
     ServicePendent: ["idService001", "idService002", "idService003"],
     Image: "/venue-images/nightClub.jpg",
@@ -28,17 +33,28 @@ export const ENCLOSURE_OPTIONS = [
       {
         Id: "idEvent001",
         Name: "Elektro Panic",
-        Enclosure: "Club Night Valpo",
-        Image: "/nightClub3.jpg",
+        Venue: "Club Night Valpo",
+        Image: "/venue-images/nightClub3.jpg",
       },
     ],
-    Blueprints: [],
+    Blueprints: [
+      {
+        Id: "idNightClub",
+        Name: "Night House",
+        Sections: 4,
+        Image: "/venue-images/nightClub5.jpg"
+    },
+    ],
     IsPublic: true,
   },
   {
     Name: "Estadio Sausalito",
     Id: "idEnclosure003",
-    Address: "Toro Herrera 177-117, Viña del Mar, Valparaíso",
+    Address: {
+      Location: "Toro Herrera 177-117, Viña del Mar, Valparaíso",
+      Lng: -71.564977,
+      Lat: -33.025337
+    },
     ServiceRealized: ["idPerformer003", "idPerformer004"],
     ServicePendent: ["idService003", "idService004"],
     Image: "/venue-images/sausalito.jpg",
@@ -63,11 +79,18 @@ export const ENCLOSURE_OPTIONS = [
       {
         Id: "idEvent002",
         Name: "Wanderers vs Everton",
-        Enclosure: "Estadio Sausalito",
-        Image: "/sausalito3.jpg",
+        Venue: "Estadio Sausalito",
+        Image: "/venue-images/sausalito3.jpg",
       },
     ],
-    Blueprints: [],
+    Blueprints: [
+      {
+        Id: "idEstadioSausalito",
+        Name: "Estadio Sausalito",
+        Sections: 6,
+        Image: "/venue-images/sausalito4.jpg"
+    }
+    ],
     IsPublic: false,
-  },
+  }
 ];
