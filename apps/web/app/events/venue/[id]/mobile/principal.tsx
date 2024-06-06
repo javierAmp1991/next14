@@ -2,7 +2,7 @@ import {
   InputText,
   IInputText,
   IInputCheckbox,
-  InputCheckbox,
+  InputCheckbox
 } from "@repo/ui/customInputs";
 import { ContainerWidthTitle, IContainerWidthTitle, SeparationLine } from "@repo/ui/misc";
 import { Map, IMapbox } from "@repo/ui/mapbox";
@@ -99,7 +99,9 @@ export default function Principal() {
       <SeparationLine/>
 
       <ContainerWidthTitle props={titleMap}>
+        <div style={{ width: "100%", aspectRatio: "1/1" }}>
           <Map props={mapProps} />
+        </div>
       </ContainerWidthTitle>
 
       {CinemaState && <CinemaMobile onClose={HandleCloseCinema} item={CinemaProps}/>}
