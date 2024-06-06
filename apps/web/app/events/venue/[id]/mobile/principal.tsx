@@ -1,4 +1,3 @@
-import {  IMutationContainerGrid} from "@repo/ui/mutationContainers";
 import {
   InputText,
   IInputText,
@@ -9,28 +8,34 @@ import { ContainerWidthTitle, IContainerWidthTitle, SeparationLine } from "@repo
 import { Map, IMapbox } from "@repo/ui/mapbox";
 import { EnumTypeResource } from "@repo/ui/resourceTabContainer";
 import { ImageRulesPopUp } from "@repo/ui/imagesRules";
-import { UploadResources, IUploadResources } from "@repo/ui/uploadResources";
+import { UploadResources, IUploadResources, Resource } from "@repo/ui/uploadResources";
+import {CinemaMobile, UseCinemaHook} from "@repo/ui/cinemaMode";
 import style from "./style.module.css";
+import {useVenueContext} from "../provider";
+import {CINEMA_TITLE} from "../const";
+
 
 import { useState } from "react";
 export default function Principal() {
-  const containerProps: IMutationContainerGrid = {};
+  const {Venue, VenueHandlers} = useVenueContext();
+  const {CinemaState, HandleCloseCinema, HandleShowCinema, CinemaProps} = UseCinemaHook(CINEMA_TITLE);
+
   const inputName: IInputText = {
-    Name: "inputName",
-    Value: "",
-    IsObligatory: true,
-    Placeholder: "Ingrese un nombre",
-    TitleInput: "Nombre del recinto",
-    OnChange: handleChange,
+     Name: "inputName",
+     Value: Venue.Name,
+     IsObligatory: true,
+     Placeholder: "Ingrese un nombre",
+     TitleInput: "Nombre del recinto",
+     OnChange: handleChange,
   };
   const inputPublic: IInputCheckbox = {
     Name: "",
-    Value: true,
-    Label:
-      "¿Este recinto puede ser utilizado por otros productores de eventos?",
-    OnChange: HandleIsPublic,
+    Value: Venue.IsPublic,
+    Label: "¿Este recinto puede ser utilizado por otros productores de eventos?",
+    OnChange: VenueHandlers.HandleIsPublic
   };
   const [Enclosure, setEnclosure] = useState({ Address: undefined });
+  
   const mapProps: IMapbox = {
     IsActiveClickMap: true,
     IsActiveGeocoder: true,
@@ -41,26 +46,18 @@ export default function Principal() {
     ViewPort: undefined,
     Address: Enclosure.Address,
   };
+
   const inputUpload: IUploadResources = {
     Id: "",
     Link: "",
     Name: "",
-    OnChange: () => {},
+    OnChange: VenueHandlers.HandleAddResource,
     OnDelete: () => {},
     Type: EnumTypeResource.Image,
     IsAvailable: true,
     PlaceholderText: " ",
   };
-  const inputFirst: IUploadResources = {
-    Id: "",
-    Link: "",
-    Name: "",
-    OnChange: () => {},
-    OnDelete: () => {},
-    Type: EnumTypeResource.Image,
-    IsAvailable: true,
-    PlaceholderText: " ",
-  };
+
   const titleProps: IContainerWidthTitle = {
     Title: "Imagenes de referencia",
     DontUseSpace: true,
@@ -75,11 +72,8 @@ export default function Principal() {
     Subtitle: "Busque en el mapa la direccion del recinto",
   };
 
-  const titleCheck: IContainerWidthTitle = {
-    Title: "Utilizacion del recinto",
-    DontUseSpace: true,
-    IsObligatory: true,
-  };
+  const listInputLabels: IUploadResources[] = getInputLabels();
+  const voidUpload = 5 - listInputLabels.length;
 
   return (
     <>
@@ -88,10 +82,8 @@ export default function Principal() {
       <ContainerWidthTitle props={titleProps}>
         <div className={style.cont}>
           <div className={style.gridImages}>
-            <UploadResources props={inputFirst} />
-            {[...Array(4)].map((e) => (
-              <UploadResources props={inputUpload} />
-            ))}
+          {listInputLabels.map(e=><UploadResources props={e}/>)}
+          {[...Array(voidUpload)].map((e) => <UploadResources props={inputUpload} />)}
           </div>
           <ImageRulesPopUp />
         </div>
@@ -106,12 +98,14 @@ export default function Principal() {
           <Map props={mapProps} />
         </div>
       </ContainerWidthTitle>
+
+      {CinemaState && <CinemaMobile onClose={HandleCloseCinema} item={CinemaProps}/>}
     </>
   );
 
-  function handleChange() {}
-
-  function HandleIsPublic() {}
+  function handleChange(){
+    
+  }
 
   function getDataFromMap(data: any) {
     setEnclosure({ Address: data.features[0].place_name });
@@ -120,5 +114,28 @@ export default function Principal() {
       data.features[0].center[0],
       data.features[0].center[1]
       */
+  }
+
+  function getInputLabels(): IUploadResources[] {
+    let listInputs: IUploadResources[] = [];
+    const listImages = Venue.Resource.filter((e: any) => e.Type === EnumTypeResource.Image);
+    listImages.forEach((r: Resource)=>{
+      const newInput: IUploadResources = {
+        Type: r.Type,
+        Name: `nameResource${r.Id}`,
+        Id: r.Id,
+        Link: r.Source,
+        IsAvailable: true,
+        OnChange: VenueHandlers.HandleAddResource,
+        OnDelete: VenueHandlers.HandleDeleteResource,
+        OnClick: handleResource
+    };
+    listInputs = [...listInputs, newInput];
+    })
+    return listInputs
+  }
+
+  function handleResource(id: string){
+    HandleShowCinema(Venue.Resource, id)
   }
 }

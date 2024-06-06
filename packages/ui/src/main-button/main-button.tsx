@@ -3,7 +3,6 @@
 import style from "./style.module.css";
 import Image from "next/image";
 
-
 export interface IMainButton {
     Text: string
     OnClick: Function
@@ -25,14 +24,13 @@ export enum EnumColorMainButton {
 export const MainButton = ({props}:{props: IMainButton})=>{
     const colorButton = getColorButton();
     return(
-          <div className={`${style.main} ${colorButton} ${props.Style}`}>
+          <div onClick={handleClick} className={`${style.main} ${colorButton} ${props.Style}`}>
             {
                 props.IsCharging ? 
                 <><div>{props.TextForCharging || "Enviando"}</div> <div className={style.loader}/></>
                 :
                 <>{props.IconStart && <Image alt="" src={props.IconStart} layout={"fill"} />} {props.Text}</>
-            }
-               
+            } 
           </div>
 
     )
@@ -42,5 +40,9 @@ export const MainButton = ({props}:{props: IMainButton})=>{
         else if (props.ColorButton === EnumColorMainButton.UseBorder) return style.border
         else if (props.ColorButton === EnumColorMainButton.UseWhite) return style.white
         else return ""
+    }
+
+    function handleClick(){
+        props.OnClick()
     }
 }

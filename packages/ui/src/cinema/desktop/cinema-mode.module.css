@@ -1,0 +1,236 @@
+.main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100svw;
+    height: 100svh;
+    z-index: 10000000000000;
+    display: grid;
+    overflow: hidden;
+}
+
+.blackScreen {
+    width: 100%;
+    height: 100%;
+    background: rgba(63, 63, 63, .9);
+    background: rgba(0, 0, 0, .98);
+    background: rgba(0, 0, 0, .9);
+    background: rgba(15, 17, 17, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 500;
+}
+
+.contButton {
+    background: white;
+    border-radius: 50%;
+    border: var(--defaultOutsideLine);
+    position: absolute;
+    top: 1.7rem;
+    right: 2rem;
+    padding: .8rem;
+}
+
+.contButton:hover{
+    background: #fafafa;
+}
+
+.closeIcon {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.mainImage {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    padding: 3.2rem 0;
+    border: 0 solid transparent;
+}
+
+.mainVideo{
+    height: 100%;
+    width: 80%;
+    overflow: hidden;
+    margin: auto;
+    padding: 3.2rem 0;
+    border: 0 solid transparent;
+}
+
+.mainImage2 {
+    height: 100%;
+    aspect-ratio: 11/9;
+    margin: auto;
+    position: relative;
+}
+
+.infoVideo{
+    display: grid;
+    gap: .4rem;
+    align-content: start;
+}
+
+.mainCont {
+    display: grid;
+    width: calc(100% - 7.2rem);
+    height: calc(100% - 9.6rem);
+    overflow: hidden;
+    grid-template-rows: max-content 1fr;
+    border-radius: 1.6rem;
+    box-shadow: 0 0 1.6rem #4f4f4f;
+    background: white;
+    z-index: 100000;
+    margin: 4.8rem 3.6rem;
+    position: relative;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 1fr 32rem;
+    overflow: hidden;
+    gap: 1.6rem;
+}
+
+.gridOptions {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: .8rem;
+    width: 100%;
+    border-bottom: .2rem solid rgb(231, 231, 231);
+    padding: 3.6rem 3.6rem 0 3.6rem;
+}
+
+.gridList {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    height: 100%;
+    overflow: hidden;
+    gap: 1.6rem;
+    padding: 2.4rem;
+    border-left: var(--separationLineT);
+}
+
+.gridVideoMini {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: .8rem;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+}
+
+.contList {
+    display: grid;
+    height: 100%;
+    gap: 1rem;
+    align-content: start;
+    overflow: scroll;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.contVideos{
+    display: grid;
+    height: 100%;
+    gap: 1rem;
+    align-content: start;
+    overflow: scroll;
+}
+
+.options {
+    padding: .4rem .8rem;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--defaultTransition);
+    opacity: .7;
+}
+
+.selected {
+    color: var(--colorMiddleSpix);
+    color: var(--colorTextTabSelected);
+    opacity: 1;
+    position: relative;
+}
+
+.selected:before {
+    content: "";
+    width: 100%;
+    height: .2rem;
+    background: var(--colorMiddleSpix);
+    background: var(--colorTextTabSelected);
+    position: absolute;
+    bottom: -.2rem;
+    left: 0;
+}
+
+.name {
+    font-size: 1.6rem;
+    color: var(--colorTitle);
+    border-bottom: var(--defaultOutsideLine);
+    padding-bottom: 1.2rem;
+}
+
+.sideImage, .sideVideo {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: .4rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--defaultTransition);
+    opacity: .5;
+    border: .2rem solid transparent;
+}
+
+.sideVideo {
+    height: 7.6rem;
+    aspect-ratio: 4/3;
+}
+
+.sideImage:hover, .selectedSource, .sideVideo:hover {
+    border: .2rem solid #f08804;
+    /*box-shadow: 0 0 .2rem #f08804, 0 0 .2rem #ea8606;*/
+    opacity: 1;
+}
+
+.noResource {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    color: var(--colorTextDetails);
+}
+
+.close {
+    width: 1.3rem;
+    height: 1.3rem;
+    z-index: 100000000;
+    position: relative;
+}
+
+.close:before, .close:after {
+    width: .2rem;
+    height: 1.3rem;
+    content: "";
+    background: #606060;
+    top: 0;
+    left: .6rem;
+    position: absolute;
+}
+
+.close:before {
+    rotate: 45deg;
+}
+
+.close:after {
+    rotate: -45deg;
+}

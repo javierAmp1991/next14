@@ -4,7 +4,7 @@ import React, {ChangeEvent, useState} from "react";
 import Image from "next/image";
 import {PLACEHOLDER_UPLOAD_IMAGE, CLOSE_ICON_GRAY} from "../../icons";
 import {STRING_EMPTY} from "../../const";
-import {IUploadResources} from "../index";
+import {IUploadResources, Resource} from "../index";
 
 export default function InputUploadImage({item}: { item: IUploadResources }) {
     const [state, setState] = useState(false);
@@ -60,11 +60,6 @@ export default function InputUploadImage({item}: { item: IUploadResources }) {
         item.OnDelete(item.Id)
     }
 
-    function handleAccept(link: string) {
-        if (link !== STRING_EMPTY) item.OnChange(link, item.Type)
-        handlePopUp()
-    }
-
     function handleOnClick() {
         item.OnClick && item.OnClick(item.Id)
     }
@@ -74,7 +69,12 @@ export default function InputUploadImage({item}: { item: IUploadResources }) {
             const file = e.target.files[0];
             //@ts-ignore
             const url = URL.createObjectURL(file);
-            item.OnChange(url, item.Type, e.target.name)
+            const newResource: Resource = {
+                Id: "randomId",
+                Source: url,
+                Type: item.Type
+            }
+            item.OnChange(newResource)
         }
     }
 

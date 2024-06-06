@@ -4,7 +4,7 @@ import {useState} from "react";
 import Image from "next/image";
 import { STRING_EMPTY } from "../../const";
 import {CLOSE_ICON_GRAY, YOUTUBE_ICON } from "../../icons";
-import { IUploadResources } from "../index";
+import { IUploadResources, Resource } from "../index";
 
 
 export default function InputUploadVideo({item}: { item: IUploadResources }) {
@@ -62,7 +62,14 @@ export default function InputUploadVideo({item}: { item: IUploadResources }) {
     }
 
     function handleAccept(link: string) {
-        if (link !== STRING_EMPTY) item.OnChange(link, item.Type)
+        if (link !== STRING_EMPTY){
+            const newResource: Resource = {
+                Id: "randomId",
+                Source: link,
+                Type: item.Type
+            }
+            item.OnChange(newResource)
+        } 
         handlePopUp()
     }
 

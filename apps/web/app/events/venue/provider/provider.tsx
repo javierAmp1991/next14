@@ -66,7 +66,7 @@ export const VenueProvider = ({ children }: { children: React.ReactNode }) => {
 
   function handleMutation(id?: string) {
     if (id) push(`/events/venue/${id}`);
-    else push(`/events/venue/create`);
+    else push(`/events/venue/create-venue`);
   }
 
   function onSearch() {}

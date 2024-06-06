@@ -5,7 +5,7 @@ export interface IUploadResources {
   Type: EnumTypeResource;
   Id: string;
   Link: string;
-  OnChange: (url: string, type: EnumTypeResource, name?: string) => void;
+  OnChange: (resource: Resource) => void;
   OnDelete: (id: string)=>void;
   OnClick?: (id: string)=>void;
   Name: string;
@@ -19,6 +19,12 @@ export interface IUploadResources {
 export enum EnumTypeResource {
   Image,
   YoutubeVideo,
+}
+
+export interface Resource {
+  Type: EnumTypeResource
+  Source: string
+  Id: string
 }
 
 export const UploadResources = ({ props }: { props: IUploadResources }) => {

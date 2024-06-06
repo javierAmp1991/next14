@@ -27,6 +27,7 @@ export const TABS_ENCLOSURE = {
   },
 };
 export const INITIAL_POSITION_MUTATION: string = "initialPositionMutationVenue";
+export const CINEMA_TITLE: string = "Referencias del recinto";
 export const NOT_FOUND_PROPS: INotFound = {
   Href: "/events/venue",
   ReturnText: "Volver a Mis recintos",

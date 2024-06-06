@@ -28,7 +28,8 @@
     "./chargingPage" : "./src/charging-page/index.ts",
     "./popUpContainer": "./src/popup-container/index.ts",
     "./scrollContainerMobile": "./src/scroll-container-mutation/index.ts",
-    "./globalEnums" : "./src/global-enums/index.ts"
+    "./globalEnums" : "./src/global-enums/index.ts",
+    "./cinemaMode": "./src/cinema/index.ts"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

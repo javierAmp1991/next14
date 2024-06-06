@@ -16,7 +16,7 @@ export default function Page() {
   const headerProps: IHeaderDesktop = {
     Title: TITLE,
     Description: DESCRIPTION,
-    Button: { Text: ADD_NEW_O, OnClick: onCreateNew },
+    Button: { Text: ADD_NEW_O, OnClick: onCreateNew }
   };
   const s: CSSProperties = {
     width: "100%",

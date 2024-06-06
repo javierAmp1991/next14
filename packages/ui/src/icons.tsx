@@ -13,3 +13,4 @@ export const RIGHT_ARROW_BLU = "/icons/rightArrowBlue.png";
 export const RIGHT_ARROW_GRAY = "/icons/rightArrowGray.png";
 export const RIGHT_ARROW_ORANGE = "/icons/rightArrowOrange.png";
 export const NOT_FOUND_IMAGE: string = "/images/notFound.png";
+export const RETURN_ARROW: string = "/icons/returnArrow.png";

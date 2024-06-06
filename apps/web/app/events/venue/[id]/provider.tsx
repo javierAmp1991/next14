@@ -2,6 +2,7 @@ import React, {createContext, useContext, useEffect, useState} from "react";
 import {useHandlePosition, useCreateEditHook, IUseHandlePositionReturn, ICreateEditReturn, EnumCreateEdit} from "@repo/ui/custom-hook";
 import {INITIAL_POSITION_MUTATION} from "./const";
 import {ENCLOSURE_OPTIONS} from "../data";
+import {Resource} from "@repo/ui/uploadResources";
 
 export interface VenueContextProps {
      Venue: Venue,
@@ -40,7 +41,7 @@ export interface Venue {
   Image: string;
   Address: string;
   Name: string;
-  Resource: any;
+  Resource: Resource[];
   ViewPort: any;
   Events: EventResume[];
   Blueprints: Blueprint[];
@@ -50,6 +51,8 @@ export interface Venue {
 interface VenueHandlers{
   HandleName: (name: string)=>void
   HandleIsPublic: ()=>void
+  HandleAddResource: (resource: Resource)=>void
+  HandleDeleteResource: (id: string)=>void
 }
 
 const DEFAULT_VENUE: Venue = {
@@ -79,8 +82,10 @@ export default function Provider ({children, id}:{children: React.ReactNode, id:
     const CreateEditHandler = useCreateEditHook();
     const venueHandlers: VenueHandlers = {
       HandleIsPublic: handleIsPublic,
-      HandleName: handleName
-    }
+      HandleName: handleName,
+      HandleAddResource: handleAddResource,
+      HandleDeleteResource: handleDeleteResource
+    };
     const provider: VenueContextProps = {
         Venue: venue,
         CreateEditHandler: CreateEditHandler,
@@ -126,5 +131,15 @@ export default function Provider ({children, id}:{children: React.ReactNode, id:
     function handleIsPublic(){
       const newVenue = {...venue, IsPublic: !venue.IsPublic}
       setVenue(newVenue)
+    }
+
+    function handleAddResource(r: Resource){
+        const newResources: Resource[] = [...venue.Resource, r];
+        setVenue({...venue, Resource: newResources})
+    }
+
+    function handleDeleteResource(id: string){
+      const newResources = venue.Resource.filter(r=>r.Id  !== id);
+      setVenue({...venue, Resource: newResources})
     }
 }
