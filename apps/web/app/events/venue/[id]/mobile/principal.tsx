@@ -41,14 +41,13 @@ export default function Principal() {
     IsActiveGeocoder: true,
     IsActiveMarker: true,
     IsActiveGeolocate: true,
-    GetData: getDataFromMap,
     ReRender: true,
     ViewPort: {
       Lat: Venue.Address.Lat,
       Lng: Venue.Address.Lng,
       Zoom: 15
     },
-    Address: Enclosure.Address,
+    Address: Venue.Address,
     GetAddress: VenueHandlers.HandlAddress
   };
 
@@ -108,18 +107,6 @@ export default function Principal() {
     </>
   );
 
-  function handleChange(){
-    
-  }
-
-  function getDataFromMap(data: any) {
-    setEnclosure({ Address: data.features[0].place_name });
-    /*
-      data.features[0].place_name,
-      data.features[0].center[0],
-      data.features[0].center[1]
-      */
-  }
 
   function getInputLabels(): IUploadResources[] {
     let listInputs: IUploadResources[] = [];
