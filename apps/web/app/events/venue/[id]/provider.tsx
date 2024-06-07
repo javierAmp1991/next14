@@ -11,6 +11,7 @@ export interface VenueContextProps {
      PositionHandler: IUseHandlePositionReturn
      CreateEditHandler: ICreateEditReturn
      VenueHandlers: VenueHandlers
+     Id: string
 }
 
 export interface EventResume {
@@ -105,7 +106,8 @@ export default function Provider ({children, id}:{children: React.ReactNode, id:
         Venue: venue,
         CreateEditHandler: CreateEditHandler,
         PositionHandler: PositionHandler,
-        VenueHandlers: venueHandlers
+        VenueHandlers: venueHandlers,
+        Id: id
     };
 
     useEffect(()=>{

@@ -13,12 +13,9 @@
     overflow: hidden;
 }
 
-.main:hover{
-    scale: 1.03;
+.hover{
+    cursor: pointer;
 }
-.noSelected {}
-
-.noHover {}
 
 .bg {
     background: var(--backgroundMenu);
@@ -177,28 +174,11 @@ overflow: scroll;
     gap: 1.6rem;
 }
 
-.flag{
-    position: absolute;
-    top: .8rem;
-    left: -1.6rem;
-    width: 50%;
-    height: 2rem;
-    background: var(--backgroundMenu);
-    z-index: 100000;
-}
-
 @media (min-width: 1280px) {
-    .noSelected:hover {
-        /*scale: 1.01;*/
+    .hover:hover{
+        scale: 1.03;
     }
-
     .profile {
         width: 9rem;
-    }
-
-    .grid{
-    
-    
-    
     }
 }

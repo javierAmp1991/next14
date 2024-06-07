@@ -1,29 +1,35 @@
 //@ts-ignore
 import style from "./style.module.css";
-import {CHECK_ICON_GREEN} from "../icons";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 export interface IDefaultCard {
   First: string;
   Second: string;
   Image: string;
-  Rating?: number;
   NewStyle?: string;
-  Selected?: boolean;
-  DontUseDecoration?: boolean | undefined;
-  NoHover?: boolean | undefined;
+  Href?: string
 }
 
 export const DefaultCard = ({props}: { props: IDefaultCard }) => {
-    const styleHover = props.NoHover? style.noHover: props.Selected ? style.selected : style.noSelected;
+    const s = `${style.main} ${props.NewStyle}`;
+    const Children = () => 
+    <>
+      <div className={style.bg}/>
+      <div className={style.profile}><Image alt="" layout={"fill"} src={props.Image}/></div>
+      <div className={`${style.name}`}>{props.First}</div>
+      <div className={style.sku}>{props.Second}</div>
+    </>
+
     return (
-        <div className={`${style.main}  ${styleHover} ${props.NewStyle}`}>
-            <div className={style.bg}/>
-            <div className={style.profile}><Image alt="" layout={"fill"} src={props.Image}/></div>
-            <div className={`${style.name}`}>{props.First}</div>
-            <div className={style.sku}>{props.Second}</div>
-            {props.Selected && <div className={style.icon}><Image alt="" layout={"fill"} src={CHECK_ICON_GREEN}/></div>}
+        props.Href ?
+        <Link href={props.Href} className={`${s} ${style.hover}`}>
+            <Children/>
+        </Link>
+        :
+        <div className={`${s}`}>
+            <Children/>
         </div>
     )
 }
