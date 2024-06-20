@@ -5,12 +5,12 @@ import style from "./style.module.css";
 import { useVenueContext } from "../../provider";
 
 export default function Blueprints() {
-  const { Venue } = useVenueContext();
+  const { Venue, Id } = useVenueContext();
   const mutationProps: IMutationContainerGrid = { Style: style.grid };
   return (
     <GridDefaultCardMobile2>
       {Venue.Blueprints.map((e) => (
-        <Blueprint e={e} />
+        <Blueprint e={e} id={Id} />
       ))}
     </GridDefaultCardMobile2>
   );
