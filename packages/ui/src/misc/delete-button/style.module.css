@@ -1,0 +1,34 @@
+.delete {
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.mainDelete {
+    padding: .5rem;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background: white;
+    box-shadow: 0 0 .4rem #c4c5c9;
+    z-index: 10000;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.x {
+    position: absolute;
+    width: .2rem;
+    height: 100%;
+    left: calc(50% - .1rem);
+    top: 0;
+    rotate: 45deg;
+}
+
+.y {
+    position: absolute;
+    width: .2rem;
+    height: 100%;
+    left: calc(50% - .1rem);
+    top: 0;
+    rotate: -45deg;
+}

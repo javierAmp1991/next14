@@ -2,10 +2,12 @@ import React, { createContext, useContext, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ENCLOSURE_OPTIONS } from "../data";
 import {  IUseSearch,  useSearch} from "@repo/ui/searchBar";
+import {addInitialPositionTabs} from "@repo/ui/navTabs";
+import {INITIAL_POSITION_MUTATION} from "../const";
 
 export interface IVenueProvider {
   Venues: VenueRowTable[];
-  HandleMutation: (id?: string) => void;
+  HandleMutation: (id?: string, index?: number) => void;
   Search: IUseSearch
 }
 
@@ -64,8 +66,11 @@ export const VenueProvider = ({ children }: { children: React.ReactNode }) => {
     return newList;
   }
 
-  function handleMutation(id?: string) {
-    if (id) push(`/events/venue/${id}`);
+  function handleMutation(id?: string, index?: number) {
+    if (id) {
+      if(index) addInitialPositionTabs(INITIAL_POSITION_MUTATION, index)
+      push(`/events/venue/${id}`);
+    }
     else push(`/events/venue/create-venue`);
   }
 

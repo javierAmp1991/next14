@@ -1,0 +1,8 @@
+.link{
+    color: var(--colorMiddleSpix);
+    text-align: left;
+}
+
+.link:hover{
+    text-decoration: underline;
+}

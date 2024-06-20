@@ -15,6 +15,10 @@
     font-weight: 600;
 }
 
+.useNormal{
+    font-weight: 400;
+}
+
 .isObligatory {
     color: red;
 }

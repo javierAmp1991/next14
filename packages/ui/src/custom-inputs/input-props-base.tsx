@@ -28,4 +28,5 @@ export enum EnumCustomInputErrors {
 export enum EnumStyleCustomInput {
   Default,
   Line,
+  NoLine
 }

@@ -78,6 +78,7 @@ export const InputText = ({props}:{props: IInputText}) => {
        if (props.StyleInput === undefined) return style.contInput;
        else if (props.StyleInput === EnumStyleCustomInput.Default) return style.contInput;
        else if (props.StyleInput === EnumStyleCustomInput.Line) return style.contInputLine;
+       else if (props.StyleInput === EnumStyleCustomInput.NoLine) return style.noLine;
        else return style.contInput;
      }
 

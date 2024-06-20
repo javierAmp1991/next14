@@ -30,7 +30,6 @@ export const InputNumber = ({props}:{props: IInputNumber}) => {
     const isDisable: boolean = props.IsDisable ? props.IsDisable : false;
     const className = `${props.Prefix && style.prefix} ${props.Style} ${isDisable && style.disable} ${error.IsError && style.mainError}`;
     const styleInput = getStyleInput();
-
     const inputProps = {
        autoComplete: "off",
        disabled: isDisable || false,
@@ -91,6 +90,7 @@ export const InputNumber = ({props}:{props: IInputNumber}) => {
        if (props.StyleInput === undefined) return style.contInput;
        else if (props.StyleInput === EnumStyleCustomInput.Default) return style.contInput;
        else if (props.StyleInput === EnumStyleCustomInput.Line) return style.contInputLine;
+       else if (props.StyleInput === EnumStyleCustomInput.NoLine) return style.noLine
        else return style.contInput;
      }
 

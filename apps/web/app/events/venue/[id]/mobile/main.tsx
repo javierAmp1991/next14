@@ -9,7 +9,6 @@ import {
   IScrollMutationContainerMobile,
 } from "@repo/ui/scrollContainerMobile";
 import dynamic from "next/dynamic";
-import style from "./style.module.css";
 
 const DynamicPrincipal = dynamic(() => import("./principal"), {
   loading: () => <SpinLoading />,
@@ -53,9 +52,19 @@ export default function Main() {
   ];
   const scrollContainerProps: IScrollMutationContainerMobile = {
     Dependency: PositionHandler.Position,
-    OnApply: () => {},
-    OnReturn: () => {},
-    Style: style.grid,
+    UseDefaultGrid: true,
+    Buttons: [
+      {
+        Name: "Aplicar cambios",
+        OnClick: handleApplyChanges,
+        Position: TABS_ENCLOSURE.Main.Position
+      },
+      {
+        Name: "Crear nuevo plano",
+        OnClick: handleCreateBlueprint,
+        Position: TABS_ENCLOSURE.Blueprints.Position
+      }
+    ]
   };
 
   return (
@@ -70,7 +79,12 @@ export default function Main() {
     </DefaulContainerMobile>
   );
 
-  
-  
-  
+  function handleApplyChanges(){
+
+  }
+
+  function handleCreateBlueprint(){
+
+  }
+
 }

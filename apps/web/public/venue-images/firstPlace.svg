@@ -1,0 +1,224 @@
+<svg id="primer-piso" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1984.25 1701.29">
+    <defs>
+        <style>
+            .cls-1{fill:#fddfbf;stroke:#f39200;}.cls-1,.cls-10,.cls-15,.cls-16,.cls-17,.cls-5{stroke-miterlimit:10;}.cls-1,.cls-10,.cls-5{stroke-width:2px;}.cls-2{fill:#f39200;}.cls-12,.cls-3,.cls-4{font-size:48px;font-family:MyriadPro-Regular,
+            Myriad
+            Pro;}.cls-20,.cls-3{fill:#fff;}.cls-12,.cls-4{fill:#1d1d1b;}.cls-5{fill:#eee5f3;stroke:#af599e;}.cls-6{letter-spacing:-0.03em;}.cls-7{fill:#af599e;}.cls-8{letter-spacing:-0.01em;}.cls-9{letter-spacing:0em;}.cls-10{fill:#d9effd;stroke:#009fe3;}.cls-11{fill:#009fe3;}.cls-12{letter-spacing:0.01em;}.cls-13{letter-spacing:0em;}.cls-14,.cls-16{fill:#dadada;}.cls-15{fill:#c6c6c6;}.cls-15,.cls-16,.cls-17{stroke:#1d1d1b;}.cls-17{font-size:72px;fill:#5a5a59;stroke-width:0.25px;font-family:MicrosoftSansSerif,
+            Microsoft Sans Serif;}.cls-18{fill:#706f6f;}.cls-19{fill:#3c3c3b;}
+        </style>
+    </defs>
+
+    <g id="seccion_objetos" data-name="seccion objetos" alias="Sillones" section-name="Seccion Vip" section-type="objects">
+        <rect is-background="true" id="seccion" class="cls-1" x="396.85" y="379.39" width="1190.55" height="255.12"/>
+
+        <g object-name="Sillon 1" capcity="4">
+            <rect id="s1" class="cls-2" x="453.54" y="478.47" width="226.77" height="113.39" rx="56.69"/>
+            <text class="cls-3" transform="translate(497.5 548.48)">Sillon 1</text>
+        </g>
+
+        <g object-name="Sillon 2" capcity="4">
+            <rect id="s2" class="cls-2" x="737.01" y="478.47" width="226.77" height="113.39" rx="56.69"/>
+            <text id="Sillon_2" data-name="Sillon 2" class="cls-3" transform="translate(780.06 549.01)">Sillon 2</text>
+        </g>
+
+        <g object-name="Sillon 3" capcity="4">
+            <rect id="s3" class="cls-2" x="1020.47" y="478.47" width="226.77" height="113.39" rx="56.69"/>
+            <text id="Sillon_3" data-name="Sillon 3" class="cls-3" transform="translate(1062.14 548.21)">Sillon 3</text>
+        </g>
+
+        <g id="objetos" object-name="Sillon 4" capcity="4">
+            <rect id="s4" class="cls-2" x="1303.94" y="478.47" width="226.77" height="113.39" rx="56.69"/>
+            <text id="Sillon_4" data-name="Sillon 4" class="cls-3" transform="translate(1348.21 552.53)">Sillon 4</text>
+        </g>
+
+        <text class="cls-4" transform="translate(932.35 443.16)">Sillones</text>
+    </g>
+
+    <g id="seccion_filas_2" data-name="seccion filas 2" section-name="Seccion Este" section-type="rows">
+        <rect is-background="true" class="cls-5" x="1637.89" y="376.58" width="340.16" height="1288.79"/>
+        <g  id="fila_2" data-name="fila 2" row-name="2">
+            <text id="f2" class="cls-4" transform="translate(1828.21 456.12)">
+                <tspan class="cls-6">F</tspan>
+                <tspan x="22.13" y="0">ila 2</tspan>
+            </text>
+
+            <circle id="a1" class="cls-7" cx="1884.9" cy="545.4" r="56.69"/>
+            <circle id="a2" class="cls-7" cx="1884.9" cy="703.79" r="56.69"/>
+            <circle id="a3" class="cls-7" cx="1884.9" cy="862.18" r="56.69"/>
+            <circle id="a4" class="cls-7" cx="1881.18" cy="1020.56" r="56.69"/>
+            <circle id="a5" class="cls-7" cx="1881.18" cy="1178.95" r="56.69"/>
+            <circle id="a6" class="cls-7" cx="1881.18" cy="1332.36" r="56.69"/>
+            <circle id="a7" class="cls-7" cx="1881.18" cy="1485.77" r="56.69"/>
+
+            <text class="cls-3" transform="translate(1873.19 558.79)">1</text>
+            <text id="_2" data-name="2" class="cls-3" transform="translate(1872.51 721.16)">2</text>
+            <text id="_3" data-name="3" class="cls-3" transform="translate(1874.67 878.37)">3</text>
+            <text id="_4" data-name="4" class="cls-3" transform="translate(1868.71 1039.16)">4</text>
+            <text id="_5" data-name="5" class="cls-3" transform="translate(1870.87 1194.72)">5</text>
+            <text id="_6" data-name="6" class="cls-3" transform="translate(1870.87 1345.21)">6</text>
+            <text id="_7" data-name="7" class="cls-3" transform="translate(1870.87 1501.9)">7</text>
+        </g>
+        <g id="fila1" row-name="1">
+            <circle id="a1-2" data-name="a1" class="cls-7" cx="1742.42" cy="545.67" r="56.69"/>
+            <circle id="a2-2" data-name="a2" class="cls-7" cx="1742.42" cy="704.05" r="56.69"/>
+            <circle id="a3-2" data-name="a3" class="cls-7" cx="1742.42" cy="862.44" r="56.69"/>
+            <circle id="a4-2" data-name="a4" class="cls-7" cx="1738.7" cy="1020.83" r="56.69"/>
+            <circle id="a5-2" data-name="a5" class="cls-7" cx="1738.7" cy="1179.21" r="56.69"/>
+            <circle id="a6-2" data-name="a6" class="cls-7" cx="1738.7" cy="1332.62" r="56.69"/>
+            <circle id="a7-2" data-name="a7" class="cls-7" cx="1738.7" cy="1486.03" r="56.69"/>
+            <text id="f1" class="cls-4" transform="translate(1697.99 455.86)">
+                <tspan class="cls-6">F</tspan>
+                <tspan x="22.13" y="0">ila 1</tspan>
+            </text>
+            <text class="cls-3" transform="translate(1729.72 558.79)">1</text>
+            <text id="_2-2" data-name="2" class="cls-3" transform="translate(1729.04 721.16)">2</text>
+            <text id="_3-2" data-name="3" class="cls-3" transform="translate(1731.2 878.37)">3</text>
+            <text id="_4-2" data-name="4" class="cls-3" transform="translate(1725.24 1039.16)">4</text>
+            <text id="_5-2" data-name="5" class="cls-3" transform="translate(1727.4 1194.72)">5</text>
+            <text id="_6-2" data-name="6" class="cls-3" transform="translate(1727.4 1345.21)">6</text>
+            <text id="_7-2" data-name="7" class="cls-3" transform="translate(1727.4 1501.9)">7</text>
+        </g>
+
+        <text class="cls-4" transform="translate(1718.69 1620.43)">
+            <tspan class="cls-8">A</tspan>
+            <tspan x="29.09" y="0">sie</tspan>
+            <tspan class="cls-9" x="83.38" y="0">n</tspan>
+            <tspan class="cls-8" x="109.82" y="0">t</tspan>
+            <tspan x="125.42" y="0">os</tspan>
+        </text>
+    </g>
+
+    <g id="seccion_filas_izq" data-name="seccion filas izq" section-name="Seccion Oeste" section-type="rows">
+        <rect is-background="true" class="cls-5" x="7" y="376.58" width="340.16" height="1288.79"/>
+        <g id="fila_2-2" data-name="fila 2" row-name="2">
+            <text id="f2-2" data-name="f2" class="cls-4" transform="translate(46.38 456.12)">
+                <tspan class="cls-6">F</tspan>
+                <tspan x="22.13" y="0">ila 2</tspan>
+            </text>
+            <circle id="a1-3" data-name="a1" class="cls-7" cx="103.07" cy="545.4" r="56.69"/>
+            <circle id="a2-3" data-name="a2" class="cls-7" cx="103.07" cy="703.79" r="56.69"/>
+            <circle id="a3-3" data-name="a3" class="cls-7" cx="103.07" cy="862.18" r="56.69"/>
+            <circle id="a4-3" data-name="a4" class="cls-7" cx="99.35" cy="1020.56" r="56.69"/>
+            <circle id="a5-3" data-name="a5" class="cls-7" cx="99.35" cy="1178.95" r="56.69"/>
+            <circle id="a6-3" data-name="a6" class="cls-7" cx="99.35" cy="1332.36" r="56.69"/>
+            <circle id="a7-3" data-name="a7" class="cls-7" cx="99.35" cy="1485.77" r="56.69"/>
+            <text class="cls-3" transform="translate(88.73 558.79)">1</text>
+            <text id="_2-3" data-name="2" class="cls-3" transform="translate(88.05 721.16)">2</text>
+            <text id="_3-3" data-name="3" class="cls-3" transform="translate(89.21 878.37)">3</text>
+            <text id="_4-3" data-name="4" class="cls-3" transform="translate(82.25 1039.16)">4</text>
+            <text id="_5-3" data-name="5" class="cls-3" transform="translate(84.41 1194.72)">5</text>
+            <text id="_6-3" data-name="6" class="cls-3" transform="translate(84.41 1345.21)">6</text>
+            <text id="_7-3" data-name="7" class="cls-3" transform="translate(84.41 1501.9)">7</text>
+        </g>
+        <g id="fila_1" data-name="fila 1" row-name="1">
+            <circle id="a1-4" data-name="a1" class="cls-7" cx="242.94" cy="545.67" r="56.69"/>
+            <circle id="a2-4" data-name="a2" class="cls-7" cx="242.94" cy="704.05" r="56.69"/>
+            <circle id="a3-4" data-name="a3" class="cls-7" cx="242.94" cy="862.44" r="56.69"/>
+            <circle id="a4-4" data-name="a4" class="cls-7" cx="239.22" cy="1020.83" r="56.69"/>
+            <circle id="a5-4" data-name="a5" class="cls-7" cx="239.22" cy="1179.21" r="56.69"/>
+            <circle id="a6-4" data-name="a6" class="cls-7" cx="239.22" cy="1332.62" r="56.69"/>
+            <circle id="a7-4" data-name="a7" class="cls-7" cx="239.22" cy="1486.03" r="56.69"/>
+            <text id="f1-2" data-name="f1" class="cls-4" transform="translate(198.51 455.86)">
+                <tspan class="cls-6">F</tspan>
+                <tspan x="22.13" y="0">ila 1</tspan>
+            </text>
+            <text class="cls-3" transform="translate(227.65 558.79)">1</text>
+            <text id="_2-4" data-name="2" class="cls-3" transform="translate(226.96 721.16)">2</text>
+            <text id="_3-4" data-name="3" class="cls-3" transform="translate(229.12 878.37)">3</text>
+            <text id="_4-4" data-name="4" class="cls-3" transform="translate(223.17 1039.16)">4</text>
+            <text id="_5-4" data-name="5" class="cls-3" transform="translate(225.33 1194.72)">5</text>
+            <text id="_6-4" data-name="6" class="cls-3" transform="translate(225.33 1345.21)">6</text>
+            <text id="_7-4" data-name="7" class="cls-3" transform="translate(225.33 1501.9)">7</text>
+        </g>
+        <text class="cls-4" transform="translate(88.21 1619.91)">
+            <tspan class="cls-8">A</tspan>
+            <tspan x="29.09" y="0">sie</tspan>
+            <tspan class="cls-9" x="83.38" y="0">n</tspan>
+            <tspan class="cls-8" x="109.82" y="0">t</tspan>
+            <tspan x="125.42" y="0">os</tspan>
+        </text>
+    </g>
+
+    <g id="seccion_mesas" data-name="seccion mesas" section-name="Seccion Estandar" section-type="tables">
+        <rect is-background="true" id="seccion-2" data-name="seccion" class="cls-10" x="396.85" y="792.94" width="1190.55" height="871.5"/>
+
+        <g id="mesa_6" data-name="mesa 6" table-name="6">
+            <rect class="cls-11" x="1298.23" y="1400.38" width="141.73" height="141.73"/>
+            <circle class="cls-11" cx="1369.09" cy="1350.4" r="28.35"/>
+            <circle class="cls-11" cx="1369.09" cy="1592.09" r="28.35"/>
+            <circle class="cls-11" cx="1485.36" cy="1471.24" r="28.35"/>
+            <circle class="cls-11" cx="1252.36" cy="1471.24" r="28.35"/>
+            <text class="cls-3" transform="translate(1343.3 1485.45)">M6</text>
+        </g>
+
+        <g id="mesa_5" data-name="mesa 5" table-name="5">
+            <rect class="cls-11" x="932.35" y="1400.38" width="141.73" height="141.73"/>
+            <circle class="cls-11" cx="1003.22" cy="1350.4" r="28.35"/>
+            <circle class="cls-11" cx="1003.22" cy="1592.09" r="28.35"/>
+            <circle class="cls-11" cx="1119.49" cy="1471.24" r="28.35"/>
+            <circle class="cls-11" cx="886.49" cy="1471.24" r="28.35"/>
+            <text class="cls-3" transform="translate(975.01 1487.13)">M5</text>
+        </g>
+        <g id="mesa_4" data-name="mesa 4" table-name="4">
+            <rect class="cls-11" x="556.8" y="1400.38" width="141.73" height="141.73"/>
+            <circle class="cls-11" cx="627.66" cy="1350.4" r="28.35"/>
+            <circle class="cls-11" cx="627.66" cy="1592.09" r="28.35"/>
+            <circle class="cls-11" cx="743.93" cy="1471.24" r="28.35"/>
+            <circle class="cls-11" cx="510.93" cy="1471.24" r="28.35"/>
+            <text class="cls-3" transform="translate(596.75 1485.45)">M4</text>
+        </g>
+        <g id="mesa_3" data-name="mesa 3" table-name="3">
+            <rect class="cls-11" x="1298" y="999.43" width="141.73" height="141.73"/>
+            <circle class="cls-11" cx="1368.86" cy="949.45" r="28.35"/>
+            <circle class="cls-11" cx="1368.86" cy="1191.14" r="28.35"/>
+            <circle class="cls-11" cx="1485.13" cy="1070.29" r="28.35"/>
+            <circle class="cls-11" cx="1252.13" cy="1070.29" r="28.35"/>
+            <text class="cls-3" transform="translate(1340.52 1087.89)">M3</text>
+        </g>
+        <g id="mesa_2" data-name="mesa 2" table-name="2">
+            <rect class="cls-11" x="932.12" y="999.43" width="141.73" height="141.73"/>
+            <circle class="cls-11" cx="1002.99" cy="949.45" r="28.35"/>
+            <circle class="cls-11" cx="1002.99" cy="1191.14" r="28.35"/>
+            <circle class="cls-11" cx="1119.26" cy="1070.29" r="28.35"/>
+            <circle class="cls-11" cx="886.26" cy="1070.29" r="28.35"/>
+            <text class="cls-3" transform="translate(974.64 1082.4)">M2</text>
+        </g>
+        <g id="mesa_1" data-name="mesa 1" table-name="1">
+            <rect class="cls-11" x="556.8" y="999.43" width="141.73" height="141.73"/>
+            <circle class="cls-11" cx="627.66" cy="949.45" r="28.35"/>
+            <circle class="cls-11" cx="627.66" cy="1191.14" r="28.35"/>
+            <circle class="cls-11" cx="743.93" cy="1070.29" r="28.35"/>
+            <circle class="cls-11" cx="510.93" cy="1070.29" r="28.35"/>
+            <text class="cls-3" transform="translate(599.32 1087.89)">M1</text>
+        </g>
+        <text class="cls-12" transform="translate(945.09 872.51)">M
+            <tspan class="cls-13" x="38.88" y="0">esas</tspan>
+        </text>
+    </g>
+
+    <rect id="valla" class="cls-14" x="396.85" y="685.38" width="1190.55" height="56.69"/>
+
+    <g id="escenario">
+        <rect id="escenario_princ" data-name="escenario princ" class="cls-15" x="283.46" y="0.5" width="1417.32"
+              height="300.61"/>
+        <rect id="escenario_princ-2" data-name="escenario princ" class="cls-16" x="311.81" y="23.21" width="1360.63"
+              height="255.2"/>
+        <text class="cls-17" transform="translate(859.56 183.78)">Escenario</text>
+        <g id="parlanteIz">
+            <rect class="cls-16" x="1749.03" y="0.5" width="232.22" height="300.61"/>
+            <circle class="cls-18" cx="1866.11" cy="81.29" r="55.14"/>
+            <circle class="cls-18" cx="1866.11" cy="220.95" r="55.14"/>
+            <circle class="cls-19" cx="1866.11" cy="80.97" r="34.91"/>
+            <circle class="cls-19" cx="1866.11" cy="220.95" r="34.91"/>
+        </g>
+        <g id="parlanteDer">
+            <rect class="cls-16" x="3" y="0.5" width="232.22" height="300.61"/>
+            <circle class="cls-18" cx="119.11" cy="80.97" r="55.14"/>
+            <circle class="cls-18" cx="119.11" cy="220.63" r="55.14"/>
+            <circle class="cls-19" cx="119.11" cy="80.82" r="34.91"/>
+            <circle class="cls-19" cx="119.11" cy="220.79" r="34.91"/>
+        </g>
+    </g>
+
+    <rect class="cls-20" y="1680.48" width="1984.25" height="20.81"/>
+</svg>

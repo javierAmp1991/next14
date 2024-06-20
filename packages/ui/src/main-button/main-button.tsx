@@ -8,7 +8,6 @@ export interface IMainButton {
     OnClick: Function
     IconStart?: string
     ColorButton?: EnumColorMainButton
-    Style?: string
     IsDisable?: boolean
     UseTiny?: boolean
     IsSquare?: boolean
@@ -21,15 +20,17 @@ export enum EnumColorMainButton {
     UseBorder, UseWhite, UseBlue, Disable
 }
 
+
 export const MainButton = ({props}:{props: IMainButton})=>{
     const colorButton = getColorButton();
+    const styleButton = getStyles();
     return(
-          <div onClick={handleClick} className={`${style.main} ${colorButton} ${props.Style}`}>
+          <div onClick={handleClick} className={`${style.main} ${colorButton} ${styleButton}`}>
             {
                 props.IsCharging ? 
-                <><div>{props.TextForCharging || "Enviando"}</div> <div className={style.loader}/></>
-                :
-                <>{props.IconStart && <Image alt="" src={props.IconStart} layout={"fill"} />} {props.Text}</>
+                    <><div>{props.TextForCharging || "Enviando"}</div> <div className={style.loader}/></>
+                    :
+                    <>{props.IconStart && <Image alt="" src={props.IconStart} layout={"fill"} />} {props.Text}</>
             } 
           </div>
 
@@ -44,5 +45,10 @@ export const MainButton = ({props}:{props: IMainButton})=>{
 
     function handleClick(){
         props.OnClick()
+    }
+
+    function getStyles(){
+        if(props.IsDisable) return style.disable
+        else return `${props.IsSquare && style.square} ${props.UseTiny && style.tiny}`
     }
 }

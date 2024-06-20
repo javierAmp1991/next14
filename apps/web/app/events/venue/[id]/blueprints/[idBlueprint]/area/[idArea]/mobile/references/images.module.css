@@ -1,0 +1,15 @@
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    padding: 1.6rem;
+}
+
+.gridImagesTabs {
+    display: grid;
+    height: 100%;
+    grid-template-rows: max-content 1fr;
+    gap: 1.6rem;
+    padding-bottom: .3rem;
+}
+

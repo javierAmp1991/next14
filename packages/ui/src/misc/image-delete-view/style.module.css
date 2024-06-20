@@ -1,0 +1,13 @@
+.main {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: .6rem;
+    overflow: hidden;
+}
+
+.contImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}

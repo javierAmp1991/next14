@@ -1,0 +1,20 @@
+.main {
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.default{
+    width: 100%;
+}
+
+.use14{
+ width: 1.4rem;
+}
+
+.use16{
+ width: 1.6rem;
+}
+
+.use12{
+ width: 1.2rem;
+}

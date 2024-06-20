@@ -1,0 +1,87 @@
+.main {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    align-content: start;
+    gap: 1.6rem;
+    padding-top: 1.6rem;
+    border-left: var(--defaultOutsideLine);
+    padding-left: 1.6rem;
+    padding-right: 3.6rem;
+    background: white;
+}
+
+.mainTop {
+    display: grid;
+    align-content: start;
+    gap: 1.6rem;
+    overflow: scroll;
+    padding-top: 1.6rem;
+}
+
+.input {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.gridInputs {
+    display: grid;
+    grid-template-columns: 1fr 16rem;
+    border: var(--defaultOutsideLine);
+    box-shadow: var(--defaultBoxShadow);
+    border-radius: .4rem;
+}
+
+.select {
+    border: none;
+    box-shadow: none;
+    border-left: var(--defaultOutsideLine);
+    border-radius: 0 .4rem .4rem 0;
+}
+
+.button {
+    font-size: 1.3rem;
+    height: max-content;
+    width: 20rem;
+}
+
+.cont {
+    display: grid;
+    gap: 1rem;
+}
+
+.gridImages {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+    gap: 1rem;
+}
+
+.contImage {
+    border-radius: .8rem;
+    overflow: hidden;
+}
+
+.images {
+    width: 100% !important;
+}
+
+.gridButtons {
+    z-index: 10000;
+    gap: 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.h {
+    height: 100px;
+}
+
+.gridType{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+    border-left: var(--defaultOutsideLine);
+}

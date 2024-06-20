@@ -8,6 +8,11 @@
     padding-bottom: 5.8rem;
 }
 
+.defaultGRid{
+    gap: 1.6rem;
+    padding: 1.6rem 1.2rem;
+}
+
 .contChildren {
     width: 100%;
     height: max-content;

@@ -1,7 +1,6 @@
 //@ts-ignore
 import style from "./style.module.css";
 import { MainButton, IMainButton } from "../main-button/main-button";
-import Image from "next/image";
 import Link from "next/link";
 
 export interface IHeaderDesktop {
@@ -13,9 +12,6 @@ export interface IHeaderDesktop {
 }
 
 export const HeaderDesktop = ({ props }: { props: IHeaderDesktop }) => {
-  const newProps: IMainButton | undefined = props.Button
-    ? { ...props.Button, Style: style.button }
-    : undefined;
   return (
     <div className={style.main}>
       <div className={style.mainGrid}>
@@ -23,7 +19,7 @@ export const HeaderDesktop = ({ props }: { props: IHeaderDesktop }) => {
           <div className={style.title}>{props.Title}</div>
           <div className={style.description}>{props.Description}</div>
         </div>
-        {newProps && <MainButton props={newProps} />}
+        {props.Button && <div className={style.containerButton}><MainButton props={props.Button} /></div>}
       </div>
       {props.OnClose && props.LinkToReturn && (
         <Link href={props.LinkToReturn} className={style.closeContainer}><div className={style.close} /></Link>

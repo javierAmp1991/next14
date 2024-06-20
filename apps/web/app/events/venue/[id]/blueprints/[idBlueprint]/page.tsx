@@ -1,9 +1,10 @@
+"use client"
+import BlueprintContext from "./provider";
+import Main from "./main";
 export default function Page({params}:{params: {id: string, idBlueprint: string}}){
     return (
-      <div>
-        <p>Aqui va el plano</p>
-        <p> {params.id}</p>
-        <p> {params.idBlueprint}</p>
-      </div>
+      <BlueprintContext idVenue={params.id} idBlueprint={params.idBlueprint}>
+           <Main/>
+      </BlueprintContext>
     );
 }

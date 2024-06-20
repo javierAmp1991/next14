@@ -15,6 +15,14 @@ export interface IScrollMutationContainerMobile {
   OnAlternative?: Function;
   OnAlternativeText?: string;
   Style?: string;
+  UseDefaultGrid?: boolean
+  Buttons?: ButtonScrollMutation[]
+}
+
+export interface ButtonScrollMutation{
+    OnClick: ()=>void
+    Name: string
+    Position: number
 }
 
 const limitScroll: number = 85;
@@ -23,7 +31,6 @@ export const ScrollMutationContainerMobile = ({props, children}: { props: IScrol
     const buttonApply: IMainButton = {
         Text: props.OnApplyText ? props.OnApplyText : APPLY,
         OnClick: handleApply,
-        Style: style.confirmButton
     };
     const returnButton: IMainButton = {
         Text: props.OnReturnText ? props.OnReturnText : RETURN,
@@ -33,17 +40,15 @@ export const ScrollMutationContainerMobile = ({props, children}: { props: IScrol
     const alternativeButton: IMainButton = {
         Text: props.OnAlternativeText ? props.OnAlternativeText : RETURN,
         OnClick: handleAlternative,
-        Style: style.confirmButton
     };
     const refContainer = useRef<HTMLDivElement>(null);
     const {handleScroll, config} = useScrollHook({ref: refContainer});
-    /*const buttonPlus: BlueButtonPluspropss = {
-        ActionFn: handlePlus,
-        Position: "absolute",
-        Bottom: `${-config.Translate / 10 + 6.4}rem`,
-        Right: "1.6rem"
-    };*/
-
+    const mainStyle = `${style.main} ${props.UseDefaultGrid && style.defaultGRid} ${props.Style}`;
+    const buttonSelected: ButtonScrollMutation | undefined = props.Buttons?.find(b=>b.Position === props.Dependency);
+    const defaultButtonProps: IMainButton = {
+        OnClick: handleClick,
+        Text: buttonSelected? buttonSelected.Name : ""
+    };
     useLayoutEffect(() => {
         if (refContainer.current) {
             if (refContainer.current.scrollTop > limitScroll) refContainer.current.scrollTop = limitScroll;
@@ -51,9 +56,14 @@ export const ScrollMutationContainerMobile = ({props, children}: { props: IScrol
     }, [props.Dependency])
 
     return (
-        <div id={"idContainerMobile"} ref={refContainer} onScroll={handleScroll} className={`${style.main} ${props.Style}`}>
+        <div id={"idContainerMobile"} ref={refContainer} onScroll={handleScroll} className={mainStyle}>
             {children}
-            {
+            { buttonSelected !== undefined &&
+                <div style={{transform: `translateY(${config.Translate}px)`}} className={style.gridButton}>
+                    <MainButton props={defaultButtonProps}/>
+                </div>
+            }    
+            {/*
                 (props.OnReturn !== undefined || props.OnApply !== undefined) &&
                 <>
                     <div style={{transform: `translateY(${config.Translate}px)`}} className={style.gridButton}>
@@ -61,9 +71,8 @@ export const ScrollMutationContainerMobile = ({props, children}: { props: IScrol
                         {props.OnReturn !== undefined && <MainButton props={returnButton}/>}
                         {props.OnApply !== undefined && <MainButton props={buttonApply}/>}
                     </div>
-                    {/* {props.OnPlus !== undefined && <BlueButtonPlus propss={buttonPlus}/>} */}
                 </>
-            }
+            */}
         </div>
     )
 
@@ -81,5 +90,9 @@ export const ScrollMutationContainerMobile = ({props, children}: { props: IScrol
 
     function handleAlternative(){
         props.OnAlternative && props.OnAlternative()
+    }
+
+    function handleClick(){
+        if(buttonSelected) buttonSelected.OnClick()
     }
 }

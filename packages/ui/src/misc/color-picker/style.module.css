@@ -1,0 +1,20 @@
+.contPicker {
+    position: relative;
+}
+
+.color {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: .6rem;
+    padding: .6rem 1rem;
+    border: var(--borderForBoxShadow);
+    box-shadow: var(--defaultBoxShadow);
+    color: var(--colorTextDetails);
+    align-items: center;
+    border-radius: .4rem;
+}
+
+.square {
+    width: 1.6rem;
+    aspect-ratio: 1/1;
+}

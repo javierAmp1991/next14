@@ -9,6 +9,7 @@ export interface IContainerWidthTitle {
   LessGap?: boolean;
   UseBorderBottom?: boolean;
   UseGridForChildren?: boolean;
+  UseNormal?: boolean
   Style?: string;
   Subtitle?: string
 }
@@ -19,7 +20,7 @@ export  const ContainerWidthTitle = ({children, props}: {children: React.ReactNo
     return (
       <div className={mainStyle}>
         <div>
-        <p className={style.title}><span> {props.Title} </span> {props.IsObligatory && <span className={style.isObligatory}>*</span>}</p>
+        <p className={`${style.title} ${props.UseNormal && style.useNormal}`}><span> {props.Title} </span> {props.IsObligatory && <span className={style.isObligatory}>*</span>}</p>
         {props.Subtitle && <p className={style.subtitle}>{props.Subtitle}</p>}
         </div>
 

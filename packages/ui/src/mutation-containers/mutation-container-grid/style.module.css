@@ -10,3 +10,11 @@
 .padding{
     padding: 1.6rem 3.6rem;
 }
+
+.gridRules{
+    grid-template-columns: 1fr 36rem;
+}
+
+.gridEdit{
+    grid-template-columns: 2fr 1.5fr;
+}

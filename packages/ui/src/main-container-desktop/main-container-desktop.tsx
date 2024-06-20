@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
 //@ts-ignore
 import style from "./style.module.css";
+import { ReactNode } from "react";
 
 export interface IMainContainerDesktop {
     Type?: EnumMainContainerDesktop

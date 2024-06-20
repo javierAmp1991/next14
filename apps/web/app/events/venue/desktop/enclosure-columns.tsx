@@ -5,9 +5,11 @@ import {
   NumberTable,
   FirstColum,
 } from "@repo/ui/tableDesktop";
-import { VenueRowTable } from "../provider";
+import { VenueRowTable, useVenueProvider } from "../provider";
+import {TABS_ENCLOSURE} from "../[id]/const";
 
 export default function EnclosureColumns({ item }: { item: VenueRowTable }) {
+  const {HandleMutation} = useVenueProvider();
   const profile = { Image: item.Image };
 
   return (
@@ -28,7 +30,11 @@ export default function EnclosureColumns({ item }: { item: VenueRowTable }) {
     </>
   );
 
-  function handleEvents() {}
+  function handleEvents() {
+    HandleMutation(item.Id, TABS_ENCLOSURE.Events.Position)
+}
 
-  function handleBlueprints() {}
+function handleBlueprints() {
+    HandleMutation(item.Id, TABS_ENCLOSURE.Blueprints.Position)
+}
 }

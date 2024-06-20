@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
 import {useHandlePosition, useCreateEditHook, IUseHandlePositionReturn, ICreateEditReturn, EnumCreateEdit} from "@repo/ui/custom-hook";
-import {INITIAL_POSITION_MUTATION} from "./const";
+import {INITIAL_POSITION_MUTATION} from "../const";
 import {ENCLOSURE_OPTIONS} from "../data";
 import {Resource} from "@repo/ui/uploadResources";
 import {InputTextChangeEvent} from "@repo/ui/customInputs";

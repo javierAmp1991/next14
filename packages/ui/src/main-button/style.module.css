@@ -51,6 +51,14 @@
     cursor: not-allowed;
 }
 
+.tiny{
+    font-size: 1.3rem;
+}
+
+.square{
+    border-radius: .4rem;
+}
+
 .loader {
     width: 1.2rem;
     aspect-ratio: 1/1;

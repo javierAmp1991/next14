@@ -25,11 +25,6 @@
     font-size: 2.1rem;
 }
 
-.button{
-    width: 20rem!important;
-    padding: 1rem 0!important;
-}
-
 .closeContainer {
     width: 3.2rem;
     aspect-ratio: 1/1;
@@ -65,4 +60,10 @@
 
 .close::before{
     rotate: -45deg;
+}
+
+.containerButton{
+    width: 100%;
+    max-width: 20rem;
+    margin: auto;
 }
