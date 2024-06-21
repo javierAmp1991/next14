@@ -8,7 +8,7 @@ export interface IImageComponent{
     Style?: string
     Priority?: boolean
     Alt?: string
-    Use?: EnumSizeImageComponent
+    Use?: EnumSizeImageComponent | undefined
 }
 
 export enum EnumSizeImageComponent{
@@ -18,8 +18,8 @@ export enum EnumSizeImageComponent{
 export const ImageComponent = ({props}:{props: IImageComponent}) => {
     const priority: boolean = props.Priority === undefined ? false : props.Priority;
     const alt: string = props.Alt || STRING_EMPTY;
-    //const className: string = props.Use? mapeo[props.Use] : style.default;
     const nStyle: string = getStyle();
+
     return (
         <div className={`${style.main} ${nStyle} ${props.Style}`}>
             <Image alt={alt} priority={priority} layout={"fill"} objectFit={"cover"} src={props.Src}/>
@@ -27,10 +27,10 @@ export const ImageComponent = ({props}:{props: IImageComponent}) => {
     )
 
     function getStyle(): string{
-        if(props.Use === undefined) return style.default
-        else if(props.Use === EnumSizeImageComponent.use12) return style.use12
-        else if(props.Use === EnumSizeImageComponent.use14) return style.use14
-        else if(props.Use === EnumSizeImageComponent.use16) return style.use16
-        else return style.default
+        if(props.Use === undefined) return `${style.default}`
+        else if(props.Use === EnumSizeImageComponent.use12) return `${style.use12}`
+        else if(props.Use === EnumSizeImageComponent.use14) return `${style.use14}`
+        else if(props.Use === EnumSizeImageComponent.use16) return `${style.use16}`
+        else return `${style.default}`
     }
 }
