@@ -8,7 +8,6 @@
 .contSection {
     display: grid;
     grid-template-rows: max-content 1fr;
-    box-shadow: var(--defaultBoxShadow);
     border-radius: 1.2rem;
     overflow: hidden;
     height: 100%;
@@ -45,4 +44,10 @@
     align-items: center;
     text-align: right;
     padding-right: 1.6rem;
+}
+
+@media (min-width: 1280px) {
+    .contSection{
+     box-shadow: var(--defaultBoxShadow);
+    }
 }

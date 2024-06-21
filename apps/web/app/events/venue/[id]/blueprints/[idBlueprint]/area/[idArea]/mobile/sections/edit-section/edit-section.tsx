@@ -41,6 +41,8 @@ export default function EditSection() {
 
     return (
         <div className={style.main}>
+            <div className={style.submain}>
+            <b style={{fontSize: 18}}>Editar seccion</b>
             <ContainerWidthTitle props={{Title: "Cambiar nombre de la seccion", IsObligatory: true, DontUseSpace: true}}>
                 <div className={style.gridInputs}>
                     <InputText props={inputName}/>
@@ -52,6 +54,7 @@ export default function EditSection() {
             </ContainerWidthTitle>
 
             {Area.Type === EnumTypeArea.Simple && <ColorPicker props={colorPicker}/>}
+            </div>
 
             <div className={style.gridButtons}>
                 <MainButton props={button}/>

@@ -87,6 +87,9 @@ export default function CreateSection({onReturn}:{onReturn: Function}) {
     return (
         <div className={style.main}>
             <div className={style.submain}>
+                <b style={{fontSize: 18}}>
+                    Crear seccion
+                </b>
             <ContainerWidthTitle props={{Title: "Ingrese un nombre y seleccione el tipo", IsObligatory: true, DontUseSpace: true}}>
                 <div className={style.gridInputs}>
                     <InputText props={inputName}/>
