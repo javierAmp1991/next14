@@ -23,8 +23,8 @@ const mapeo: { [key: number]: string } = {
 
 export const ImageComponent = ({props}:{props: IImageComponent}) => {
     const priority: boolean = props.Priority === undefined ? false : props.Priority;
-    const alt = props.Alt || STRING_EMPTY;
-    const className = props.Use? mapeo[props.Use] : style.default;
+    const alt: string = props.Alt || STRING_EMPTY;
+    const className: string = props.Use? mapeo[props.Use] : style.default;
     return (
         <div className={`${style.main} ${className} ${props.Style}`}>
             <Image alt={alt} priority={priority} layout={"fill"} objectFit={"cover"} src={props.Src}/>
