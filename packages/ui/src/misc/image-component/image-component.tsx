@@ -26,7 +26,7 @@ export const ImageComponent = ({props}:{props: IImageComponent}) => {
         </div>
     )
 
-    function getStyle(){
+    function getStyle(): string{
         if(props.Use === undefined) return style.default
         else if(props.Use === EnumSizeImageComponent.use12) return style.use12
         else if(props.Use === EnumSizeImageComponent.use14) return style.use14
