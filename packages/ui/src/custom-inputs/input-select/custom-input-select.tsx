@@ -61,7 +61,7 @@ export const InputSelect = ({prop}: { prop: IInputSelect }) => {
                 </div>
             </div>
             :
-            <div ref={selectRef} className={style.main}>
+            <div ref={selectRef} className={`${style.main} ${prop.Style}`}>
                 {
                     isAnySelected ?
                         prop.UseCheckBox ?

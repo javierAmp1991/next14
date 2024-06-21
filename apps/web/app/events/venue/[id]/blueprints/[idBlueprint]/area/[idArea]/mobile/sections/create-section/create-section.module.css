@@ -44,10 +44,10 @@
 }
 
 .select {
-    border: none;
-    box-shadow: none;
-    border-left: var(--defaultOutsideLine);
-    border-radius: 0 .4rem .4rem 0;
+    border: none!important;
+    box-shadow: none!important;
+    border-left: var(--defaultOutsideLine)!important;
+    border-radius: 0!important;
 }
 
 .cont {

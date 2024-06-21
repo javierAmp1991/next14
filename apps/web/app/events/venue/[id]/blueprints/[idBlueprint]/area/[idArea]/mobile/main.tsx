@@ -11,6 +11,7 @@ import {
 } from "@repo/ui/scrollContainerMobile";
 import dynamic from "next/dynamic";
 import CreateSection from "./sections/create-section/create-section";
+import EditSection from "./sections/edit-section/edit-section";
 import { useState } from "react";
 
 const LazyPrincipal = dynamic(()=>import("./principal/principal"), {loading: SpinLoading});
@@ -18,8 +19,9 @@ const LazyReference = dynamic(()=>import("./references/images"), {loading: SpinL
 const LazySections = dynamic(()=>import("./sections/sections"), {loading: SpinLoading});
 
 export default function Main(){
-    const {PositionHandler} = useAreaContext();
+    const {PositionHandler, SectionForEdit} = useAreaContext();
     const [showCreate, setShowCreate] = useState(false);
+    const showEdit = SectionForEdit !== undefined;
     const {Position} = PositionHandler;
     const cont: IScrollMutationContainerMobile = {
       Dependency: Position,
@@ -84,6 +86,9 @@ export default function Main(){
             </ScrollMutationContainerMobile>
             <DesplegableContainer s={showCreate}>
               <CreateSection onReturn={handleReturn}/>
+            </DesplegableContainer>
+            <DesplegableContainer s={showEdit}>
+              <EditSection/>
             </DesplegableContainer>
         </DefaulContainerMobile>
     )

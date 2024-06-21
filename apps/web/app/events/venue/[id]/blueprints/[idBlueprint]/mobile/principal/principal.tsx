@@ -19,7 +19,8 @@ export default function Principal(){
     };
     const contTitle: IContainerWidthTitle = {
         Title: "Areas del plano",
-        DontUseSpace: true
+        DontUseSpace: true,
+        UseGridForChildren: true
     }
     return(
         <>

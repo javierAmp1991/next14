@@ -9,7 +9,6 @@ import { useBlueprintContext} from "../../../provider";
 
 export default function Blueprints() {
   const {IdBlueprint, IdVenue} = useBlueprintContext();
-  const mutationProps: IMutationContainerGrid = { Style: style.grid };
   const Areas = [
     {
       Name: "Name 1",
@@ -25,10 +24,10 @@ export default function Blueprints() {
     }
   ]
   return (
-    <MutationContainerGrid props={mutationProps}>
+    <>
         {Areas.map((e) => (
           <Area e={e} idBlueprint={IdBlueprint} idVenue={IdVenue} />
         ))}
-    </MutationContainerGrid>
+    </>
   );
 }
