@@ -81,10 +81,9 @@ export default function Rows({section, onOpen}: { section: RowSection, onOpen: F
         const initialIf = section.Rows.length + 1;
         let files = section.Rows;
         for (let i = initialIf; i < (initialIf + defaultFs.Amount); i++) {
-            const newFile: FileAndSeatItem = {
-                Orientation: EnumTypeOrientation.Center,
+            const newFile: RowItem = {
                 SeatsDisable: [],
-                File: `Fila ${i}`,
+                Row: `Fila ${i}`,
                 Id: `${i}`,
                 Seat: defaultFs.Seat
             }
