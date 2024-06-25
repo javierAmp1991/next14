@@ -24,7 +24,7 @@ export default function Sections() {
                     hasSections ?
                         Area.Sections.map((s: any) => {
                             if (s.Type === EnumTypeSection.Row) {
-                                return <Rows onOpen={handleDisplay} section={s as RowSection}/>
+                                return <Rows section={s as RowSection}/>
                             }
                             else if (s.Type === EnumTypeSection.Table) {
                                 return <Table onOpen={handleDisplay} section={s as TableSection}/>
