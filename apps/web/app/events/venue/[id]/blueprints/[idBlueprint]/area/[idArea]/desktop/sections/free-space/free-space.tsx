@@ -11,7 +11,7 @@ const names = {
     Amount: "amount"
 };
 
-export default function FreeSpace({section, onOpen}: { section: FreeSpaceSection, onOpen: Function }) {
+export default function FreeSpace({section}: { section: FreeSpaceSection }) {
     const {HaveEventActive} = useAreaContext();
     const amount: IInputNumber = {
         Name: names.Amount,

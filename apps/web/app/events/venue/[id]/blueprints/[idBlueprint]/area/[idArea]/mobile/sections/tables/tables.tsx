@@ -18,7 +18,8 @@ const names = {
 };
 
 export default function TableAndChairs({section, onOpen}: { section: TableSection, onOpen: Function }) {
-    const {HaveEventActive}= useAreaContext();
+    const {HaveEventActive, SectionHandlers} = useAreaContext();
+    const {DeleteSectionItem, EditCapacityFromSectionItem, EditNameSectionItem} = SectionHandlers;
     const [defaultFs, setDefaultFs] = useState(defaultFileAndSeat);
     const chairs: IInputNumber = {
         Name: names.Chairs,
@@ -96,18 +97,19 @@ export default function TableAndChairs({section, onOpen}: { section: TableSectio
     function handleCreateFiles() {
     }
 
-    function handleDeleteTable(file: string) {
-    }
-
-    function handleEditTable(file: string, capacity: number) {
-    }
-
     function handleEditMin(file: string, min: number) {
     }
 
-    function handleEditNameTable(file: string, newName: string) {
+    function handleEditShared() {
     }
 
-    function handleEditShared() {
+    function handleDeleteTable(row: string) {
+        DeleteSectionItem(section.Id, row)
+    }
+    function handleEditTable(id: string, value: number) {
+        EditCapacityFromSectionItem(section.Id, id, value)
+    }
+    function handleEditNameTable(id: string, newName: string) {
+        EditNameSectionItem(section.Id, id, newName)
     }
 }

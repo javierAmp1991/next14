@@ -18,7 +18,8 @@ const names = {
 };
 
 export default function Rows({section, onOpen}: { section: RowSection, onOpen: Function }) {
-    const {HaveEventActive} = useAreaContext();
+    const {HaveEventActive, SectionHandlers} = useAreaContext();
+    const {DeleteSectionItem, EditCapacityFromSectionItem, EditNameSectionItem} = SectionHandlers;
     const [defaultFs, setDefaultFs] = useState(defaultFileAndSeat);
     const seats: IInputNumber = {
         Name: names.Seats,
@@ -66,7 +67,14 @@ export default function Rows({section, onOpen}: { section: RowSection, onOpen: F
                 </div>
             </ContainerWidthTitle>
             <ContainerWidthTitle props={titleSeats}>
-                {section.Rows.map((s)=><Seats S={s} OnDelete={handleDeleteFile} OnEdit={handleEditFile} OnName={handleEditNameFile} HaveEventActive={HaveEventActive} />)}
+            {
+                section.Rows.map((s)=>
+                <Seats S={s} 
+                OnDelete={handleDeleteRow}
+                OnEdit={handleEditRow}
+                OnName={handleEditNameRow}
+                HaveEventActive={HaveEventActive}/>)
+            }
             </ContainerWidthTitle>
         </SectionContainer>
 
@@ -109,15 +117,13 @@ export default function Rows({section, onOpen}: { section: RowSection, onOpen: F
         else return 1;
     }
 
-    function handleDeleteFile(file: string) {
-
+    function handleDeleteRow(row: string) {
+        DeleteSectionItem(section.Id, row)
     }
-
-    function handleEditFile(file: string, capacity: number) {
-
+    function handleEditRow(id: string, value: number) {
+        EditCapacityFromSectionItem(section.Id, id, value)
     }
-
-    function handleEditNameFile(file: string, newName: string) {
-
+    function handleEditNameRow(id: string, newName: string) {
+        EditNameSectionItem(section.Id, id, newName)
     }
 }

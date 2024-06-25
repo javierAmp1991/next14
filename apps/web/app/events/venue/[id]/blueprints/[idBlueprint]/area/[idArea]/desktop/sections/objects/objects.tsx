@@ -20,9 +20,9 @@ const names = {
     Capacity: "capacity"
 };
 
-export default function ObjectSec({section, onOpen}: { section: ObjectSection, onOpen: Function }) {
-    const {HaveEventActive, SectionHandlers}= useAreaContext();
-    const {DeleteSectionItem} = SectionHandlers;
+export default function ObjectSec({section}: { section: ObjectSection }) {
+    const {HaveEventActive, SectionHandlers} = useAreaContext();
+    const {DeleteSectionItem, EditCapacityFromSectionItem, EditNameSectionItem} = SectionHandlers;
     const [defaultFs, setDefaultFs] = useState(defaultFileAndSeat);
     const object: IInputText = {
         Name: names.Object,
@@ -103,7 +103,7 @@ export default function ObjectSec({section, onOpen}: { section: ObjectSection, o
                     onDelete={handleDeleteObject}
                     onEdit={handleEditObject}
                     onMin={handleEditMin}
-                    onName={handleEditName}/>)
+                    onName={handleEditNameObject}/>)
                 }
             </ContainerWidthTitle>
         </SectionContainer>
@@ -121,19 +121,19 @@ export default function ObjectSec({section, onOpen}: { section: ObjectSection, o
     function handleCreateFiles() {
     }
 
-    function handleDeleteObject(object: string) {
-        DeleteSectionItem(section.Id, object)
-    }
-
-    function handleEditObject(object: string, capacity: number) {
-    }
-
     function handleEditMin(file: string, min: number) {
     }
 
-    function handleEditName(object: string, newName: string) {
+    function handleEditShared() {
     }
 
-    function handleEditShared() {
+    function handleDeleteObject(row: string) {
+        DeleteSectionItem(section.Id, row)
+    }
+    function handleEditObject(id: string, value: number) {
+        EditCapacityFromSectionItem(section.Id, id, value)
+    }
+    function handleEditNameObject(id: string, newName: string) {
+        EditNameSectionItem(section.Id, id, newName)
     }
 }

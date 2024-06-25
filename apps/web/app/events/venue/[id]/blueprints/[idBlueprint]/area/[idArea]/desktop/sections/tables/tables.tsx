@@ -17,9 +17,9 @@ const names = {
     Amount: "amount"
 };
 
-export default function TableAndChairs({section, onOpen}: { section: TableSection, onOpen: Function }) {
-    const {HaveEventActive, SectionHandlers}= useAreaContext();
-    const {DeleteSectionItem} = SectionHandlers;
+export default function TableAndChairs({section}: { section: TableSection}) {
+    const {HaveEventActive, SectionHandlers} = useAreaContext();
+    const {DeleteSectionItem, EditCapacityFromSectionItem, EditNameSectionItem} = SectionHandlers;
     const [defaultFs, setDefaultFs] = useState(defaultTables);
     const chairs: IInputNumber = {
         Name: names.Chairs,
@@ -83,11 +83,11 @@ export default function TableAndChairs({section, onOpen}: { section: TableSectio
                 section.Tables.map(c => 
                     <Chairs 
                     C={c} 
-                    OnName={handleEditNameSeat} 
-                    OnDelete={handleDeleteSeat} 
+                    OnName={handleEditNameTable} 
+                    OnDelete={handleDeleteTable} 
                     IsShared={isSharedTable} 
                     OnMin={handleEditMin} 
-                    OnEdit={handleEditSeat} 
+                    OnEdit={handleEditTable} 
                     HaveEventActive={HaveEventActive}/>)
                 }
             </ContainerWidthTitle>
@@ -100,19 +100,19 @@ export default function TableAndChairs({section, onOpen}: { section: TableSectio
     function handleCreateFiles() {
     }
 
-    function handleDeleteSeat(seat: string) {
-        DeleteSectionItem(section.Id, seat)       
-    }
-
-    function handleEditSeat(file: string, capacity: number) {
-    }
-
     function handleEditMin(file: string, min: number) {
     }
 
-    function handleEditNameSeat(file: string, newName: string) {
+    function handleEditShared() {
     }
 
-    function handleEditShared() {
+    function handleDeleteTable(row: string) {
+        DeleteSectionItem(section.Id, row)
+    }
+    function handleEditTable(id: string, value: number) {
+        EditCapacityFromSectionItem(section.Id, id, value)
+    }
+    function handleEditNameTable(id: string, newName: string) {
+        EditNameSectionItem(section.Id, id, newName)
     }
 }
