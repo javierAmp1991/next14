@@ -13,7 +13,8 @@ export default function Seats({S, OnDelete, OnEdit, OnName, HaveEventActive}: IS
         OnChange: handleEdit,
         Style: css.input,
         IsDisable: HaveEventActive,
-        StyleInput: EnumStyleCustomInput.NoLine
+        StyleInput: EnumStyleCustomInput.NoLine,
+        IsEmptyValueInvalid: true
 
     };
     const file: IInputText = {
@@ -24,7 +25,8 @@ export default function Seats({S, OnDelete, OnEdit, OnName, HaveEventActive}: IS
         OnChange: handleName,
         Style: css.input,
         IsDisable: HaveEventActive,
-        StyleInput: EnumStyleCustomInput.NoLine
+        StyleInput: EnumStyleCustomInput.NoLine,
+        IsEmptyValueInvalid: true
 
     };
     const icon: IImageComponent = {
@@ -49,7 +51,7 @@ export default function Seats({S, OnDelete, OnEdit, OnName, HaveEventActive}: IS
     )
 
     function handleDeleteFile() {
-        if (!HaveEventActive) OnDelete(S.Id)
+        OnDelete(S.Id)
     }
 
     function handleEdit(e: InputTextChangeEvent) {

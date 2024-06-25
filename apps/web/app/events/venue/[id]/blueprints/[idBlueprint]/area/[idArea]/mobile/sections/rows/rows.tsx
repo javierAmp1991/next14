@@ -42,7 +42,7 @@ export default function Rows({section, onOpen}: { section: RowSection, onOpen: F
         IsDisable: HaveEventActive,
         UseTiny: true,
         IsSquare: true,
-        ColorButton: EnumColorMainButton.UseBorder
+        ColorButton: EnumColorMainButton.UseWhite
     };
     const title: IContainerWidthTitle = {
         Title: "Crear Filas",

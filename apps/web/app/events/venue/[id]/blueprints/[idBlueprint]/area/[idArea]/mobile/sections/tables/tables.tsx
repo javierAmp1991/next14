@@ -39,7 +39,7 @@ export default function TableAndChairs({section, onOpen}: { section: TableSectio
     const create: IMainButton = {
         Text: "Crear mesas",
         OnClick: handleCreateFiles,
-        ColorButton: EnumColorMainButton.UseBorder,
+        ColorButton: EnumColorMainButton.UseWhite,
         IsDisable: HaveEventActive,
         IsSquare: true,
         UseTiny: true

@@ -1,8 +1,8 @@
 import css from "../section.module.css";
 import {useAreaContext} from "../../../provider";
 import {RowItem, RowSection} from "../../../area-interfaces";
-import {ChangeEvent, useState} from "react";
-import {IInputNumber, InputText, IInputText, InputNumber} from "@repo/ui/customInputs";
+import {useState} from "react";
+import {IInputNumber,InputNumber, InputTextChangeEvent} from "@repo/ui/customInputs";
 import {EnumColorMainButton, IMainButton, MainButton} from "@repo/ui/mainButton";
 import {ContainerWidthTitle, IContainerWidthTitle} from "@repo/ui/misc";
 import Seats from "./seats";
@@ -17,24 +17,23 @@ const names = {
     Amount: "amount"
 };
 
-export default function Rows({section, onOpen}: { section: RowSection, onOpen: Function }) {
-    const {HaveEventActive} = useAreaContext();
+export default function Rows({section}: { section: RowSection}) {
+    const {HaveEventActive, SectionHandlers} = useAreaContext();
+    const {DeleteSectionItem, EditCapacityFromSectionItem, EditNameSectionItem} = SectionHandlers;
     const [defaultFs, setDefaultFs] = useState(defaultFileAndSeat);
     const seats: IInputNumber = {
         Name: names.Seats,
         IsObligatory: true,
         Placeholder: "Asientos por fila",
         Value: defaultFs.Seat === 0 ? "" : `${defaultFs.Seat}`,
-        OnChange: ()=>{},
-        IsDisable: HaveEventActive
+        OnChange: handleSeatAmount
     };
-    const amount: IInputText = {
+    const amount: IInputNumber = {
         Name: names.Amount,
         IsObligatory: true,
         Placeholder: "Numero de filas",
         Value: defaultFs.Amount === 0 ? "" : `${defaultFs.Amount}`,
-        OnChange: ()=>{},
-        IsDisable: HaveEventActive
+        OnChange: handleSeatAmount
     };
     const create: IMainButton = {
         Text: "Crear filas",
@@ -42,7 +41,7 @@ export default function Rows({section, onOpen}: { section: RowSection, onOpen: F
         IsDisable: HaveEventActive,
         UseTiny: true,
         IsSquare: true,
-        ColorButton: EnumColorMainButton.UseBorder
+        ColorButton: EnumColorMainButton.UseWhite
     };
     const title: IContainerWidthTitle = {
         Title: "Crear Filas",
@@ -54,27 +53,35 @@ export default function Rows({section, onOpen}: { section: RowSection, onOpen: F
         UseNormal: true,
         DontUseSpace: true,
         UseGridForChildren: true
-    }
+    };
 
     return (
         <SectionContainer section={section}>
             <ContainerWidthTitle props={title}>
                 <div className={css.createFile}>
                    <InputNumber props={amount}/>
-                   <InputText props={seats}/>
+                   <InputNumber props={seats}/>
                    <MainButton props={create}/>
                 </div>
             </ContainerWidthTitle>
             <ContainerWidthTitle props={titleSeats}>
-                {section.Rows.map((s)=><Seats S={s} OnDelete={handleDeleteFile} OnEdit={handleEditFile} OnName={handleEditNameFile} HaveEventActive={HaveEventActive} />)}
+                {
+                    section.Rows.map((s)=>
+                    <Seats S={s} 
+                    OnDelete={handleDeleteRow}
+                    OnEdit={handleEditRow}
+                    OnName={handleEditNameRow}
+                    HaveEventActive={HaveEventActive}/>)
+                }
             </ContainerWidthTitle>
         </SectionContainer>
 
     )
 
-    function handleSeatAmount(e: ChangeEvent<HTMLInputElement>) {
-        if (e.target.name === names.Seats) setDefaultFs({...defaultFs, Seat: e.target.valueAsNumber})
-        else setDefaultFs({...defaultFs, Amount: e.target.valueAsNumber})
+    function handleSeatAmount(e: InputTextChangeEvent) {
+        const {Event} = e;
+        if (Event.target.name === names.Seats) setDefaultFs({...defaultFs, Seat: Event.target.valueAsNumber})
+        else setDefaultFs({...defaultFs, Amount: Event.target.valueAsNumber})
     }
 
     function handleCreateFiles() {
@@ -109,15 +116,15 @@ export default function Rows({section, onOpen}: { section: RowSection, onOpen: F
         else return 1;
     }
 
-    function handleDeleteFile(file: string) {
-
+    function handleDeleteRow(row: string) {
+        DeleteSectionItem(section.Id, row)
     }
 
-    function handleEditFile(file: string, capacity: number) {
-
+    function handleEditRow(id: string, value: number) {
+        EditCapacityFromSectionItem(section.Id, id, value)
     }
 
-    function handleEditNameFile(file: string, newName: string) {
-
+    function handleEditNameRow(id: string, newName: string) {
+        EditNameSectionItem(section.Id, id, newName)
     }
 }

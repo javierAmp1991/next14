@@ -14,6 +14,7 @@ import {GetNameAndIconTypeSection} from "../../get-name-section";
 export default function SectionContainer({children, section}:{children: React.ReactNode, section:SectionsOptions}){
     const {Area, HaveEventActive, IsSimple, SectionHandlers, SectionForEdit} = useAreaContext();
     const {Name, Type, Color, Images} = section;
+    const {DeleteSection, SelectSectionForEdit, DeleteResource} = SectionHandlers;
     const {State, HandleToggle} = usePopUpHook();
     const colorBorder = Area.Type === EnumTypeArea.Interactive ? "#3182c5" : Color;
     const border = {borderLeft: `.5rem solid ${colorBorder}`};
@@ -48,9 +49,8 @@ export default function SectionContainer({children, section}:{children: React.Re
                  {
                      (IsSimple && !HaveEventActive) && 
                      <>
-                        <button className={u.link} onClick={handleEdit}>Editar</button>
-                        <button onClick={handlePopUp} className={`${style.middle} ${u.link}`}>Eliminar</button>
-                        <button className={u.link} onClick={handleEdit}>Duplicar</button>
+                        <button className={u.link} onClick={handleEdit}>{isSelected? "Cancelar" : "Editar"}</button>
+                        <button onClick={handleDelete} className={`${style.middle} ${u.link}`}>Eliminar</button>
                      </>
                  }
             </button>
@@ -83,22 +83,25 @@ export default function SectionContainer({children, section}:{children: React.Re
     function handleEdit(e: MouseEvent) {
         e.preventDefault()
         e.stopPropagation()
-        SectionHandlers.SelectSectionForEdit(section)
+        if(isSelected) SelectSectionForEdit()
+        else SelectSectionForEdit(section)
     }
     
     function handleAccept() {
 
     }
 
-    function handlePopUp(e: MouseEvent) {
-
-    }
-
-    function handleDeleteImage(){
-
+    function handleDeleteImage(idResource: string){
+        DeleteResource(section.Id, idResource)
     }
 
     function onClickImage(){
 
+    }
+
+    function handleDelete(e: MouseEvent){
+        e.preventDefault()
+        e.stopPropagation()
+        DeleteSection(section.Id)
     }
 }

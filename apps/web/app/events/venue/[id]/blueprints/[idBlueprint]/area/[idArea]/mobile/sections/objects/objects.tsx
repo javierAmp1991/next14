@@ -51,7 +51,7 @@ export default function ObjectSec({section, onOpen}: { section: ObjectSection, o
         Text: "Crear objeto",
         OnClick: handleCreateFiles,
         IsDisable: false,
-        ColorButton: EnumColorMainButton.UseBorder,
+        ColorButton: EnumColorMainButton.UseWhite,
         IsSquare: true,
         UseTiny: true
     };

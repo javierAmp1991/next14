@@ -21,7 +21,8 @@ const names = {
 };
 
 export default function ObjectSec({section, onOpen}: { section: ObjectSection, onOpen: Function }) {
-    const {HaveEventActive} = useAreaContext();
+    const {HaveEventActive, SectionHandlers}= useAreaContext();
+    const {DeleteSectionItem} = SectionHandlers;
     const [defaultFs, setDefaultFs] = useState(defaultFileAndSeat);
     const object: IInputText = {
         Name: names.Object,
@@ -51,7 +52,7 @@ export default function ObjectSec({section, onOpen}: { section: ObjectSection, o
         Text: "Crear objeto",
         OnClick: handleCreateFiles,
         IsDisable: false,
-        ColorButton: EnumColorMainButton.UseBorder,
+        ColorButton: EnumColorMainButton.UseWhite,
         IsSquare: true,
         UseTiny: true
     };
@@ -94,14 +95,16 @@ export default function ObjectSec({section, onOpen}: { section: ObjectSection, o
             <InputCheckbox props={isShared}/>
 
             <ContainerWidthTitle props={objectsTitle}>
-                {section.Objects.map((f)=><Object f={f} 
-                haveEventActive={HaveEventActive}
-                isShared={false}
-                onDelete={handleDeleteObject}
-                onEdit={handleEditObject}
-                onMin={handleEditMin}
-                onName={handleEditName}
-                />)}
+                {
+                section.Objects.map((f)=>
+                    <Object f={f} 
+                    haveEventActive={HaveEventActive}
+                    isShared={false}
+                    onDelete={handleDeleteObject}
+                    onEdit={handleEditObject}
+                    onMin={handleEditMin}
+                    onName={handleEditName}/>)
+                }
             </ContainerWidthTitle>
         </SectionContainer>
     )
@@ -119,6 +122,7 @@ export default function ObjectSec({section, onOpen}: { section: ObjectSection, o
     }
 
     function handleDeleteObject(object: string) {
+        DeleteSectionItem(section.Id, object)
     }
 
     function handleEditObject(object: string, capacity: number) {

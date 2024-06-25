@@ -40,8 +40,8 @@
 
 .white{
     background: white;
-    color: black;
-    border: .1rem solid #bdbdbd;
+    color: var(--colorTextNormal);
+    border: var(--defaultOutsideLine);
 }
 
 .disable {

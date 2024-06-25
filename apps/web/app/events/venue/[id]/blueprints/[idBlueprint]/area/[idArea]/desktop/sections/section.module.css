@@ -18,7 +18,7 @@
 
 .selected{
     box-shadow: var(--boxShadowSelectedOrange);
-    border: none;
+    border: var(--borderForBoxShadowSelectedOrange);
 }
 
 .type {
@@ -65,7 +65,7 @@
 }
 
 .gridInput {
-    box-shadow: var(--defaultBoxShadow);
+    border: var(--defaultOutsideLine);
     display: grid;
     grid-template-columns: max-content 1fr;
     align-items: center;

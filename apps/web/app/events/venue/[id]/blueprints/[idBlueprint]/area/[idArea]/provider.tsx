@@ -1,7 +1,8 @@
 'use client'
 import { createContext, useContext, useEffect, useState } from "react";
 import {useHandlePosition, useCreateEditHook, IUseHandlePositionReturn, ICreateEditReturn} from "@repo/ui/custom-hook";
-import {EnumTypeArea, EnumTypeSection, Area, SectionsOptions} from "./area-interfaces";
+import {EnumTypeArea, EnumTypeSection, Area, SectionsOptions, RowSection, TableSection, ObjectSection, FreeSpaceSection} from "./area-interfaces";
+import { Resource } from "@repo/ui/uploadResources";
 
 export interface IAreaContext {
     IdVenue: string
@@ -18,6 +19,11 @@ export interface IAreaContext {
 
 export interface ISectionHandlers{
     SelectSectionForEdit: (s?: SectionsOptions | undefined)=>void
+    DeleteSection: (id: string)=>void
+    DeleteResource: (idSection: string, idReource: string)=>void
+    DeleteSectionItem: (idSection: string, idItem: string)=>void
+    EditCapacityFromSectionItem: (idSection: string, idItem: string, value: number)=>void
+    EditNameSectionItem:(id: string, idItem: string, newValue: string)=>void
 }
 
   
@@ -32,12 +38,11 @@ export function useAreaContext(){
   
 
 export default function Provider({children,idVenue, idBlueprint, idArea}:
-     {children: React.ReactNode, idVenue: string, idBlueprint: string, idArea: string}){
+    {children: React.ReactNode, idVenue: string, idBlueprint: string, idArea: string}){
     const CreateEditHandler = useCreateEditHook();
     const PositionHandler = useHandlePosition();
     const [secForEdit, setSecForEdit] = useState<SectionsOptions | undefined>(undefined);
-
-    const Area: Area =   {
+    const defaultArea: Area =   {
         Id: "idFirstPlace",
         Name: "Primer piso",
         Blueprint: "/venue-images/firstPlace.svg",
@@ -166,7 +171,7 @@ export default function Provider({children,idVenue, idBlueprint, idArea}:
             }
         ]
     };
-
+    const [area, setArea] = useState<Area>(defaultArea);
 
     const provider: IAreaContext = {
         IdVenue: idVenue,
@@ -174,12 +179,18 @@ export default function Provider({children,idVenue, idBlueprint, idArea}:
         IdArea: idArea,
         CreateEditHandler: CreateEditHandler,
         PositionHandler: PositionHandler,
-        Area: Area,
+        Area: area,
         IsSimple: true,
         HaveEventActive: false,
         SectionForEdit: secForEdit,
         SectionHandlers:{
-            SelectSectionForEdit: handleSelectSectionForEdit
+            SelectSectionForEdit: handleSelectSectionForEdit,
+            DeleteSection: handleDeleteSection,
+            DeleteResource: handleDeleteResource,
+            DeleteSectionItem: handleDeleteSectionItem,
+            EditCapacityFromSectionItem: handleEditCapacityFromSectionItem,
+            EditNameSectionItem: handleEditNameSectionItem
+            
         }
     };
 
@@ -195,5 +206,108 @@ export default function Provider({children,idVenue, idBlueprint, idArea}:
 
     function handleSelectSectionForEdit(s?: SectionsOptions | undefined){
         setSecForEdit(s)
+    }
+
+    function handleDeleteSection(id: string){
+        const newSections = area?.Sections.filter(s=>s.Id !== id)
+        setArea({...area, Sections: newSections})
+    }
+
+    function handleDeleteResource(idSection: string, idReource: string){
+        const newSections = area.Sections.map(s=>{
+            if(s.Id === idSection){
+                const newImages = s.Images?.filter(i=>i!== idReource)
+                return {...s, Images: newImages}
+            } else return {...s}
+        })
+        setArea({...area, Sections: newSections})
+    }
+
+    function handleDeleteSectionItem(idSection: string, idItem: string){
+        const newSections = area.Sections.map(s=>{
+            if(s.Id === idSection){
+                if(s.Type === EnumTypeSection.Row){
+                    const castSection: RowSection = s as RowSection;
+                    const newRows = castSection.Rows.filter(r=> r.Id !== idItem);
+                    return({...castSection, Rows: newRows})
+                }
+                else if(s.Type === EnumTypeSection.Table){
+                    const castSection: TableSection = s as TableSection;
+                    const newTables = castSection.Tables.filter(r=> r.Id !== idItem);
+                    return({...castSection, Tables: newTables})
+                }
+                else if(s.Type === EnumTypeSection.Object){
+                    const castSection: ObjectSection = s as ObjectSection;
+                    const newObjects = castSection.Objects.filter(r=> r.Id !== idItem);
+                    return({...castSection, Objects: newObjects})
+                }
+                else return {...s}
+            } else return {...s}
+        })
+        setArea({...area, Sections: newSections})
+
+    }
+
+    function handleEditCapacityFromSectionItem(idSection: string, idItem: string, value: number) {
+        const newSections = area.Sections.map(e => {
+            if (e.Id === idSection) {
+                if (e.Type === EnumTypeSection.Row) {
+                    const newSection = e as RowSection;
+                    const newRows = newSection.Rows.map(f => {
+                        if (f.Id === idItem) return {...f, Seat: value}
+                        else return {...f}
+                    })
+                    return {...newSection, Rows: newRows}
+                } else if (e.Type === EnumTypeSection.Table) {
+                    const newSection = e as TableSection;
+                    const newTables = newSection.Tables.map(f => {
+                        if (f.Id === idItem) return {...f, Chair: value}
+                        else return {...f}
+                    })
+                    return {...newSection, Tables: newTables}
+                } else if (e.Type === EnumTypeSection.Object) {
+                    const newSection = e as ObjectSection;
+                    const newObjects = newSection.Objects.map(f => {
+                        if (f.Id === idItem) return {...f, Capacity: value}
+                        else return {...f}
+                    })
+                    return {...newSection, Objects: newObjects}
+                } else {
+                    const newSection = e as FreeSpaceSection;
+                    return {...newSection, Capacity: value}
+                }
+            } else return {...e}
+        });
+        setArea({...area, Sections: newSections})
+    }
+
+    function handleEditNameSectionItem(id: string, idItem: string, newValue: string) {
+        const newSections = area.Sections.map(s => {
+            if (s.Id === id) {
+                if (s.Type === EnumTypeSection.Row) {
+                    const castSection = s as RowSection;
+                    const newFiles = castSection.Rows.map(f => {
+                        if (f.Id === idItem) return {...f, Row: newValue}
+                        else return {...f}
+                    });
+                    return {...castSection, Rows: newFiles}
+                } else if (s.Type === EnumTypeSection.Table) {
+                    const castSection = s as TableSection;
+                    const newFiles = castSection.Tables.map(f => {
+                        if (f.Id === idItem) return {...f, Table: newValue}
+                        else return {...f}
+                    });
+                    return {...castSection, Tables: newFiles}
+                } else {
+                    const castSection = s as ObjectSection;
+                    const newFiles = castSection.Objects.map(f => {
+                        if (f.Id === idItem) return {...f, Object: newValue}
+                        else return {...f}
+                    });
+                    return {...castSection, Objects: newFiles}
+                }
+            } else return {...s}
+        });
+        setArea({...area, Sections: newSections})
     }
 }

@@ -60,7 +60,7 @@ export const ScrollMutationContainerMobile = ({props, children}: { props: IScrol
             {children}
             { buttonSelected !== undefined &&
                 <div style={{transform: `translateY(${config.Translate}px)`}} className={style.gridButton}>
-                    <MainButton props={defaultButtonProps}/>
+                    <div className={style.contButton}><MainButton props={defaultButtonProps}/></div>
                 </div>
             }    
             {/*

@@ -8,7 +8,7 @@ import {ContainerWidthTitle, IContainerWidthTitle} from "@repo/ui/misc";
 import Chairs from "./chairs";
 import SectionContainer from "../section-containr";
 
-const defaultFileAndSeat = {
+const defaultTables = {
     Amount: 0,
     Seat: 0
 };
@@ -18,8 +18,9 @@ const names = {
 };
 
 export default function TableAndChairs({section, onOpen}: { section: TableSection, onOpen: Function }) {
-    const {HaveEventActive}= useAreaContext();
-    const [defaultFs, setDefaultFs] = useState(defaultFileAndSeat);
+    const {HaveEventActive, SectionHandlers}= useAreaContext();
+    const {DeleteSectionItem} = SectionHandlers;
+    const [defaultFs, setDefaultFs] = useState(defaultTables);
     const chairs: IInputNumber = {
         Name: names.Chairs,
         IsObligatory: true,
@@ -39,7 +40,7 @@ export default function TableAndChairs({section, onOpen}: { section: TableSectio
     const create: IMainButton = {
         Text: "Crear mesas",
         OnClick: handleCreateFiles,
-        ColorButton: EnumColorMainButton.UseBorder,
+        ColorButton: EnumColorMainButton.UseWhite,
         IsDisable: HaveEventActive,
         IsSquare: true,
         UseTiny: true
@@ -78,14 +79,17 @@ export default function TableAndChairs({section, onOpen}: { section: TableSectio
             </div>
 
             <ContainerWidthTitle props={titleChairs}>
-                {section.Tables.map(c => <Chairs 
-                OnName={handleEditNameTable} 
-                C={c} 
-                OnDelete={handleDeleteTable} 
-                IsShared={isSharedTable} 
-                OnMin={handleEditMin} 
-                OnEdit={handleEditTable} 
-                HaveEventActive={HaveEventActive}/>)}
+                {
+                section.Tables.map(c => 
+                    <Chairs 
+                    C={c} 
+                    OnName={handleEditNameSeat} 
+                    OnDelete={handleDeleteSeat} 
+                    IsShared={isSharedTable} 
+                    OnMin={handleEditMin} 
+                    OnEdit={handleEditSeat} 
+                    HaveEventActive={HaveEventActive}/>)
+                }
             </ContainerWidthTitle>
         </SectionContainer>   
     )
@@ -96,16 +100,17 @@ export default function TableAndChairs({section, onOpen}: { section: TableSectio
     function handleCreateFiles() {
     }
 
-    function handleDeleteTable(file: string) {
+    function handleDeleteSeat(seat: string) {
+        DeleteSectionItem(section.Id, seat)       
     }
 
-    function handleEditTable(file: string, capacity: number) {
+    function handleEditSeat(file: string, capacity: number) {
     }
 
     function handleEditMin(file: string, min: number) {
     }
 
-    function handleEditNameTable(file: string, newName: string) {
+    function handleEditNameSeat(file: string, newName: string) {
     }
 
     function handleEditShared() {

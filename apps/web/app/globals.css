@@ -11,11 +11,13 @@
   --colorBoxShadow: #cdcdcd;
   --colorBoxShadowSelected: #adacac;
   --defaultBoxShadow: 0 .1rem .3rem var(--colorBoxShadow);
+  --defaultBoxShadow: 0 0 .3rem var(--colorBoxShadow);
   --defaultBoxShadowSelected: 0 .1rem .4rem var(--colorBoxShadowSelected);
   --defaultTransition: .3s;
   --colorForBoxShadow: #f5f5f5;
   --borderForBoxShadow: .1rem solid var(--colorForBoxShadow);
   --boxShadowSelectedOrange: 0 0 .2rem #f38304, 0 0 .3rem #f38304, 0 0 .4rem #f38304;
+  --borderForBoxShadowSelectedOrange: .1rem solid #ff88004b;
 
   --colorMiddleSpix: #2e8dec;
   --colorDarkSpix: #1D9BF0;
