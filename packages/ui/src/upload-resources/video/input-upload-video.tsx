@@ -5,6 +5,7 @@ import Image from "next/image";
 import { STRING_EMPTY } from "../../const";
 import {CLOSE_ICON_GRAY, YOUTUBE_ICON } from "../../icons";
 import { IUploadResources, Resource } from "../index";
+import { ulid } from "ulid";
 
 
 export default function InputUploadVideo({item}: { item: IUploadResources }) {
@@ -64,7 +65,7 @@ export default function InputUploadVideo({item}: { item: IUploadResources }) {
     function handleAccept(link: string) {
         if (link !== STRING_EMPTY){
             const newResource: Resource = {
-                Id: "randomId",
+                Id: ulid(),
                 Source: link,
                 Type: item.Type
             }

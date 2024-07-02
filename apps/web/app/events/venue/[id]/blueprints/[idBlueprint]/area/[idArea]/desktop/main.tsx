@@ -17,7 +17,7 @@ export default function Main(){
     const headerProps: IHeaderDesktop = {
         Title: "Edicion de area",
         OnClose: ()=>{},
-        LinkToReturn: `/events/venue/${IdVenue}/blueprints${IdBlueprint}`,
+        LinkToReturn: `/events/venue/${IdVenue}/blueprints/${IdBlueprint}`,
         Description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
         Button: {
         OnClick: () => {},

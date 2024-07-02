@@ -19,7 +19,7 @@ const names = {
 
 export default function Rows({section}: { section: RowSection}) {
     const {HaveEventActive, SectionHandlers} = useAreaContext();
-    const {DeleteSectionItem, EditCapacityFromSectionItem, EditNameSectionItem} = SectionHandlers;
+    const {DeleteSectionItem, EditCapacityFromSectionItem, EditNameSectionItem, HandleAddNewItemToSection} = SectionHandlers;
     const [defaultFs, setDefaultFs] = useState(defaultFileAndSeat);
     const seats: IInputNumber = {
         Name: names.Seats,
@@ -38,7 +38,7 @@ export default function Rows({section}: { section: RowSection}) {
     const create: IMainButton = {
         Text: "Crear filas",
         OnClick: handleCreateFiles,
-        IsDisable: HaveEventActive,
+        IsDisable: defaultFs.Amount === 0 || defaultFs.Seat === 0,
         UseTiny: true,
         IsSquare: true,
         ColorButton: EnumColorMainButton.UseWhite
@@ -86,17 +86,18 @@ export default function Rows({section}: { section: RowSection}) {
 
     function handleCreateFiles() {
         const initialIf = section.Rows.length + 1;
-        let files = section.Rows;
+        let rows = section.Rows;
         for (let i = initialIf; i < (initialIf + defaultFs.Amount); i++) {
             const newFile: RowItem = {
                 SeatsDisable: [],
                 Row: `Fila ${i}`,
-                Id: `${i}`,
+                Id: `Fila ${i}`,
                 Seat: defaultFs.Seat
             }
-            files = [...files, newFile]
+            rows = [...rows, newFile]
         }
-        const newSection = {...section, Files: files}
+        const newSection = {...section, Rows: rows}
+        HandleAddNewItemToSection(newSection)
         setDefaultFs(defaultFileAndSeat)
     }
 

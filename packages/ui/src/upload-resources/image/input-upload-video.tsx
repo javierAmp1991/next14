@@ -5,6 +5,7 @@ import Image from "next/image";
 import {PLACEHOLDER_UPLOAD_IMAGE, CLOSE_ICON_GRAY} from "../../icons";
 import {STRING_EMPTY} from "../../const";
 import {IUploadResources, Resource} from "../index";
+import {ulid} from "ulid";
 
 export default function InputUploadImage({item}: { item: IUploadResources }) {
     const [state, setState] = useState(false);
@@ -70,12 +71,11 @@ export default function InputUploadImage({item}: { item: IUploadResources }) {
             //@ts-ignore
             const url = URL.createObjectURL(file);
             const newResource: Resource = {
-                Id: "randomId",
+                Id: ulid(),
                 Source: url,
                 Type: item.Type
             }
             item.OnChange(newResource)
         }
     }
-
 }

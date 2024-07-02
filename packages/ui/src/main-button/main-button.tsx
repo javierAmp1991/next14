@@ -36,8 +36,7 @@ export const MainButton = ({props}:{props: IMainButton})=>{
 
     )
     function getColorButton(){
-        if (props.IsDisable) return style.disable
-        else if(props.ColorButton === EnumColorMainButton.UseBlue) return style.blue
+        if(props.ColorButton === EnumColorMainButton.UseBlue) return style.blue
         else if (props.ColorButton === EnumColorMainButton.UseBorder) return style.border
         else if (props.ColorButton === EnumColorMainButton.UseWhite) return style.white
         else return ""
@@ -48,7 +47,6 @@ export const MainButton = ({props}:{props: IMainButton})=>{
     }
 
     function getStyles(){
-        if(props.IsDisable) return style.disable
-        else return `${props.IsSquare && style.square} ${props.UseTiny && style.tiny}`
+        return `${props.IsSquare && style.square} ${props.UseTiny && style.tiny} ${props.IsDisable && style.disable}`
     }
 }

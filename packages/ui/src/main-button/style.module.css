@@ -45,9 +45,9 @@
 }
 
 .disable {
-    background: gray;
-    color: black;
-    border: .1rem solid gray;
+    background: rgb(237, 237, 237);
+    color: rgb(155, 155, 155);
+    border: var(--defaultOutsideLine);
     cursor: not-allowed;
 }
 

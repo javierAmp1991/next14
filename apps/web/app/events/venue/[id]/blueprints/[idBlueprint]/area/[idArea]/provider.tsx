@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import {useHandlePosition, useCreateEditHook, IUseHandlePositionReturn, ICreateEditReturn} from "@repo/ui/custom-hook";
 import {EnumTypeArea, EnumTypeSection, Area, SectionsOptions, RowSection, TableSection, ObjectSection, FreeSpaceSection} from "./area-interfaces";
 import { Resource } from "@repo/ui/uploadResources";
+import {InputTextChangeEvent} from "@repo/ui/customInputs";
 
 export interface IAreaContext {
     IdVenue: string
@@ -15,15 +16,28 @@ export interface IAreaContext {
     HaveEventActive: boolean
     SectionForEdit: SectionsOptions | undefined
     SectionHandlers: ISectionHandlers
+    AreaHandlers: IAreaHandlers
 }
 
 export interface ISectionHandlers{
     SelectSectionForEdit: (s?: SectionsOptions | undefined)=>void
     DeleteSection: (id: string)=>void
     DeleteResource: (idSection: string, idReource: string)=>void
+    AddResource: (idSection: string, resource: Resource)=>void
     DeleteSectionItem: (idSection: string, idItem: string)=>void
     EditCapacityFromSectionItem: (idSection: string, idItem: string, value: number)=>void
     EditNameSectionItem:(id: string, idItem: string, newValue: string)=>void
+    HandleAddNewItemToSection: (section: SectionsOptions)=>void
+    EditSection: (section: SectionsOptions)=>void
+    AddSection: (section: SectionsOptions)=>void
+}
+
+export interface IAreaHandlers{
+    EditName: (e: InputTextChangeEvent) =>void
+    AddResource: (r: Resource)=>void
+    DeleteResource: (id: string)=>void
+    AddLayout: (r: Resource)=>void
+    DeleteLayout: ()=>void
 }
 
   
@@ -41,7 +55,6 @@ export default function Provider({children,idVenue, idBlueprint, idArea}:
     {children: React.ReactNode, idVenue: string, idBlueprint: string, idArea: string}){
     const CreateEditHandler = useCreateEditHook();
     const PositionHandler = useHandlePosition();
-    const [secForEdit, setSecForEdit] = useState<SectionsOptions | undefined>(undefined);
     const defaultArea: Area =   {
         Id: "idFirstPlace",
         Name: "Primer piso",
@@ -55,14 +68,14 @@ export default function Provider({children,idVenue, idBlueprint, idArea}:
                 Color: "#af599e",
                 Rows: [
                     {
-                        Id: `1`,
-                        Row: `1`,
+                        Id: `Fila 1`,
+                        Row: `Fila 1`,
                         Seat: 7,
                         SeatsDisable: []
                     },
                     {
-                        Id: `2`,
-                        Row: `2`,
+                        Id: `Fila 2`,
+                        Row: `Fila 2`,
                         Seat: 7,
                         SeatsDisable: []
                     },
@@ -76,14 +89,14 @@ export default function Provider({children,idVenue, idBlueprint, idArea}:
                 Color: "#af599e",
                 Rows: [
                     {
-                        Id: `1`,
-                        Row: `1`,
+                        Id: `Fila 1`,
+                        Row: `Fila 1`,
                         Seat: 7,
                         SeatsDisable: []
                     },
                     {
-                        Id: `2`,
-                        Row: `2`,
+                        Id: `Fila 2`,
+                        Row: `Fila 2`,
                         Seat: 7,
                         SeatsDisable: []
                     },
@@ -97,33 +110,33 @@ export default function Provider({children,idVenue, idBlueprint, idArea}:
                 IsShared: false,
                 Tables: [
                     {
-                        Id: `1`,
-                        Table: `1`,
+                        Id: `Mesa 1`,
+                        Table: `Mesa 1`,
                         Chair: 4,
                     },
                     {
-                        Id: `2`,
-                        Table: `2`,
+                        Id: `Mesa 2`,
+                        Table: `Mesa 2`,
                         Chair: 4,
                     },
                     {
-                        Id: `3`,
-                        Table: `3`,
+                        Id: `Mesa 3`,
+                        Table: `Mesa 3`,
                         Chair: 4,
                     },
                     {
-                        Id: `4`,
-                        Table: `4`,
+                        Id: `Mesa 4`,
+                        Table: `Mesa 4`,
                         Chair: 4,
                     },
                     {
-                        Id: `5`,
-                        Table: `5`,
+                        Id: `Mesa 5`,
+                        Table: `Mesa 5`,
                         Chair: 4,
                     },
                     {
-                        Id: `6`,
-                        Table: `6`,
+                        Id: `Mesa 6`,
+                        Table: `Mesa 6`,
                         Chair: 4,
                     }
                 ],
@@ -169,9 +182,11 @@ export default function Provider({children,idVenue, idBlueprint, idArea}:
                 Color: "#f37600",
                 Capacity: 10
             }
-        ]
+        ],
+        Resources: []
     };
     const [area, setArea] = useState<Area>(defaultArea);
+    const [secForEdit, setSecForEdit] = useState<SectionsOptions | undefined>(undefined);
 
     const provider: IAreaContext = {
         IdVenue: idVenue,
@@ -183,19 +198,28 @@ export default function Provider({children,idVenue, idBlueprint, idArea}:
         IsSimple: true,
         HaveEventActive: false,
         SectionForEdit: secForEdit,
+        AreaHandlers:{
+            EditName: handleEditNameArea,
+            AddResource: handleAddAreaResource,
+            DeleteResource: handleDeleteAreaResource,
+            AddLayout: handleAddLayout,
+            DeleteLayout: handleDeleteLayout
+        },
         SectionHandlers:{
             SelectSectionForEdit: handleSelectSectionForEdit,
             DeleteSection: handleDeleteSection,
             DeleteResource: handleDeleteResource,
             DeleteSectionItem: handleDeleteSectionItem,
             EditCapacityFromSectionItem: handleEditCapacityFromSectionItem,
-            EditNameSectionItem: handleEditNameSectionItem
-            
+            EditNameSectionItem: handleEditNameSectionItem,
+            HandleAddNewItemToSection: handleAddNewItemToSections,
+            AddResource: handleAddResource,
+            EditSection: handleEditSection,
+            AddSection: handleAddNewSection
         }
     };
 
     useEffect(()=>{
-
     }, [idArea, idBlueprint, idVenue])
 
     return(
@@ -204,12 +228,34 @@ export default function Provider({children,idVenue, idBlueprint, idArea}:
         </AreaContext.Provider>
     )
 
+    function handleEditNameArea(e: InputTextChangeEvent){
+        setArea({...area, Name: e.Event.target.value})
+    }
+
+    function handleAddLayout(r: Resource){
+        setArea({...area, Blueprint: r.Source})
+    }
+
+    function handleDeleteLayout(){
+        setArea({...area, Blueprint: ""})
+    }
+
+    function handleAddAreaResource(r: Resource){
+        const newResources = [...area.Resources, r];
+        setArea({...area, Resources: newResources})
+    }
+
+    function handleDeleteAreaResource(id: string){
+        const newResources = area.Resources.filter(r=>r.Id !== id);
+        setArea({...area, Resources: newResources})
+    }
+
     function handleSelectSectionForEdit(s?: SectionsOptions | undefined){
         setSecForEdit(s)
     }
 
     function handleDeleteSection(id: string){
-        const newSections = area?.Sections.filter(s=>s.Id !== id)
+        const newSections = area.Sections.filter(s=>s.Id !== id)
         setArea({...area, Sections: newSections})
     }
 
@@ -218,6 +264,18 @@ export default function Provider({children,idVenue, idBlueprint, idArea}:
             if(s.Id === idSection){
                 const newImages = s.Images?.filter(i=>i!== idReource)
                 return {...s, Images: newImages}
+            } else return {...s}
+        })
+        setArea({...area, Sections: newSections})
+    }
+
+    function handleAddResource(idSection: string, resource: Resource){
+        const newSections = area.Sections.map(s=>{
+            if(s.Id === idSection){
+                if(s.Images){
+                    const newImages = [...s.Images, resource.Source];
+                    return {...s, Images: newImages}
+                } else return {...s, Images: [resource.Source]}
             } else return {...s}
         })
         setArea({...area, Sections: newSections})
@@ -308,6 +366,23 @@ export default function Provider({children,idVenue, idBlueprint, idArea}:
                 }
             } else return {...s}
         });
+        setArea({...area, Sections: newSections})
+    }
+
+    function handleAddNewItemToSections(section: SectionsOptions) {
+        const newSections = area.Sections.map(s => {return s.Id === section.Id ? {...section} : {...s}});
+        setArea({...area, Sections: newSections})
+    }
+
+    function handleEditSection(section: SectionsOptions){
+        const newSections = area.Sections.map(s=>{return s.Id === section.Id ? {...section} : {...s}});
+        setArea({...area, Sections: newSections})
+        setSecForEdit(undefined)
+        
+    }
+
+    function handleAddNewSection(section: SectionsOptions){
+        const newSections = [...area.Sections, section];
         setArea({...area, Sections: newSections})
     }
 }

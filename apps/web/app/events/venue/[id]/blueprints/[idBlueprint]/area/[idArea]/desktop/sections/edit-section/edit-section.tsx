@@ -1,8 +1,8 @@
 import style from "./create-section.module.css";
 import {useState} from "react";
 import {useAreaContext} from "../../../provider";
-import {EnumTypeArea, SectionBase} from "../../../area-interfaces";
-import {InputText, IInputText, EnumStyleCustomInput} from "@repo/ui/customInputs";
+import {EnumTypeArea, EnumTypeSection, FreeSpaceSection, ObjectSection, RowSection, SectionBase, TableSection} from "../../../area-interfaces";
+import {InputText, IInputText, EnumStyleCustomInput, InputTextChangeEvent} from "@repo/ui/customInputs";
 import {ContainerWidthTitle, ColorPicker, IColorPicker, ImageComponent, EnumSizeImageComponent} from "@repo/ui/misc";
 import {MainButton, IMainButton, EnumColorMainButton} from "@repo/ui/mainButton";
 import {GetNameAndIconTypeSection} from "../../../get-name-section";
@@ -11,9 +11,9 @@ const defaultColor = "#2394d7";
 
 export default function EditSection() {
     const {Area, SectionForEdit, SectionHandlers} = useAreaContext();
+    const {SelectSectionForEdit, EditSection } = SectionHandlers;
     const initial = SectionForEdit as SectionBase
     const [section, setSection] = useState<SectionBase>(initial);
-    const [newColor, setNewColor] = useState(defaultColor);
     const inputName: IInputText = {
         Name: "",
         IsObligatory: true,
@@ -23,9 +23,10 @@ export default function EditSection() {
         StyleInput: EnumStyleCustomInput.NoLine
     };
     const button: IMainButton = {
-        OnClick: handleCreate,
+        OnClick: handleEditSection,
         Text: "Crear seccion",
-        UseTiny: true
+        UseTiny: true,
+        IsDisable: section.Name === "" || section.Color === ""
     };
     const buttonCancel: IMainButton = {
         OnClick: handleCancelEdit,
@@ -34,7 +35,7 @@ export default function EditSection() {
         UseTiny: true
     };
     const colorPicker: IColorPicker = {
-        Color: newColor,
+        Color: section.Color,
         HandleColor: handleColor
     };
     const {Icon, Name} = GetNameAndIconTypeSection(section.Type);
@@ -60,23 +61,22 @@ export default function EditSection() {
         </div>
     )
 
-    function handleName(e: any) {
-        setSection({...section, Name: e.target.value})
+    function handleEditSection(){
+        if(section.Type === EnumTypeSection.Row ) EditSection(section as RowSection)
+        else if(section.Type === EnumTypeSection.Table ) EditSection(section as TableSection)
+        else if(section.Type === EnumTypeSection.Object ) EditSection(section as ObjectSection)
+        else if(section.Type === EnumTypeSection.FreeSpace ) EditSection(section as FreeSpaceSection)
     }
 
-    function handleCreate() {
-    }
-    
-
-    function HandleCreateSection(e: any){
-
+    function handleName(e:InputTextChangeEvent ) {
+        setSection({...section, Name: e.Event.target.value})
     }
 
     function handleColor(newColor: string){
-        setNewColor(newColor)
+        setSection({...section, Color: newColor})
     }
 
     function handleCancelEdit(){
-        SectionHandlers.SelectSectionForEdit()
+        SelectSectionForEdit()
     }
 };

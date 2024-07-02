@@ -1,21 +1,21 @@
 import style from "./create-section.module.css";
 import {useState} from "react";
 import {useAreaContext} from "../../../provider";
-import {EnumTypeArea, RowSection, TableSection, FreeSpaceSection, ObjectSection, EnumTypeSection} from "../../../area-interfaces";
+import {EnumTypeArea, RowSection, TableSection, FreeSpaceSection, ObjectSection, EnumTypeSection, SectionsOptions} from "../../../area-interfaces";
 import {STRING_EMPTY} from "@repo/ui/const";
 import {ROW_SECTION, TABLE_SECTION, FREE_SPACE_SECTION, OBJECT_SECTION} from "@repo/ui/localIcons";
-import {InputText, IInputText, InputSelect, IInputSelect, IInputSelectOptions, EnumStyleCustomInput} from "@repo/ui/customInputs";
+import {InputText, IInputText, InputSelect, IInputSelect, IInputSelectOptions, EnumStyleCustomInput, InputTextChangeEvent} from "@repo/ui/customInputs";
 import {ContainerWidthTitle, ColorPicker, IColorPicker} from "@repo/ui/misc";
 import {MainButton, IMainButton} from "@repo/ui/mainButton";
 
-const defaultSection = {
+const defaultSection: RowSection = {
     Name: STRING_EMPTY,
     Type: EnumTypeSection.Row,
     Id: "idDefault",
-    Atributes: [],
-    Images: []
+    Images: [],
+    Color: "#2394d7",
+    Rows: []
 };
-const defaultColor = "#2394d7";
 const ids = {
     FS: "id001",
     MS: "id003",
@@ -50,10 +50,11 @@ const defaultOptions: IInputSelectOptions[] = [
 ];
 
 export default function CreateSection() {
-    const {Area} = useAreaContext();
-    const [section, setSection] = useState(defaultSection);
-    const [newColor, setNewColor] = useState(defaultColor);
+    const {Area, SectionHandlers} = useAreaContext();
+    const {AddSection} = SectionHandlers;
+    const [section, setSection] = useState<SectionsOptions>(defaultSection);
     const [options, setOptions] = useState<IInputSelectOptions[]>(defaultOptions);
+    const findOption = options.find(e => e.State);
     const inputName: IInputText = {
         Name: "",
         IsObligatory: true,
@@ -65,7 +66,8 @@ export default function CreateSection() {
     const button: IMainButton = {
         OnClick: handleCreate,
         Text: "Crear seccion",
-        UseTiny: true
+        UseTiny: true,
+        IsDisable: findOption === undefined || section.Name === ""
     };
     const select: IInputSelect = {
         Name: "Tipo de seccion",
@@ -74,7 +76,7 @@ export default function CreateSection() {
         Style: style.select
     };
     const colorPicker: IColorPicker = {
-        Color: newColor,
+        Color: section.Color,
         HandleColor: handleColor
     };
 
@@ -95,8 +97,8 @@ export default function CreateSection() {
         </div>
     )
 
-    function handleName(e: any) {
-        setSection({...section, Name: e.target.value})
+    function handleName(e: InputTextChangeEvent) {
+        setSection({...section, Name: e.Event.target.value})
     }
 
     function handleSelect(id: string) {
@@ -114,70 +116,54 @@ export default function CreateSection() {
     }
 
     function handleCreate() {
-        const findOption = options.find(e => e.State);
         if (findOption) {
             if (findOption.Id === ids.FS) {
                 const newSection: RowSection = {
                     Id: section.Name,
                     Name: section.Name,
                     Type: EnumTypeSection.Row,
-                    Color: newColor,
+                    Color: section.Color,
                     Rows: [],
                     Images: section.Images
-                }
-                HandleCreateSection(newSection)
+                };
+                AddSection(newSection)
             } else if (findOption.Id === ids.MS) {
                 const newSection: TableSection = {
                     Id: section.Name,
                     Name: section.Name,
                     Type: EnumTypeSection.Table,
-                    Color: newColor,
+                    Color: section.Color,
                     Tables: [],
                     Images: section.Images
-                }
-                HandleCreateSection(newSection)
+                };
+                AddSection(newSection)
             } else if (findOption.Id === ids.O) {
                 const newSection: ObjectSection = {
                     Id: section.Name,
                     Name: section.Name,
                     Type: EnumTypeSection.Object,
-                    Color: newColor,
+                    Color: section.Color,
                     Objects: [],
                     Images: section.Images
-                }
-                HandleCreateSection(newSection)
+                };
+                AddSection(newSection)
             } else {
                 const newSection: FreeSpaceSection = {
                     Id: section.Name,
                     Name: section.Name,
                     Type: EnumTypeSection.FreeSpace,
-                    Color: newColor,
+                    Color: section.Color,
                     Capacity: 0,
                     Images: section.Images
-                }
-                HandleCreateSection(newSection)
+                };
+                AddSection(newSection)
             }
             setSection(defaultSection)
             setOptions(defaultOptions)
-            setNewColor(defaultColor)
         }
     }
 
-    function handleUploadResource(url: string) {
-        // @ts-ignore
-        setSection({...section, Images: [...section.Images, url]})
-    }
-
-    function handleDeleteImage(link: string) {
-        const newLinks = section.Images.filter(e => e !== link)
-        setSection({...section, Images: newLinks})
-    }
-
-    function HandleCreateSection(e: any){
-
-    }
-
     function handleColor(newColor: string){
-        setNewColor(newColor)
+        setSection({...section, Color: newColor})
     }
 };

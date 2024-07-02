@@ -1,3 +1,5 @@
+import { Resource } from "@repo/ui/uploadResources"
+
 export enum EnumTypeSection {
     Row, Table, FreeSpace, Object
 }
@@ -14,6 +16,7 @@ export interface Area{
     Blueprint: string
     Type: EnumTypeArea
     Sections : SectionsOptions[]
+    Resources: Resource[]
 }
 
 export interface SectionBase {

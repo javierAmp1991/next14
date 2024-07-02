@@ -3,19 +3,19 @@ import {InputNumber, InputText, IInputNumber, IInputText, InputTextChangeEvent, 
 import {TRASH_ICON} from "@repo/ui/localIcons";
 import {ImageComponent, IImageComponent, EnumSizeImageComponent} from "@repo/ui/misc";
 import {ObjectItem} from "../../../area-interfaces";
-import {ChangeEvent} from "react";
+
 
 export default function Objects({f, onDelete, onEdit, onMin, onName, haveEventActive, isShared}: {
     f: ObjectItem, onDelete: (file: string) => void,    onEdit: (file: string, capacity: number) => void,
     onName: (file: string, newName: string)=>void, haveEventActive: boolean, onMin: (file: string, min: number) => void,
     isShared: boolean
 }) {
-    const seat: IInputNumber = {
+    const capacity: IInputNumber = {
         Name: "",
         Placeholder: "Sillas para la mesa",
         Value: `${f.Capacity}`,
         IsObligatory: true,
-        OnChange: handleEdit,
+        OnChange: handleCapacity,
         Style: css.input,
         IsDisable: haveEventActive,
         StyleInput: EnumStyleCustomInput.NoLine
@@ -53,7 +53,7 @@ export default function Objects({f, onDelete, onEdit, onMin, onName, haveEventAc
             </div>
             <div className={css.gridInput}>
                 Capacidad:
-                <InputNumber props={seat}/>
+                <InputNumber props={capacity}/>
             </div>
             {
                 !isShared &&
@@ -69,14 +69,17 @@ export default function Objects({f, onDelete, onEdit, onMin, onName, haveEventAc
     )
 
     function handleDeleteFile() {
+        onDelete(f.Id)
     }
 
-    function handleEdit(e: InputTextChangeEvent) {
+    function handleCapacity(e: InputTextChangeEvent) {
+        onEdit(f.Id, e.Event.target.valueAsNumber)
     }
 
     function handleMin(e: InputTextChangeEvent) {
     }
 
     function handleEditName(e: InputTextChangeEvent) {
+        onName(f.Id, e.Event.target.value)
     }
 }

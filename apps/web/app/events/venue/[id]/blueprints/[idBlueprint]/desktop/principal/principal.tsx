@@ -2,9 +2,12 @@ import { MutationContainerShort, IMutationContainerShort, EnumMutationContainerS
 import {ContainerWidthTitle, IContainerWidthTitle} from "@repo/ui/misc";
 import {IInputText, InputText} from "@repo/ui/customInputs";
 import {INPUT_CREATE_BLUPRINT} from "../../const";
-import Areas from "./areas/areas";
+import { GridDefaultCardMobile, GridDefaultCard } from "@repo/ui/defaultCard";
+import { useBlueprintContext} from "../../provider";
+import Area from "./areas/area";
 
 export default function Principal(){
+    const {IdBlueprint, IdVenue} = useBlueprintContext();
     const mutationShortProps: IMutationContainerShort = {
         Type: EnumMutationContainerShort.Small
     };
@@ -20,12 +23,28 @@ export default function Principal(){
     const contTitle: IContainerWidthTitle = {
         Title: "Areas del plano",
         DontUseSpace: true
-    }
+    };
+    const AllAreas = [
+        {
+          Name: "Name 1",
+          Image: "/venue-images/firstPlace.svg",
+          Sections: 4,
+          Id: "id001"
+        },
+        {
+          Name: "Name 2",
+          Image: "/venue-images/sausalito4.jpg",
+          Sections: 3,
+          Id: "id002"
+        }
+    ]
     return(
         <MutationContainerShort props={mutationShortProps}>
             <InputText props={inputName}/>
             <ContainerWidthTitle props={contTitle}>
-               <Areas/>
+            <GridDefaultCardMobile>
+                {AllAreas.map((e) => (<Area e={e} idBlueprint={IdBlueprint} idVenue={IdVenue} />))}
+            </GridDefaultCardMobile>
             </ContainerWidthTitle>
         </MutationContainerShort>
     )

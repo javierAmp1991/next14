@@ -4,19 +4,22 @@ import {CinemaDesktop, UseCinemaHook} from "@repo/ui/cinemaMode";
 import {UploadResources, IUploadResources, EnumTypeResource} from "@repo/ui/uploadResources";
 import {EnumMutationContainerGrid, MutationContainerGrid} from "@repo/ui/mutationContainers";
 import {IResourceTabContainer, ResourceTabContainer} from "@repo/ui/resourceTabContainer";
+import {ImageDeleteView} from "@repo/ui/misc";
+import {AREA_CONST} from "../../../const";
 
 export default function Images() {
-    const {} = useAreaContext();
-    const totalArray = 4 - 0;
+    const {Area, AreaHandlers} = useAreaContext();
+    const {DeleteResource, AddResource} = AreaHandlers;
+    const totalResource = Area.Resources.length;
+    const totalArray = 4 - totalResource;
     const {CinemaProps, CinemaState, HandleCloseCinema, HandleShowCinema} = UseCinemaHook("");
     const upload: IUploadResources = {
-        Name: "",
-        Link: "",
-        Type: EnumTypeResource.Image,
-        OnChange: ()=>{},
-        Id: "",
-        OnDelete: () => {
-        },
+        Id: AREA_CONST.Resources.Resource.Id,
+        Name: AREA_CONST.Resources.Resource.Name,
+        Link: AREA_CONST.Resources.Resource.Link,
+        Type: AREA_CONST.Resources.Resource.Type,
+        OnChange: AddResource,
+        OnDelete: () => {},
         IsAvailable: true
     };
     const resourceTab: IResourceTabContainer = {
@@ -25,10 +28,10 @@ export default function Images() {
                 State: true,
                 Id: "",
                 Type: EnumTypeResource.Image,
-                Text: "Imagenes de referencia"
+                Text: AREA_CONST.Resources.Tab.Title
             }
         ],
-        TotalResource: `0/4`,
+        TotalResource: `${totalResource}${AREA_CONST.Resources.Tab.Complement}`,
         OnChange: () => {
         }
     };
@@ -37,6 +40,7 @@ export default function Images() {
             <MutationContainerGrid props={{UseDefaultPadding: true, Grid: EnumMutationContainerGrid.Rules}}>
                 <ResourceTabContainer props={resourceTab}>
                     <div className={style.main}>
+                        {Area.Resources.map(s => <ImageDeleteView Link={s.Source} OnDelete={DeleteResource} OnClick={onClickImage} Id={s.Id}/>)}
                         {[...Array(totalArray)].map(e => <UploadResources props={upload}/>)}
                     </div>
                 </ResourceTabContainer>
@@ -46,13 +50,8 @@ export default function Images() {
             {CinemaState && <CinemaDesktop item={CinemaProps} onClose={HandleCloseCinema}/>}
         </>
     )
-
-    function handleChange(link: string) {
-    }
-
-    function handleDelete(link: string) {
-    }
-
-    function handleClick(id: string) {
+    
+    function onClickImage(id: string){
+        HandleShowCinema(Area.Resources, id)
     }
 }

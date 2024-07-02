@@ -1,49 +1,50 @@
 import style from "./style.module.css";
 import {useAreaContext} from "../../provider";
-import {ChangeEvent, MouseEvent} from "react";
 import {CinemaDesktop, UseCinemaHook} from "@repo/ui/cinemaMode";
-import {UploadResources, IUploadResources, EnumTypeResource} from "@repo/ui/uploadResources";
-import {IPopUpContainer} from "@repo/ui/popUpContainer";
+import {UploadResources, IUploadResources, Resource, EnumTypeResource} from "@repo/ui/uploadResources";
 import {IInputText, InputText} from "@repo/ui/customInputs";
-import {MutationContainerShort} from "@repo/ui/mutationContainers";
+import {EnumMutationContainerShort, MutationContainerShort} from "@repo/ui/mutationContainers";
 import {ContainerWidthTitle, IContainerWidthTitle} from "@repo/ui/misc";
+import {AREA_CONST} from "../../../const";
 
 
 export default function Principal() {
-    const {} = useAreaContext();
+    const {Area, AreaHandlers} = useAreaContext();
+    const {EditName, AddLayout, DeleteLayout} = AreaHandlers;
     const inputName: IInputText = {
-        Name: "",
-        Placeholder: "Ingrese el nombre del area",
-        Value: "",
-        TitleInput: "Nombre del area",
-        OnChange: ()=>{},
-        IsObligatory: true
+        Name: AREA_CONST.Main.Input.Name,
+        Placeholder: AREA_CONST.Main.Input.Placeholder,
+        Value: Area.Name,
+        TitleInput: AREA_CONST.Main.Input.Title,
+        OnChange: EditName,
+        IsObligatory: AREA_CONST.Main.Input.IsObligatory
     };
     const inputImage: IUploadResources = {
-        Name: "",
-        Id: "",
-        Link: "",
-        OnChange: ()=>{},
-        Type: EnumTypeResource.Image,
-        OnClick: () => {
-        },
+        Name: AREA_CONST.Main.Resource.Name,
+        Id: AREA_CONST.Main.Resource.Id,
+        Link: Area.Blueprint,
+        Type: AREA_CONST.Main.Resource.Type,
+        OnChange: AddLayout,
+        OnClick: handleShowCinema,
         IsAvailable: true,
-        OnDelete: ()=>{}
+        OnDelete: DeleteLayout
     };
-    const popup: IPopUpContainer = {
-        Close: handleClosePopUp,
-        UseTransparent: true,
-        IsButton: false,
-        DontUseBlackScreen: true
+    const {CinemaState, CinemaProps, HandleShowCinema, HandleCloseCinema} = UseCinemaHook(AREA_CONST.Main.Resource.TitleCinema);
+    const titleBlueprint: IContainerWidthTitle = {
+        Title: AREA_CONST.Main.Layout.Title,
+        Subtitle: AREA_CONST.Main.Layout.Subtitle,
+        DontUseSpace: true,
+        IsObligatory: true
     };
-    const {CinemaState, CinemaProps, HandleShowCinema, HandleCloseCinema} = UseCinemaHook("");
 
     return (
-        <MutationContainerShort props={{}}>
+        <MutationContainerShort props={{Type: EnumMutationContainerShort.Small}}>
             <InputText props={inputName}/>
 
-            <ContainerWidthTitle props={{Title: "Plano"}}>
-                <UploadResources props={inputImage}/>
+            <ContainerWidthTitle props={titleBlueprint}>
+                <div className={style.contResource}>
+                    <UploadResources props={inputImage}/>
+                </div>
             </ContainerWidthTitle>
 
 
@@ -52,27 +53,12 @@ export default function Principal() {
         </MutationContainerShort>
     )
 
-    function handleDeleteAlt(link: string) {
-    }
-
-    function handleClick(id: string) {
-    }
-
-    function handleOpenRules(e: MouseEvent) {
-    }
-
-    function handleClose() {
-    }
-
-    function handleAddImage(link: string) {
-    }
-
-    function handleClosePopUp() {
-    }
-
-    function handleDelete() {
-    }
-
-    function handleName(e: ChangeEvent<HTMLInputElement>) {
+    function handleShowCinema(){
+        const newResource: Resource = {
+            Id: "",
+            Source: Area.Blueprint,
+            Type: EnumTypeResource.Image
+        }
+        HandleShowCinema([newResource])
     }
 }
