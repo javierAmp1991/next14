@@ -1,5 +1,4 @@
-export const PLACEHOLDER_UPLOAD_IMAGE: string =
-  "/icons/placeholderImageUpload.png";
+export const PLACEHOLDER_UPLOAD_IMAGE: string = "/icons/placeholderImageUpload.png";
 export const CLOSE_ICON_GRAY: string = "/icons/closePopUpIcon.png";
 export const YOUTUBE_ICON: string = "/icons/youtubeIcon.png";
 export const CHECK_ICON_GREEN: string = "/icons/checkIconGreen.png";
@@ -20,4 +19,5 @@ export const ROW_SECTION: string = "/icons/enumerateIcon.png";
 export const TABLE_SECTION: string = "/icons/tableIcon.png";
 export const FREE_SPACE_SECTION: string = "/icons/freeIcon.png";
 export const OBJECT_SECTION: string = "/icons/advancedIcon.png";
+export const PLUS_ICON_ORANGE: string = "/icons/plusIconOrange.png";
 
