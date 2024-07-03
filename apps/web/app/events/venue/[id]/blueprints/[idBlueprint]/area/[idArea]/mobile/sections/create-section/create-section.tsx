@@ -21,7 +21,7 @@ const ids = {
     MS: "id003",
     EL: "id002",
     O: "id004"
-}
+};
 const defaultOptions: IInputSelectOptions[] = [
     {
         Id: ids.FS,
