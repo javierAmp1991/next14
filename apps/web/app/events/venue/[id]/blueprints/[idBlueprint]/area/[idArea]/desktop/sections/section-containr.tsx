@@ -12,7 +12,7 @@ import {GetNameAndIconTypeSection} from "../../get-name-section";
 
 
 export default function SectionContainer({children, section}:{children: React.ReactNode, section:SectionsOptions}){
-    const {Area, HaveEventActive, IsSimple, SectionHandlers, SectionForEdit} = useAreaContext();
+    const {Area, SectionHandlers, SectionForEdit} = useAreaContext();
     const {Name, Type, Color, Images} = section;
     const {DeleteSection, SelectSectionForEdit, DeleteResource, AddResource} = SectionHandlers;
     const {State, HandleToggle} = usePopUpHook();
@@ -42,14 +42,9 @@ export default function SectionContainer({children, section}:{children: React.Re
         <>
         <div style={border} className={`${style.main} ${isSelected && style.selected}`}>
              <button onClick={handleClick} className={style.gridNameEditDelete}>
-                 <b>{Name} <span className={style.type}>({typeName.Name})</span></b>
-                 {
-                     (IsSimple && !HaveEventActive) && 
-                     <>
-                        <button className={u.link} onClick={handleEdit}>{isSelected? "Cancelar" : "Editar"}</button>
-                        <button onClick={handleDelete} className={`${style.middle} ${u.link}`}>Eliminar</button>
-                     </>
-                 }
+                <b>{Name} <span className={style.type}>({typeName.Name})</span></b>
+                <button className={u.link} onClick={handleEdit}>{isSelected? "Cancelar" : "Editar"}</button>
+                <button onClick={handleDelete} className={`${style.middle} ${u.link}`}>Eliminar</button>
             </button>
 
             

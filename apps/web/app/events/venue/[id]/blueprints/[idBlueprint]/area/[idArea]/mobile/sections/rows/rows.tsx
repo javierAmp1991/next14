@@ -1,8 +1,8 @@
 import css from "../section.module.css";
 import {useAreaContext} from "../../../provider";
 import {RowItem, RowSection} from "../../../area-interfaces";
-import {ChangeEvent, useState} from "react";
-import {IInputNumber, InputText, IInputText, InputNumber} from "@repo/ui/customInputs";
+import {useState} from "react";
+import {IInputNumber, InputNumber, InputTextChangeEvent} from "@repo/ui/customInputs";
 import {EnumColorMainButton, IMainButton, MainButton} from "@repo/ui/mainButton";
 import {ContainerWidthTitle, IContainerWidthTitle} from "@repo/ui/misc";
 import Seats from "./seats";
@@ -19,28 +19,28 @@ const names = {
 
 export default function Rows({section, onOpen}: { section: RowSection, onOpen: Function }) {
     const {HaveEventActive, SectionHandlers} = useAreaContext();
-    const {DeleteSectionItem, EditCapacityFromSectionItem, EditNameSectionItem} = SectionHandlers;
+    const {DeleteSectionItem, EditCapacityFromSectionItem, EditNameSectionItem, HandleAddNewItemToSection} = SectionHandlers;
     const [defaultFs, setDefaultFs] = useState(defaultFileAndSeat);
     const seats: IInputNumber = {
         Name: names.Seats,
         IsObligatory: true,
         Placeholder: "Asientos por fila",
         Value: defaultFs.Seat === 0 ? "" : `${defaultFs.Seat}`,
-        OnChange: ()=>{},
+        OnChange: handleSeatAmount,
         IsDisable: HaveEventActive
     };
-    const amount: IInputText = {
+    const amount: IInputNumber = {
         Name: names.Amount,
         IsObligatory: true,
         Placeholder: "Numero de filas",
         Value: defaultFs.Amount === 0 ? "" : `${defaultFs.Amount}`,
-        OnChange: ()=>{},
+        OnChange: handleSeatAmount,
         IsDisable: HaveEventActive
     };
     const create: IMainButton = {
         Text: "Crear filas",
         OnClick: handleCreateFiles,
-        IsDisable: HaveEventActive,
+        IsDisable: defaultFs.Amount === 0 || defaultFs.Seat === 0,
         UseTiny: true,
         IsSquare: true,
         ColorButton: EnumColorMainButton.UseWhite
@@ -55,14 +55,14 @@ export default function Rows({section, onOpen}: { section: RowSection, onOpen: F
         UseNormal: true,
         DontUseSpace: true,
         UseGridForChildren: true
-    }
+    };
 
     return (
         <SectionContainer section={section}>
             <ContainerWidthTitle props={title}>
                 <div className={css.createFile}>
                    <InputNumber props={amount}/>
-                   <InputText props={seats}/>
+                   <InputNumber props={seats}/>
                    <MainButton props={create}/>
                 </div>
             </ContainerWidthTitle>
@@ -80,9 +80,9 @@ export default function Rows({section, onOpen}: { section: RowSection, onOpen: F
 
     )
 
-    function handleSeatAmount(e: ChangeEvent<HTMLInputElement>) {
-        if (e.target.name === names.Seats) setDefaultFs({...defaultFs, Seat: e.target.valueAsNumber})
-        else setDefaultFs({...defaultFs, Amount: e.target.valueAsNumber})
+    function handleSeatAmount(e: InputTextChangeEvent ) {
+        if (e.Event.target.name === names.Seats) setDefaultFs({...defaultFs, Seat: e.Event.target.valueAsNumber})
+        else setDefaultFs({...defaultFs, Amount: e.Event.target.valueAsNumber})
     }
 
     function handleCreateFiles() {
@@ -98,6 +98,7 @@ export default function Rows({section, onOpen}: { section: RowSection, onOpen: F
             files = [...files, newFile]
         }
         const newSection = {...section, Files: files}
+        HandleAddNewItemToSection(newSection)
         setDefaultFs(defaultFileAndSeat)
     }
 

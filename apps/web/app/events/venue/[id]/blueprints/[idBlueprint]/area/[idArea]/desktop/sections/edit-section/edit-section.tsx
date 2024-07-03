@@ -7,8 +7,6 @@ import {ContainerWidthTitle, ColorPicker, IColorPicker, ImageComponent, EnumSize
 import {MainButton, IMainButton, EnumColorMainButton} from "@repo/ui/mainButton";
 import {GetNameAndIconTypeSection} from "../../../get-name-section";
 
-const defaultColor = "#2394d7";
-
 export default function EditSection() {
     const {Area, SectionForEdit, SectionHandlers} = useAreaContext();
     const {SelectSectionForEdit, EditSection } = SectionHandlers;

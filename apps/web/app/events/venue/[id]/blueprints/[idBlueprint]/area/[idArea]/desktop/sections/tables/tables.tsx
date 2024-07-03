@@ -1,7 +1,7 @@
 import css from "../section.module.css";
 import {useAreaContext} from "../../../provider";
 import {TableItem, TableSection} from "../../../area-interfaces";
-import {ChangeEvent, useState} from "react";
+import {useState} from "react";
 import {IInputNumber, InputCheckbox, InputNumber, IInputCheckbox, InputTextChangeEvent} from "@repo/ui/customInputs";
 import {EnumColorMainButton, IMainButton, MainButton} from "@repo/ui/mainButton";
 import {ContainerWidthTitle, IContainerWidthTitle} from "@repo/ui/misc";

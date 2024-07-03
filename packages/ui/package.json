@@ -4,6 +4,7 @@
   "private": true,
   "exports": {
     "./custom-hook": "./src/custom-hooks/index.ts",
+    "./functions": "./src/function/index.ts",
     "./mainContainer": "./src/main-container-desktop/index.ts",
     "./headerDesktop": "./src/header-desktop/index.ts",
     "./mainHeader": "./src/header-page/index.ts",

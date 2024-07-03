@@ -54,7 +54,6 @@ export const AREA_CONST = {
             Link: "",
             Type: EnumTypeResource.Image
         }
-
     }
 }
 

@@ -79,11 +79,11 @@ export default function ObjectSec({section}: { section: ObjectSection }) {
 
     return (
         <SectionContainer section={section}>
-            <ContainerWidthTitle props={{Title: "Alias de los objetos", UseNormal: true}}>
+            <ContainerWidthTitle props={{Title: "Alias de los objetos", UseNormal: true, DontUseSpace: true}}>
                 <InputText props={alias}/>
             </ContainerWidthTitle>
 
-            <ContainerWidthTitle props={{Title: "Crear objeto", UseNormal: true}}>
+            <ContainerWidthTitle props={{Title: "Crear objeto", UseNormal: true, DontUseSpace: true}}>
                 <div className={css.createObject}>
                     <InputText props={object}/>
                     <InputNumber props={capacity}/>

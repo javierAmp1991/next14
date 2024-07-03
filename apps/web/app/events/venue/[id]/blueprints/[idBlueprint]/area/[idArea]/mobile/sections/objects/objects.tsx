@@ -1,14 +1,14 @@
 import css from "../section.module.css";
-import {ObjectSection} from "../../../area-interfaces";
+import {ObjectSection, ObjectItem} from "../../../area-interfaces";
 import {useAreaContext} from "../../../provider";
 import {ChangeEvent, useState} from "react";
-import {IInputNumber, IInputText, InputNumber, InputText, IInputCheckbox, InputCheckbox} from "@repo/ui/customInputs";
+import {IInputNumber, IInputText, InputNumber, InputText, IInputCheckbox, InputCheckbox, InputTextChangeEvent} from "@repo/ui/customInputs";
 import {EnumColorMainButton, IMainButton, MainButton} from "@repo/ui/mainButton";
 import {ContainerWidthTitle, IContainerWidthTitle} from "@repo/ui/misc";
 import SectionContainer from "../section-containr";
 import Object from "./object";
 
-const defaultFileAndSeat = {
+const defaultObject = {
     Amount: 0,
     Object: "",
     Capacity: 0
@@ -22,14 +22,14 @@ const names = {
 
 export default function ObjectSec({section, onOpen}: { section: ObjectSection, onOpen: Function }) {
     const {HaveEventActive, SectionHandlers} = useAreaContext();
-    const {DeleteSectionItem, EditCapacityFromSectionItem, EditNameSectionItem} = SectionHandlers;
-    const [defaultFs, setDefaultFs] = useState(defaultFileAndSeat);
+    const {DeleteSectionItem, EditCapacityFromSectionItem, EditNameSectionItem, HandleAddNewItemToSection} = SectionHandlers;
+    const [defaultFs, setDefaultFs] = useState(defaultObject);
     const object: IInputText = {
         Name: names.Object,
         IsObligatory: true,
         Placeholder: "Nombre del objeto",
         Value: `${defaultFs.Object}`,
-        OnChange: ()=>{},
+        OnChange: handleSeatAmount,
         IsDisable: HaveEventActive
     };
     const amount: IInputNumber = {
@@ -37,7 +37,7 @@ export default function ObjectSec({section, onOpen}: { section: ObjectSection, o
         IsObligatory: true,
         Placeholder: "Cantidad",
         Value: defaultFs.Amount === 0 ? "" : `${defaultFs.Amount}`,
-        OnChange: ()=>{},
+        OnChange: handleSeatAmount,
         IsDisable: HaveEventActive
     };
     const capacity: IInputNumber = {
@@ -45,13 +45,13 @@ export default function ObjectSec({section, onOpen}: { section: ObjectSection, o
         IsObligatory: true,
         Placeholder: "Capacidad",
         Value: defaultFs.Capacity === 0 ? "" : `${defaultFs.Capacity}`,
-        OnChange: ()=>{},
+        OnChange: handleSeatAmount,
         IsDisable: HaveEventActive
     };
     const create: IMainButton = {
         Text: "Crear objeto",
         OnClick: handleCreateFiles,
-        IsDisable: false,
+        IsDisable: defaultFs.Amount === 0 || defaultFs.Capacity === 0 || defaultFs.Object === "",
         ColorButton: EnumColorMainButton.UseWhite,
         IsSquare: true,
         UseTiny: true
@@ -79,11 +79,11 @@ export default function ObjectSec({section, onOpen}: { section: ObjectSection, o
 
     return (
         <SectionContainer section={section}>
-            <ContainerWidthTitle props={{Title: "Alias de los objetos", UseNormal: true}}>
+            <ContainerWidthTitle props={{Title: "Alias de los objetos", UseNormal: true, DontUseSpace: true}}>
                 <InputText props={alias}/>
             </ContainerWidthTitle>
 
-            <ContainerWidthTitle props={{Title: "Crear objeto", UseNormal: true}}>
+            <ContainerWidthTitle props={{Title: "Crear objeto", UseNormal: true, DontUseSpace: true}}>
                 <div className={css.createObject}>
                     <InputText props={object}/>
                     <InputNumber props={capacity}/>
@@ -107,16 +107,30 @@ export default function ObjectSec({section, onOpen}: { section: ObjectSection, o
         </SectionContainer>
     )
 
-    function handleSeatAmount(e: ChangeEvent<HTMLInputElement>) {
-        if (e.target.name === names.Object) setDefaultFs({...defaultFs, Object: e.target.value})
-        else if (e.target.name === names.Capacity) setDefaultFs({...defaultFs, Capacity: e.target.valueAsNumber})
-        else setDefaultFs({...defaultFs, Amount: e.target.valueAsNumber})
+    function handleSeatAmount(e: InputTextChangeEvent) {
+        if (e.Event.target.name === names.Object) setDefaultFs({...defaultFs, Object: e.Event.target.value})
+        else if (e.Event.target.name === names.Capacity) setDefaultFs({...defaultFs, Capacity: e.Event.target.valueAsNumber})
+        else setDefaultFs({...defaultFs, Amount: e.Event.target.valueAsNumber})
     }
 
     function handleAlias(e: ChangeEvent<HTMLInputElement>) {
     }
 
     function handleCreateFiles() {
+        const initial = section.Objects.length + 1;
+        let objects = section.Objects;
+        for (let i = initial + 1; i <= (initial + defaultFs.Amount); i++) {
+            const newObject: ObjectItem = {
+                Id: `Object${i}`,
+                Object: `${defaultFs.Object} ${i}`,
+                Min: defaultFs.Capacity,
+                Capacity: defaultFs.Capacity
+            };
+            objects = [...objects, newObject]
+        }
+        const newSection = {...section, Objects: objects}
+        HandleAddNewItemToSection(newSection)
+        setDefaultFs(defaultObject)
     }
 
     function handleEditMin(file: string, min: number) {

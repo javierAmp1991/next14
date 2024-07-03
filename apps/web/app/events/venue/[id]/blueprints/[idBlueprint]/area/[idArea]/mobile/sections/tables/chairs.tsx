@@ -12,7 +12,7 @@ export default function Tables({HaveEventActive, OnDelete, OnEdit, OnMin,  OnNam
         Value: `${C.Chair}`,
         IsObligatory: true,
         Style: css.input,
-        OnChange: handleMin,
+        OnChange: handleEdit,
         IsDisable: HaveEventActive,
         StyleInput: EnumStyleCustomInput.NoLine
 
@@ -46,7 +46,6 @@ export default function Tables({HaveEventActive, OnDelete, OnEdit, OnMin,  OnNam
     return (
         <div className={`${!IsShared ? css.gridFileAndSeatDelete3 : css.gridFileSeatDelete}`}>
             <div className={css.gridInput}>
-                Mesa
                 <InputText props={table}/>
             </div>
             <div className={css.gridInput}>

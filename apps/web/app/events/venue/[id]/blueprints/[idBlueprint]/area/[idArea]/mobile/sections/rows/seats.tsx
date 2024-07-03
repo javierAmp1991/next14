@@ -35,7 +35,6 @@ export default function Seats({S, OnDelete, OnEdit, OnName, HaveEventActive}: IS
     return (
         <div className={css.gridFileSeatDelete}>
             <div className={css.gridInput}>
-                Fila
                 <InputText props={file}/>
             </div>
             <div className={css.gridInput}>
