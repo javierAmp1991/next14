@@ -94,6 +94,9 @@ export default function ObjectSec({section, onOpen}: { section: ObjectSection, o
 
             <InputCheckbox props={isShared}/>
 
+            {defaultFs.Amount}
+            {defaultFs.Capacity}
+
             <ContainerWidthTitle props={objectsTitle}>
                 {section.Objects.map((f)=><Object f={f} 
                 haveEventActive={HaveEventActive}
@@ -109,8 +112,14 @@ export default function ObjectSec({section, onOpen}: { section: ObjectSection, o
 
     function handleSeatAmount(e: InputTextChangeEvent) {
         if (e.Event.target.name === names.Object) setDefaultFs({...defaultFs, Object: e.Event.target.value})
-        else if (e.Event.target.name === names.Capacity) setDefaultFs({...defaultFs, Capacity: e.Event.target.valueAsNumber})
-        else setDefaultFs({...defaultFs, Amount: e.Event.target.valueAsNumber})
+        else if (e.Event.target.name === names.Capacity){
+            if(e.Event.target.value === "") setDefaultFs({...defaultFs, Capacity: 0})
+            else setDefaultFs({...defaultFs, Capacity: e.Event.target.valueAsNumber})
+        }
+        else {
+            if(e.Event.target.value === "") setDefaultFs({...defaultFs, Amount: 0})
+            else setDefaultFs({...defaultFs, Amount: e.Event.target.valueAsNumber})
+        } 
     }
 
     function handleAlias(e: ChangeEvent<HTMLInputElement>) {

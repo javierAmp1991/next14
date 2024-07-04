@@ -59,7 +59,7 @@ export const InputNumber = ({props}:{props: IInputNumber}) => {
 
       <div ref={contRef} className={`${styleInput} ${className}`}>
         {props.Prefix && (<span className={style.prefixColor}>{props.Prefix}:</span>)}
-        <input ref={inputRef} onClick={handleFocus} onChange={handleChange} onFocus={handleFocus} onBlur={handleChange} className={`${style.input}`} {...inputProps}/>
+        <input ref={inputRef} onClick={handleFocus} onChange={handleChange} onFocus={handleFocus} onBlur={handleOut} className={`${style.input}`} {...inputProps}/>
         {error.IsError && (
           <button onMouseOver={handleOver} onMouseLeave={handleLeave} {...propsTooltip} className={style.errorCont}>!</button>
         )}
@@ -70,7 +70,7 @@ export const InputNumber = ({props}:{props: IInputNumber}) => {
     </div>
   )
 
-   function handleChange(e: ChangeEvent<HTMLInputElement>) {
+   function handleChangeEvent(e: ChangeEvent<HTMLInputElement>) {
      e.preventDefault();
      e.stopPropagation();
      let error: EnumCustomInputErrors | undefined = undefined;
@@ -96,13 +96,23 @@ export const InputNumber = ({props}:{props: IInputNumber}) => {
      }
    }
 
-     function getStyleInput() {
+   function handleChange(e: ChangeEvent<HTMLInputElement>) {
+    handleChangeEvent(e)
+    if(e.target.value === "") setPhTooltip(true)
+    else setPhTooltip(false)
+ }
+ function handleOut(e: ChangeEvent<HTMLInputElement>){
+   handleChangeEvent(e)
+   setPhTooltip(false) 
+ }
+
+  function getStyleInput() {
        if (props.StyleInput === undefined) return style.contInput;
        else if (props.StyleInput === EnumStyleCustomInput.Default) return style.contInput;
        else if (props.StyleInput === EnumStyleCustomInput.Line) return style.contInputLine;
        else if (props.StyleInput === EnumStyleCustomInput.NoLine) return style.noLine
        else return style.contInput;
-     }
+  }
 
    function handleOver() {
      setError({ ...error, ShowTooltip: true })

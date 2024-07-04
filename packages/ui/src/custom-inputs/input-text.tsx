@@ -63,11 +63,11 @@ export const InputText = ({props}:{props: IInputText}) => {
     </div>
   )
 
-   function handleChange(e: ChangeEvent<HTMLInputElement>) {
+  function handleChange(e: ChangeEvent<HTMLInputElement>) {
      handleChangeEvent(e)
      if(e.target.value === "") setPhTooltip(true)
      else setPhTooltip(false)
-   }
+  }
 
   function handleOut(e: ChangeEvent<HTMLInputElement>){
     handleChangeEvent(e)
