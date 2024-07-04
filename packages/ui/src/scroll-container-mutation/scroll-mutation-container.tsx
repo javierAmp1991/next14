@@ -29,8 +29,9 @@ const limitScroll: number = 85;
 
 export const ScrollMutationContainerMobile = ({props, children}: { props: IScrollMutationContainerMobile, children: ReactNode }) => {
     const buttonApply: IMainButton = {
-        Text: props.OnApplyText ? props.OnApplyText : APPLY,
+        Text: "Aplicar cambios",
         OnClick: handleApply,
+        UseTiny: true
     };
     const returnButton: IMainButton = {
         Text: props.OnReturnText ? props.OnReturnText : RETURN,
@@ -56,24 +57,20 @@ export const ScrollMutationContainerMobile = ({props, children}: { props: IScrol
     }, [props.Dependency])
 
     return (
-        <div id={"idContainerMobile"} ref={refContainer} onScroll={handleScroll} className={mainStyle}>
+        <div id={"idContainerMobile"} ref={refContainer} onScroll={handleScroll} className={`${mainStyle} ${style.padding}`}>
             {children}
-            { buttonSelected !== undefined &&
+
+            {/*buttonSelected !== undefined &&
                 <div style={{transform: `translateY(${config.Translate}px)`}} className={style.gridButton}>
                     <div className={style.contButton}><MainButton props={defaultButtonProps}/></div>
                 </div>
-            }    
-            {/*
-                (props.OnReturn !== undefined || props.OnApply !== undefined) &&
-                <>
-                    <div style={{transform: `translateY(${config.Translate}px)`}} className={style.gridButton}>
-                        {props.OnAlternative !== undefined && <MainButton props={alternativeButton}/>}
-                        {props.OnReturn !== undefined && <MainButton props={returnButton}/>}
-                        {props.OnApply !== undefined && <MainButton props={buttonApply}/>}
-                    </div>
-                </>
-            */}
-        </div>
+            */}    
+            <div style={{transform: `translateY(${config.Translate}px)`}} className={style.gridButton}>
+                {/* {props.OnAlternative !== undefined && <MainButton props={alternativeButton}/>} */}
+                {/* {props.OnReturn !== undefined && <MainButton props={returnButton}/>} */}
+                <div className={style.contButton}><MainButton props={buttonApply}/></div>
+            </div>
+            </div>
     )
 
     function handleReturn() {

@@ -13,7 +13,6 @@
 .noLine {
     border: var(--defaultOutsideLine);
     border-radius: .4rem;
-    overflow: hidden;
     padding: .6rem 1rem;
     width: 100%;
     position: relative;
@@ -77,5 +76,38 @@
     color: var(--colorTextTitle);
         font-size: 1.4rem;
         font-weight: 600;
+}
+
+.controlPLaceholder{
+    width: max-content;
+    position: absolute;
+    height: 100%;
+    background: red;
+    padding: .6rem 1rem;
+    top: 0;
+    left: 0;
+    font-size: 1.4rem;
+    z-index: -100;
+}
+
+.placeholderTooltip{
+    width: 100%;
+    position: absolute;
+    bottom: calc(100% + .8rem);
+    left: 0;
+    background: rgb(75, 75, 75);
+    color:  white;
+    padding: .8rem;
+}
+
+.placeholderTooltip:before{
+    width: 1.6rem;
+    aspect-ratio: 1/1;
+    background: inherit;
+    position: absolute;
+    content: "";
+    rotate: 45deg;
+    left: calc(50% - .8rem);
+    top: calc(100% - .8rem);
 }
 

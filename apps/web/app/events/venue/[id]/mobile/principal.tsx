@@ -23,7 +23,7 @@ export default function Principal() {
      Name: "inputName",
      Value: Venue.Name,
      IsObligatory: true,
-     Placeholder: "Ingrese un nombre",
+     Placeholder: "Ingrese un nombre para que nosotroas jkasjd sadjaslkdjas jdkasddshdjkas sdhsakjd",
      TitleInput: "Nombre del recinto",
      OnChange: VenueHandlers.HandleName,
   };

@@ -81,7 +81,7 @@ export default function Main(){
             <ScrollMutationContainerMobile props={cont}>
                 {PositionHandler.Position === TABS_AREA.Main.Position && <LazyPrincipal/>}
                 {PositionHandler.Position === TABS_AREA.Images.Position && <LazyReference/>}
-                {PositionHandler.Position === TABS_AREA.Sections.Position && <LazySections/>}
+                {PositionHandler.Position === TABS_AREA.Sections.Position && <LazySections displayCreate={handleCreateSection}/>}
                 {PositionHandler.Position === TABS_AREA.Preview.Position && <div>preview</div>}
             </ScrollMutationContainerMobile>
             <DesplegableContainer s={showCreate}>

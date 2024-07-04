@@ -9,7 +9,6 @@
     background: white;
     z-index: 10000000;
     grid-template-rows: 1fr max-content;
-    padding: 1.6rem;
 
 }
 
@@ -20,6 +19,7 @@
     overflow: scroll;
     align-content: start;
     gap: 1.6rem;
+    padding: 1.6rem;
 }
 
 .mainTop {
@@ -78,9 +78,11 @@
 
 .gridButtons {
     z-index: 10000;
-    gap: 1.6rem;
+    gap: 1.2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    box-shadow: 0 0 .6rem rgb(196, 196, 196);
+    padding: 1.6rem;
 }
 
 .h {

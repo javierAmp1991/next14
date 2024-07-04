@@ -7,7 +7,6 @@
     width: 100%;
     overflow: hidden;
     gap: 1.6rem;
-    padding: 1.6rem;
     border-left: var(--defaultOutsideLine);
     background: white;
     grid-template-rows: 1fr max-content;
@@ -20,6 +19,7 @@
     overflow: scroll;
     align-content: start;
     gap: 1.6rem;
+    padding: 1.6rem;
 }
 
 .mainTop {
@@ -71,14 +71,12 @@
 }
 
 .gridButtons {
-    background: white;
-    bottom: 0;
     z-index: 10000;
-    display: grid;
-    justify-content: left;
-    gap: 1.6rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+gap: 1.2rem;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+box-shadow: 0 0 .6rem rgb(196, 196, 196);
+padding: 1.6rem;
 }
 
 .h {

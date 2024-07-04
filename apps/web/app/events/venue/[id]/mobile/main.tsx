@@ -53,23 +53,7 @@ export default function Main() {
   const scrollContainerProps: IScrollMutationContainerMobile = {
     Dependency: PositionHandler.Position,
     UseDefaultGrid: true,
-    Buttons: [
-      {
-        Name: "Aplicar cambios",
-        OnClick: handleApplyChanges,
-        Position: TABS_ENCLOSURE.Main.Position
-      },
-      {
-        Name: "Aplicar cambios",
-        OnClick: handleApplyChanges,
-        Position: TABS_ENCLOSURE.Events.Position
-      },
-      {
-        Name: "Aplicar cambios",
-        OnClick: handleApplyChanges,
-        Position: TABS_ENCLOSURE.Blueprints.Position
-      },
-    ]
+    OnApply:  handleApplyChanges
   };
 
   return (
@@ -87,9 +71,4 @@ export default function Main() {
   function handleApplyChanges(){
 
   }
-
-  function handleCreateBlueprint(){
-
-  }
-
 }

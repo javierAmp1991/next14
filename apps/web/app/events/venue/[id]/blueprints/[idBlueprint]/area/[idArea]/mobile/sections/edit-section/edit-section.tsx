@@ -22,7 +22,7 @@ export default function EditSection() {
     };
     const button: IMainButton = {
         OnClick: handleEditSection,
-        Text: "Aplicar cambios",
+        Text: "Guardar edicion",
         UseTiny: true,
         IsDisable: section.Name === "" || section.Color === ""
 

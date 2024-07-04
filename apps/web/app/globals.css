@@ -122,6 +122,7 @@ input[type="number"] {
     -moz-appearance: textfield; /* Firefox */
 }
 
-button, img {
-  -webkit-tap-highlight-color: transparent;
+*:active, *:focus {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
 }

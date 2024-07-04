@@ -4,17 +4,22 @@ import Rows from "./rows/rows";
 import Table from "./tables/tables";
 import Objects from "./objects/objects";
 import FreeSpace from "./free-space/free-space";
-import {useState} from "react";
+import style from "./section.module.css";
+import Image from "next/image";
+import {RIGHT_ARROW_BLU} from "@repo/ui/localIcons";
 
-export default function Sections() {
+export default function Sections({displayCreate}:{displayCreate: Function}) {
     const {Area, SectionForEdit} = useAreaContext();
-    const [displayCreate, setDisplayCreate] = useState(false);
     const hasSections = Area.Sections.length > 0;
     const showEdit = SectionForEdit !== undefined;
     const keyEdit = SectionForEdit? SectionForEdit.Id : "";
 
     return (
         <>
+            <div onClick={handleDisplay} className={style.create}>
+                Crear nueva seccion
+                <div className={style.arrow}><Image alt="" layout={"fill"} src={RIGHT_ARROW_BLU}/></div>
+            </div>
             {
                 hasSections ?
                     Area.Sections.map((s: any) => {
@@ -30,6 +35,6 @@ export default function Sections() {
     )
 
     function handleDisplay() {
-        setDisplayCreate(!displayCreate)
+        displayCreate()
     }
 }

@@ -14,6 +14,7 @@ export interface InputPropsBase {
   OnChange: (e: InputTextChangeEvent) => void;
   OnLoadFocus?: boolean;
   ErrorMessage?: string;
+  UseTooltip?: boolean
 }
 
 export interface InputTextChangeEvent {

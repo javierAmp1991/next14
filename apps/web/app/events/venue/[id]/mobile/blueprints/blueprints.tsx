@@ -5,8 +5,8 @@ import { useVenueContext } from "../../provider";
 export default function Blueprints() {
   const { Venue, Id } = useVenueContext();
   const create: IDefaultCard = {
-    First: "Crear nueva",
-    Second: "Area del plano",
+    First: "Crear nuevo",
+    Second: "Plano del recinto",
     Image: "",
     Href: `/events/venue/${Id}/blueprints/createNewBlueprint`
   };
