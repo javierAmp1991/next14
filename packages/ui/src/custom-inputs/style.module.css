@@ -113,3 +113,13 @@
     top: calc(100% - .8rem);
 }
 
+.test{
+    position: absolute;
+    right:  0;
+    top: 0;
+    user-select: none!important;
+    -moz-user-select: none!important;
+    -webkit-user-select: none!important;
+    z-index: 100000;
+}
+
