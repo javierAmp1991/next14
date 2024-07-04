@@ -19,6 +19,7 @@
     background: white;
     display: grid;
     align-items: center;
+    user-select: none!important;
 }
 
 .contInputLine {
