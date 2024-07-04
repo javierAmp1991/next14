@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { Row, EmtyRow, Table, TableProps } from "@repo/ui/tableMobile";
+import { Row, EmtyRow, Table, TableProps, EnumTypeHeaderColum } from "@repo/ui/tableMobile";
 import css from "./administration.module.css";
 import EnclosureColumns from "./enclosure-columns";
 import ServiceExpand from "./service-expand";
@@ -33,8 +33,8 @@ export default function ServiceTable() {
   };
   const props: TableProps = {
     ListHeader: [
-      { Name: "Recinto" },
-      { Name: "Direccion" },
+      { Name: "Recinto", Type: EnumTypeHeaderColum.AscDesc, HandleFilter: ()=>{} },
+      { Name: "Direccion", Type: EnumTypeHeaderColum.NumRange, HandleFilter: ()=>{} },
       { Name: "Eventos" },
       { Name: "Planos" }
     ],

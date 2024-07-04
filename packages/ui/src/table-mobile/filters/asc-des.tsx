@@ -14,7 +14,6 @@ export const AscDes = ({
   const item = props as HeaderColumAscDes;
   return (
     <FilterContainer name={item.Name} type={item.Type!}>
-      <>
         <div className={style.gridOptions}>
           <span>{item.From || ASCENDING}</span>
           <input
@@ -31,7 +30,6 @@ export const AscDes = ({
             onChange={() => item.HandleFilter(EnumStateAscDes.Descending)}
           />
         </div>
-      </>
     </FilterContainer>
   );
 };

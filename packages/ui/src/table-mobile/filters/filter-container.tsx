@@ -1,10 +1,10 @@
 //@ts-ignore
 import style from "./filters.module.css";
-import {useState} from "react";
+import React, {useState} from "react";
 import {EnumTypeHeaderColum} from "../props";
 
 export  const FilterContainer = ({children, name, type, isCurrency}:
-                                            { children: JSX.Element, name: string, type: EnumTypeHeaderColum, isCurrency?: boolean }) => {
+                                            { children: React.ReactNode, name: string, type: EnumTypeHeaderColum, isCurrency?: boolean }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className={`${style.filterContainer} ${isOpen && style.filterContainerOpen}`}>

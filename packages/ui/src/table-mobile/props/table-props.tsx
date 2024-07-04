@@ -1,8 +1,9 @@
 import React, {CSSProperties} from "react";
-import {HeaderColumBase} from "./header-column-props";
+import {HeaderColumn, HeaderColumAscDes, HeaderColumMultiple, HeaderColumNumericRange} from "./header-column-props";
+type FilterOpt = HeaderColumAscDes | HeaderColumMultiple | HeaderColumNumericRange | HeaderColumn
 
 export interface TableProps {
-    ListHeader: HeaderColumBase[]
+    ListHeader: FilterOpt[]
     FilterSelected?: string
     GridHeader: string
     TotalRows: number

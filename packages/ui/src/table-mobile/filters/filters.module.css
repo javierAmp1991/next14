@@ -134,7 +134,7 @@
     overflow: hidden;
     display: grid;
     gap: .1rem;
-    background: gray;
+    background: rgb(224, 224, 224);
 }
 
 .containerOptionsOpen {
