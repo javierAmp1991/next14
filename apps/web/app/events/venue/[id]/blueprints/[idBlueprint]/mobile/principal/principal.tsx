@@ -31,7 +31,7 @@ export default function Principal(){
         <>
             <InputText props={inputName}/>
             <ContainerWidthTitle props={contTitle}>
-                <CreateCardMobile props={create}/>
+               <CreateCardMobile props={create}/>
                <Areas/>
             </ContainerWidthTitle>
         </>

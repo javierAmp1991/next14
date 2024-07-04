@@ -1,4 +1,4 @@
-import { GridDefaultCardMobile2, IDefaultCard, CreateCardMobile } from "@repo/ui/defaultCard";
+import {IDefaultCard, CreateCardMobile } from "@repo/ui/defaultCard";
 import Blueprint from "./blueprint";
 import { useVenueContext } from "../../provider";
 
@@ -11,11 +11,9 @@ export default function Blueprints() {
     Href: `/events/venue/${Id}/blueprints/createNewBlueprint`
   };
   return (
-    <GridDefaultCardMobile2>
+    <>
       <CreateCardMobile props={create}/>
-      {Venue.Blueprints.map((e) => (
-        <Blueprint e={e} id={Id} />
-      ))}
-    </GridDefaultCardMobile2>
+      {Venue.Blueprints.map((e) => (<Blueprint e={e} id={Id} />))}
+    </>
   );
 }
