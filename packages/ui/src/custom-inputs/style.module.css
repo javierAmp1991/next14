@@ -94,6 +94,7 @@
 
 .placeholderTooltip{
     width: 100%;
+    min-width: 14rem;
     position: absolute;
     bottom: calc(100% + .8rem);
     left: 0;
@@ -103,23 +104,14 @@
 }
 
 .placeholderTooltip:before{
-    width: 1.6rem;
+    width: 1.2rem;
     aspect-ratio: 1/1;
     background: inherit;
     position: absolute;
     content: "";
     rotate: 45deg;
-    left: calc(50% - .8rem);
+    left: .8rem;
     top: calc(100% - .8rem);
 }
 
-.test{
-    position: absolute;
-    right:  0;
-    top: 0;
-    user-select: none!important;
-    -moz-user-select: none!important;
-    -webkit-user-select: none!important;
-    z-index: 100000;
-}
 

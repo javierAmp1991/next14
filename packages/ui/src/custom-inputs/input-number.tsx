@@ -1,6 +1,6 @@
 //@ts-ignore
 import style from "./style.module.css";
-import { ChangeEvent, useRef, useState, useId } from "react";
+import { ChangeEvent, useRef, useState, useId, useEffect } from "react";
 import {InputPropsBase, EnumCustomInputErrors, EnumStyleCustomInput} from "./index";
 
 export interface IInputNumber extends InputPropsBase {
@@ -23,6 +23,8 @@ const Errors = {
 const STRING_EMPTY = "";
 
 export const InputNumber = ({props}:{props: IInputNumber}) => {
+    const contRef = useRef<HTMLDivElement>(null);
+    const controlRef = useRef<HTMLDivElement>(null); 
     const idTooltip = useId();
     const propsTooltip = { "data-tooltip-id": idTooltip };
     const inputRef = useRef<HTMLInputElement>(null);
@@ -38,6 +40,14 @@ export const InputNumber = ({props}:{props: IInputNumber}) => {
        placeholder: props.Placeholder || STRING_EMPTY,
        value: props.Value
     };
+    const [phTooltip, setPhTooltip] = useState(false);
+    const [isOverflow, setIsOverflow] = useState(false);
+
+    useEffect(()=>{
+      if(contRef.current && controlRef.current){
+        setIsOverflow(controlRef.current.offsetWidth > contRef.current.clientWidth)
+      }    
+    },[])
 
     return (
     <div className={style.main}>{props.TitleInput !== undefined && (
@@ -47,14 +57,14 @@ export const InputNumber = ({props}:{props: IInputNumber}) => {
         </p>
       )}
 
-      <div className={`${styleInput} ${className}`}>
+      <div ref={contRef} className={`${styleInput} ${className}`}>
         {props.Prefix && (<span className={style.prefixColor}>{props.Prefix}:</span>)}
-        <input ref={inputRef} onChange={handleChange} onBlur={handleChange} className={`${style.input}`}
-          {...inputProps}
-        />
+        <input ref={inputRef} onChange={handleChange} onFocus={handleFocus} onBlur={handleChange} className={`${style.input}`} {...inputProps}/>
         {error.IsError && (
           <button onMouseOver={handleOver} onMouseLeave={handleLeave} {...propsTooltip} className={style.errorCont}>!</button>
         )}
+        <div ref={controlRef} className={style.controlPLaceholder}>{props.Placeholder}</div>
+        {(phTooltip && isOverflow) && <div className={style.placeholderTooltip}>{props.Placeholder}</div>}
         
       </div>
     </div>
@@ -84,6 +94,7 @@ export const InputNumber = ({props}:{props: IInputNumber}) => {
       } else setError(defaultError);
        props.OnChange({ Event: e, Error: error });
      }
+     setPhTooltip(false)
    }
 
      function getStyleInput() {
@@ -95,10 +106,15 @@ export const InputNumber = ({props}:{props: IInputNumber}) => {
      }
 
    function handleOver() {
-     setError({ ...error, ShowTooltip: true });
+     setError({ ...error, ShowTooltip: true })
    }
 
    function handleLeave() {
-     setError({ ...error, ShowTooltip: false });
+     setError({ ...error, ShowTooltip: false })
+     setPhTooltip(false)
+   }
+
+   function handleFocus(){
+       setPhTooltip(props.Value === "")
    }
 }

@@ -55,9 +55,8 @@ export const InputText = ({props}:{props: IInputText}) => {
 
       <div ref={contRef} className={`${styleInput} ${className}`}>
         {props.Prefix && (<span className={style.prefixColor}>{props.Prefix}:</span>)}
-        <input title={props.Placeholder} ref={inputRef} onChange={handleChange} onFocus={handleFocus} onBlur={handleChange} className={`${style.input}`} {...inputProps}/>
+        <input ref={inputRef} onChange={handleChange} onFocus={handleFocus} onBlur={handleChange} className={`${style.input}`} {...inputProps}/>
         {error.IsError && (<button onMouseOver={handleOver} onMouseLeave={handleLeave} {...propsTooltip} className={style.errorCont}>!</button>)}
-        <span className={style.test} title={"some nigga"}> Algo</span>
         <div ref={controlRef} className={style.controlPLaceholder}>{props.Placeholder}</div>
         {(phTooltip && isOverflow) && <div className={style.placeholderTooltip}>{props.Placeholder}</div>}
       </div>
