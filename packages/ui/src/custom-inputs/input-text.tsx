@@ -55,7 +55,7 @@ export const InputText = ({props}:{props: IInputText}) => {
 
       <div ref={contRef} className={`${styleInput} ${className}`}>
         {props.Prefix && (<span className={style.prefixColor}>{props.Prefix}:</span>)}
-        <input ref={inputRef} onChange={handleChange} onClick={handleFocus} onFocus={handleFocus} onBlur={handleChange} className={`${style.input}`} {...inputProps}/>
+        <input ref={inputRef} onChange={handleChange} onClick={handleFocus} onFocus={handleFocus} onBlur={handleOut} className={`${style.input}`} {...inputProps}/>
         {error.IsError && (<button onMouseOver={handleOver} onMouseLeave={handleLeave} {...propsTooltip} className={style.errorCont}>!</button>)}
         <div ref={controlRef} className={style.controlPLaceholder}>{props.Placeholder}</div>
         {(phTooltip && isOverflow) && <div className={style.placeholderTooltip}>{props.Placeholder}</div>}
@@ -64,23 +64,32 @@ export const InputText = ({props}:{props: IInputText}) => {
   )
 
    function handleChange(e: ChangeEvent<HTMLInputElement>) {
-     e.preventDefault();
-     e.stopPropagation();
-     let error: EnumCustomInputErrors | undefined = undefined;
-     if (!isDisable) {
-         if (e.target.value === STRING_EMPTY && props.IsEmptyValueInvalid) {
-           error = EnumCustomInputErrors.EmptyValue;
-           setError({
-             IsError: true,
-             ShowTooltip: true,
-             Error: Errors.EmptyValue,
-           });
-         } else setError(defaultError);
-       props.OnChange({ Event: e, Error: error });
-       setPhTooltip(e.target.value === "")
-     }
-     setPhTooltip(e.target.value === "")
+     handleChangeEvent(e)
+     if(e.target.value === "") setPhTooltip(true)
+     else setPhTooltip(false)
    }
+
+  function handleOut(e: ChangeEvent<HTMLInputElement>){
+    handleChangeEvent(e)
+    setPhTooltip(false) 
+  }
+
+  function handleChangeEvent(e: ChangeEvent<HTMLInputElement>){
+    e.preventDefault();
+    e.stopPropagation();
+    let error: EnumCustomInputErrors | undefined = undefined;
+    if (!isDisable) {
+        if (e.target.value === STRING_EMPTY && props.IsEmptyValueInvalid) {
+          error = EnumCustomInputErrors.EmptyValue;
+          setError({
+            IsError: true,
+            ShowTooltip: true,
+            Error: Errors.EmptyValue,
+          });
+        } else setError(defaultError);
+      props.OnChange({ Event: e, Error: error });
+    }
+  }
 
      function getStyleInput() {
        if (props.StyleInput === undefined) return style.contInput;
@@ -99,7 +108,8 @@ export const InputText = ({props}:{props: IInputText}) => {
      setPhTooltip(false)
    }
 
-   function handleFocus(){
-       setPhTooltip(props.Value === "")
-   }
+  function handleFocus(){
+    if(props.Value === "" || props.Value === undefined) setPhTooltip(true)
+    else setPhTooltip(false)
+  }
 }

@@ -94,7 +94,6 @@ export const InputNumber = ({props}:{props: IInputNumber}) => {
       } else setError(defaultError);
        props.OnChange({ Event: e, Error: error });
      }
-     setPhTooltip(false)
    }
 
      function getStyleInput() {
@@ -115,6 +114,7 @@ export const InputNumber = ({props}:{props: IInputNumber}) => {
    }
 
    function handleFocus(){
-       setPhTooltip(props.Value === "")
+      if(props.Value === "" || props.Value === undefined) setPhTooltip(true)
+      else setPhTooltip(false)
    }
 }
