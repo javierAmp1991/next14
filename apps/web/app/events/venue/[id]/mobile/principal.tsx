@@ -93,7 +93,7 @@ export default function Principal() {
 
       <InputCheckbox props={inputPublic} />
 
-      <SeparationLine/>
+      {/* <SeparationLine/> */}
 
       <ContainerWidthTitle props={titleMap}>
         <div style={{ width: "100%", aspectRatio: "1/1" }}>

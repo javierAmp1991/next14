@@ -10,8 +10,7 @@ export default function Request({id}:{id: string}){
     return (
         id === undefined ? <div>Pidiendo el recinto</div> :
          <Provider id={id}>
-          {RangeView === EnumTypeView.Loading ? <SpinLoading/> : RangeView === EnumTypeView.Desktop ? <Desktop /> : <Mobile/>}
+            {RangeView === EnumTypeView.Loading ? <SpinLoading/> : RangeView === EnumTypeView.Desktop ? <Desktop /> : <Mobile/>}
          </Provider>
-
     )
 }

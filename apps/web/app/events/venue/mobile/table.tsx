@@ -22,12 +22,12 @@ export default function ServiceTable() {
         <Row
           Expandable={<ServiceExpand item={item} />}
           Columns={<EnclosureColumns item={item} />}
-          style={style}
+          Style={style}
           key={key}
-          index={index}
-          grid={css.grid!}
-          isOpen={isOpen}
-          onMutation={() => HandleMutation(item.Id)}
+          Index={index}
+          Grid={css.grid!}
+          IsOpen={isOpen}
+          OnMutation={() => HandleMutation(item.Id)}
         />
       );
   };
@@ -36,13 +36,12 @@ export default function ServiceTable() {
       { Name: "Recinto" },
       { Name: "Direccion" },
       { Name: "Eventos" },
-      { Name: "Planos" },
-      { Name: "Editar" },
+      { Name: "Planos" }
     ],
     TotalRows: total,
     FilterSelected: undefined,
     GridHeader: css.grid!,
-    Width: 930,
+    Width: 730,
     OnRowEnd: () => {},
     RowRender: RowRender,
   };

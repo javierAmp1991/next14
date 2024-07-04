@@ -1,14 +1,18 @@
-import { IMutationContainerGrid } from "@repo/ui/mutationContainers";
-import { GridDefaultCardMobile2 } from "@repo/ui/defaultCard";
+import { GridDefaultCardMobile2, IDefaultCard, CreateCardMobile } from "@repo/ui/defaultCard";
 import Blueprint from "./blueprint";
-import style from "./style.module.css";
 import { useVenueContext } from "../../provider";
 
 export default function Blueprints() {
   const { Venue, Id } = useVenueContext();
-  const mutationProps: IMutationContainerGrid = { Style: style.grid };
+  const create: IDefaultCard = {
+    First: "Crear nueva",
+    Second: "Area del plano",
+    Image: "",
+    Href: `/events/venue/${Id}/blueprints/createNewBlueprint`
+  };
   return (
     <GridDefaultCardMobile2>
+      <CreateCardMobile props={create}/>
       {Venue.Blueprints.map((e) => (
         <Blueprint e={e} id={Id} />
       ))}

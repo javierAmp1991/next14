@@ -12,7 +12,7 @@ export default function Blueprints() {
     Second: "Area del plano",
     Image: "",
     Href: `/events/venue/${Id}/blueprints/createNewBlueprint`
-};
+  };
   return (
     <MutationContainerGrid props={mutationProps}>
       <GridDefaultCard>

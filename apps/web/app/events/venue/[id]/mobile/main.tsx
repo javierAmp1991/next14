@@ -60,10 +60,15 @@ export default function Main() {
         Position: TABS_ENCLOSURE.Main.Position
       },
       {
-        Name: "Crear nuevo plano",
-        OnClick: handleCreateBlueprint,
+        Name: "Aplicar cambios",
+        OnClick: handleApplyChanges,
+        Position: TABS_ENCLOSURE.Events.Position
+      },
+      {
+        Name: "Aplicar cambios",
+        OnClick: handleApplyChanges,
         Position: TABS_ENCLOSURE.Blueprints.Position
-      }
+      },
     ]
   };
 

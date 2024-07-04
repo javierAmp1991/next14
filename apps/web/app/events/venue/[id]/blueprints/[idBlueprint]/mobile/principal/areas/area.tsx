@@ -1,5 +1,4 @@
 import {DefaultCardMobile, IDefaultCard} from "@repo/ui/defaultCard";
-import {} from "../../../provider";
 
 export default function Blueprint({e, idVenue, idBlueprint}: { e: any, idVenue: string, idBlueprint: string }) {
     const props: IDefaultCard = {

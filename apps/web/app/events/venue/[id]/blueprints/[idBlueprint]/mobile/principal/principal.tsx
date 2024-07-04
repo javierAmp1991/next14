@@ -19,7 +19,7 @@ export default function Principal(){
         Title: "Areas del plano",
         DontUseSpace: true,
         UseGridForChildren: true
-    }
+    };
     return(
         <>
             <InputText props={inputName}/>

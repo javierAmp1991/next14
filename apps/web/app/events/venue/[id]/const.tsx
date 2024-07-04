@@ -1,4 +1,5 @@
 import {INotFound} from "@repo/ui/misc";
+export const CINEMA_TITLE: string = "Referencias del recinto";
 export const TABS_ENCLOSURE = {
   Main: {
     Id: "idMain",
@@ -26,9 +27,8 @@ export const TABS_ENCLOSURE = {
     Name: "Avanzado",
   },
 };
-export const CINEMA_TITLE: string = "Referencias del recinto";
 export const NOT_FOUND_PROPS: INotFound = {
   Href: "/events/venue",
   ReturnText: "Volver a Mis recintos",
   Text: "Recinto no encontrado"
-}
+};

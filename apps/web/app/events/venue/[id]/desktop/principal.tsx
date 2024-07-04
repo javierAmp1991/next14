@@ -20,7 +20,6 @@ import style from "./style.module.css";
 import {useVenueContext} from "../provider";
 import {CINEMA_TITLE} from "../const";
 
-import { useState } from "react";
 export default function Principal() {
   const {Venue, VenueHandlers} = useVenueContext();
   const containerProps: IMutationContainerGrid = {};

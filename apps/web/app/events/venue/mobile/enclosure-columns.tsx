@@ -23,8 +23,6 @@ export default function EnclosureColumns({ item }: { item: VenueRowTable }) {
       <ColumnClick onClick={handleBlueprints}>
         <NumberTable number={item.TotalBluePrints} />
       </ColumnClick>
-
-      <ColumnEdit post={"Recinto"} />
     </>
   );
 

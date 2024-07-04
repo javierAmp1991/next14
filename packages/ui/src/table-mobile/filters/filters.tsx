@@ -13,7 +13,17 @@ export const Filters = ({isOpen, filters, handleClose, selected}: {
     filters: HeaderColumBase[], isOpen: boolean, handleClose: Function, selected?: string }) => {
     const noFilters = filters.filter(e => e.Type !== undefined).length === 0;
     useEffect(() => {
-        isOpen && noFilters && setTimeout(() => onClick(), 2000)
+        let timeoutId: NodeJS.Timeout;
+
+        if (isOpen && noFilters) {
+        timeoutId = setTimeout(() => {
+          onClick();
+        }, 2000);
+        }
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
     }, [noFilters, isOpen])
     return (
         createPortal(
