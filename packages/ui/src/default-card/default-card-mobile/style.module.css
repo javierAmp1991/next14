@@ -12,6 +12,7 @@
     border-radius: .8rem;
     height: 12rem;
     padding-left: .6rem;
+    background: linear-gradient(160deg, white 50%, white 100%);
 }
 
 .noSelected {}
