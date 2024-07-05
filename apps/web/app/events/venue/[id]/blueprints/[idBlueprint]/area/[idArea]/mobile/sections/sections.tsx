@@ -18,7 +18,8 @@ export default function Sections({displayCreate}:{displayCreate: Function}) {
         <>
             <div onClick={handleDisplay} className={style.create}>
                 Crear nueva seccion
-                <div className={style.arrow}><Image alt="" layout={"fill"} src={RIGHT_ARROW_BLU}/></div>
+                <div className={style.plus}>+</div>
+                {/* <div className={style.arrow}><Image alt="" layout={"fill"} src={RIGHT_ARROW_BLU}/></div> */}
             </div>
             {
                 hasSections ?

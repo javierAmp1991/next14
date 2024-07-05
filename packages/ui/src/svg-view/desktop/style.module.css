@@ -1,0 +1,96 @@
+.main {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: rgb(246, 248, 249);
+    box-shadow: 0 0 .8rem #d9d9d9 inset;
+    position: relative;
+}
+
+.buttons {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    display: grid;
+    background: rgb(226, 226, 226);
+    box-shadow: var(--defaultBoxShadow);
+    gap: .1rem;
+    z-index: 100000000;
+    border-radius: .4rem;
+    overflow: hidden;
+}
+
+.button {
+    padding: .8rem 1rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    background: linear-gradient(180deg, #f5f5f5 0%, #f5f5f5 100%);
+    background: white;
+}
+
+.button:hover {
+    background: #eaeaea;
+}
+
+.mainInfo {
+    position: absolute;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    background: white;
+    padding: 1rem 1.6rem;
+    box-shadow: var(--defaultBoxShadow);
+    border-radius: .8rem;
+    overflow: hidden;
+    display: grid;
+    gap: 1.2rem;
+    width: 14rem;
+}
+
+.gridInfo {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    text-align: left;
+}
+
+.contInfo {
+    padding-top: 1.2rem;
+    border-top: var(--defaultOutsideLine);
+    display: grid;
+    gap: .8rem;
+}
+
+.gridSubInfo {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: .8rem;
+    align-items: center;
+}
+
+.circle {
+    width: 1rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.rotate {
+    rotate: 90deg;
+}
+
+.available {
+    background: var(--availableColor);
+}
+
+.disable {
+    background: var(--disableColor);
+    border: .1rem solid var(--disableStroke);
+}
+
+.resale{
+    background: var(--resaleColor);
+}
+
+
+
+

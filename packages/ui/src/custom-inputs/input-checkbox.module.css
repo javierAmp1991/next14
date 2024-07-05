@@ -1,12 +1,10 @@
 .main {
-    display: grid;
-    grid-template-columns: max-content;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-    gap: .6rem;
+    line-height: 1.8rem;
 }
 
-
-.error {
-    color: red;
+.input{
+    display: inline-block!important;
+    margin-right: .4rem;
+    position: relative;
+    top: .2rem;
 }

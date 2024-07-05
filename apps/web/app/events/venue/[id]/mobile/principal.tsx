@@ -91,7 +91,9 @@ export default function Principal() {
         </div>
       </ContainerWidthTitle>
 
-      <InputCheckbox props={inputPublic} />
+      <ContainerWidthTitle props={{Title: "Privacidad del recinto", DontUseSpace: true}}>
+          <InputCheckbox props={inputPublic} />
+      </ContainerWidthTitle>
 
       {/* <SeparationLine/> */}
 

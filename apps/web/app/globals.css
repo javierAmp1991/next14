@@ -56,6 +56,14 @@
   --colorTextLink: var(--colorMiddleSpix);
   --colorTextLinkHover: #0a68f5;
 
+  --selectedColor: orange;
+  --resaleColor: #d0006f;
+  --availableColor: #2394d7;
+  --reservedColor: #d0d0d0;
+  --disableColor: #c2c2c2;
+  --disableStroke: #818181;
+  --brightnessLight: 1.3;
+
 }
 
 * {

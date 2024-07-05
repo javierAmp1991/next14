@@ -30,7 +30,8 @@
     "./popUpContainer": "./src/popup-container/index.ts",
     "./scrollContainerMobile": "./src/scroll-container-mutation/index.ts",
     "./globalEnums" : "./src/global-enums/index.ts",
-    "./cinemaMode": "./src/cinema/index.ts"
+    "./cinemaMode": "./src/cinema/index.ts",
+    "./svgView": "./src/svg-view/index.ts"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -40,7 +41,9 @@
     "next": "^14.1.1",
     "mapbox-gl": "^2.14.1",
     "@mapbox/mapbox-gl-geocoder": "^5.0.1",
-    "ulid": "^2.3.0"
+    "ulid": "^2.3.0",
+    "react-zoom-pan-pinch": "^3.3.0",
+    "react-inlinesvg": "^4.1.0"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

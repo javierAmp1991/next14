@@ -20,4 +20,10 @@ export const TABLE_SECTION: string = "/icons/tableIcon.png";
 export const FREE_SPACE_SECTION: string = "/icons/freeIcon.png";
 export const OBJECT_SECTION: string = "/icons/advancedIcon.png";
 export const PLUS_ICON_ORANGE: string = "/icons/plusIconOrange.png";
+export const CONTRACT_ICON: string = "/icons/contractIcon2.png";
+export const EXPAND_ICON: string = "/icons/expandIcon.png";
+export const REFRESH_ICON: string = "/icons/refreshIconBlack.png";
+export const CURSOR_ICON_WHITE: string = "/icons/cursorIconWhite.png";
+export const GRAB_ICON_WHITE: string = "/icons/grabIcon.png";
+export const ZOOM_IN_OUT: string = "/icons/zoomInOutIcon.png";
 
