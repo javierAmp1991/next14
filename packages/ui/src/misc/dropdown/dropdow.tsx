@@ -25,7 +25,7 @@ export const DropDownContainer = ({props, children}: { props: IDropDownContainer
     const icon: string = props.Icon ? props.Icon : props.UseLinkColor ? RIGHT_ARROW_BLU : RIGHT_ARROW_BLACK;
     const [state, setState] = useState<boolean>(initialState);
     const contRef = useRef<HTMLDivElement>(null);
-    const title: string = getSize();
+    const title: string = getSize()!;
     const styleTitleArrow = props.UseSpaceArrow ? style.gridTitleArrowSpace : style.gridTitleArrow;
 
     useEffect(() => {
@@ -55,10 +55,10 @@ export const DropDownContainer = ({props, children}: { props: IDropDownContainer
         setState(!state)
     }
 
-    function getSize() {
-        if (props.Size === undefined) return style.titleM
-        else if (props.Size === "Xl") return style.titleXl
-        else if (props.Size === "L") return style.titleL
-        else return style.titleM
+    function getSize(): string {
+        if (props.Size === undefined) return `${style.titleM}`
+        else if (props.Size === "Xl") return `${style.titleXl}`
+        else if (props.Size === "L") return `${style.titleL}`
+        else return `${style.titleM}`
     }
 }
