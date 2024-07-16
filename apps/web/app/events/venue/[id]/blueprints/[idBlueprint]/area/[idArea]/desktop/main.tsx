@@ -10,6 +10,7 @@ import { SpinLoading } from "@repo/ui/misc";
 const LazyPrincipal = dynamic(()=>import("./principal/principal"), {loading: SpinLoading});
 const LazyReference = dynamic(()=>import("./references/images"), {loading: SpinLoading});
 const LazySections = dynamic(()=>import("./sections/sections"), {loading: SpinLoading});
+const LazyPreview = dynamic(()=>import("./preview/preview"), {loading: SpinLoading});
 
 export default function Main(){
     const {PositionHandler, IdVenue, IdBlueprint} = useAreaContext();
@@ -62,7 +63,7 @@ export default function Main(){
             {PositionHandler.Position === TABS_AREA.Main.Position && <LazyPrincipal/>}
             {PositionHandler.Position === TABS_AREA.Images.Position && <LazyReference/>}
             {PositionHandler.Position === TABS_AREA.Sections.Position && <LazySections/>}
-            {PositionHandler.Position === TABS_AREA.Preview.Position && <div>preview</div>}
+            {PositionHandler.Position === TABS_AREA.Preview.Position && <LazyPreview/>}
         </MainContainerDesktop>
     )
 }

@@ -26,4 +26,6 @@ export const REFRESH_ICON: string = "/icons/refreshIconBlack.png";
 export const CURSOR_ICON_WHITE: string = "/icons/cursorIconWhite.png";
 export const GRAB_ICON_WHITE: string = "/icons/grabIcon.png";
 export const ZOOM_IN_OUT: string = "/icons/zoomInOutIcon.png";
+export const RATING_STAR: string = "/icons/ratingStarIconFull.png";
+export const RATING_STAR_EMPTY: string = "/icons/ratingStarIconEmpty.png";
 

@@ -1,0 +1,70 @@
+.main{
+    display: grid;
+    grid-template-columns: 24rem 1fr 28rem;
+    overflow: hidden;
+    border-left: var(--defaultOutsideLine);
+    border-right: var(--defaultOutsideLine);
+    width: 100%;
+    height: 100%;
+}
+
+.mainHeader{
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+.left, .right, .mainTabs{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    display: grid;
+    position: relative;
+    align-content: start;
+}
+
+.right{
+    overflow: hidden!important;
+    grid-template-rows: 1fr max-content;
+}
+
+.mainTabs{
+    overflow: hidden!important;
+    grid-template-rows: max-content 1fr;
+}
+
+.number, .numberSelected, .numberDisable {
+    background: var(--colorMiddleSpix);
+    color: white;
+    width: 100%;
+    padding: .4rem 0;
+    display: grid;
+    place-items: center;
+    border-radius: .4rem;
+}
+
+.numberSelected {
+    background: orange;
+}
+
+.number:hover {
+    background: var(--colorLightSpix);
+}
+
+.numberDisable {
+    background: #bebebe;
+}
+
+.filter {
+    height: 6.2rem;
+    border-bottom: var(--defaultOutsideLine);
+    place-items: center;
+    display: grid;
+    align-content: center;
+    justify-items: left;
+    gap: .2rem;
+    padding: 0 1.6rem;
+}

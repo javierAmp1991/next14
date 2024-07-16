@@ -18,6 +18,7 @@
   --borderForBoxShadow: .1rem solid var(--colorForBoxShadow);
   --boxShadowSelectedOrange: 0 0 .2rem #f38304, 0 0 .3rem #f38304, 0 0 .4rem #f38304;
   --borderForBoxShadowSelectedOrange: .1rem solid #ff88004b;
+  --gradientMenu: #2c3844;
 
   --colorMiddleSpix: #2e8dec;
   --colorDarkSpix: #1D9BF0;

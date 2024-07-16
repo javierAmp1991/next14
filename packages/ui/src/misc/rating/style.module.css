@@ -1,0 +1,61 @@
+.main {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: .4rem;
+    align-items: center;
+}
+
+.gridStars {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    gap: .2rem;
+    align-items: center;
+}
+
+.star {
+    width: 1.3rem;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.starTiny {
+    width: 1.1rem;
+}
+
+.starLarge{
+    width: 1.6rem;
+}
+
+.ratingText {
+    color: var(--colorMiddleSpix);
+    text-decoration: none;
+    font-weight: 500;
+    font-family: Roboto;
+    position: relative;
+    font-size: 1.4rem;
+}
+
+.ratingTextTiny {
+    font-size: 1.1rem;
+}
+
+.yellow {
+    color: #faa220;
+    font-weight: 600;
+}
+
+.parent{
+    font-size: 1.4rem;
+}
+
+.parentTiny{
+    font-size: 1rem;
+}
+
+.number {
+    position: relative;
+    top: .1rem;
+    margin: 0 .1rem;
+}

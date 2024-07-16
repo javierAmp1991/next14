@@ -1,0 +1,24 @@
+.available {
+    cursor: pointer !important;
+    fill: var(--availableColor) !important;
+}
+
+.disable {
+    fill: var(--disableColor) !important;
+    stroke: var(--disableStroke) !important;
+}
+
+.reserved {
+    fill: var(--reservedColor) !important;
+}
+
+.availableResale {
+    cursor: pointer;
+    fill: var(--resaleColor) !important;
+}
+
+.selected {
+    cursor: pointer !important;
+    background: var(--selectedColor) !important;
+    fill: var(--selectedColor) !important;
+}

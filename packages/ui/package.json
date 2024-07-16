@@ -4,7 +4,7 @@
   "private": true,
   "exports": {
     "./custom-hook": "./src/custom-hooks/index.ts",
-    "./functions": "./src/function/index.ts",
+    "./functions": "./src/functions/index.ts",
     "./mainContainer": "./src/main-container-desktop/index.ts",
     "./headerDesktop": "./src/header-desktop/index.ts",
     "./mainHeader": "./src/header-page/index.ts",
@@ -31,7 +31,8 @@
     "./scrollContainerMobile": "./src/scroll-container-mutation/index.ts",
     "./globalEnums" : "./src/global-enums/index.ts",
     "./cinemaMode": "./src/cinema/index.ts",
-    "./svgView": "./src/svg-view/index.ts"
+    "./svgView": "./src/svg-view/index.ts",
+    "./calendar": "./src/calendar/index.ts"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -43,7 +44,8 @@
     "@mapbox/mapbox-gl-geocoder": "^5.0.1",
     "ulid": "^2.3.0",
     "react-zoom-pan-pinch": "^3.3.0",
-    "react-inlinesvg": "^4.1.0"
+    "react-inlinesvg": "^4.1.0",
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

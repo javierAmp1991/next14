@@ -1,0 +1,31 @@
+.main {
+    display: grid;
+    border-bottom: var(--defaultOutsideLine);
+    padding:  1.6rem 2rem;
+    gap: .8rem;
+}
+
+.contAtr {
+    position: relative;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: .6rem;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.contText {
+    position: absolute;
+    top: 0;
+    left: 1.6rem;
+    border: var(--borderMainCard);
+    box-shadow: var(--boxShadowMainCard);
+    z-index: 500;
+    font-size: 1.3rem;
+    padding: .8rem;
+    border-radius: .4rem;
+    color: white;
+    background: var(--colorLightSpix);
+    font-weight: 600;
+    width: calc(100% - 1.6rem);
+}

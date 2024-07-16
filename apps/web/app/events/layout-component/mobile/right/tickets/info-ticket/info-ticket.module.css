@@ -1,0 +1,19 @@
+.main {
+    display: grid;
+    gap: 1.6rem;
+    border-bottom: var(--defaultOutsideLine);
+    padding:  1.6rem 2rem;
+}
+
+.gridPrice {
+    display: grid;
+    align-items: center;
+    gap: .8rem;
+    grid-template-columns: 1fr max-content;
+    color: var(--colorTextPrimary);
+}
+
+.type {
+    color: var(--colorTextSecundary);
+    font-size: 1.3rem;
+}

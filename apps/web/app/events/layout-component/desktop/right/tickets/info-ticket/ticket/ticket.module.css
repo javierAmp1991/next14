@@ -1,0 +1,379 @@
+.mainButton {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr max-content;
+    padding-bottom: 1.6rem;
+}
+
+.mainCont {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 2rem;
+    align-content: start;
+    overflow: scroll;
+    padding: 1.6rem;
+    background: white;
+}
+
+.main {
+    height: max-content;
+    width: 100%;
+    padding: 0 2rem 0 1.6rem;
+    /*    border-top: var(--borderTicketDash);
+        border-bottom: var(--borderTicketDash);*/
+    position: relative;
+    border-radius: .4rem;
+    overflow: hidden;
+}
+
+.button {
+    width: 20rem;
+    margin: auto;
+}
+
+.contNamePrice {
+    display: grid;
+    gap: .2rem;
+}
+
+.gridTop, .gridTopTable {
+    display: grid;
+    grid-template-columns: 1fr 4.8rem;
+    grid-auto-columns: 4.8rem;
+    grid-auto-flow: column;
+    padding-bottom: .8rem;
+    border-bottom: var(--defaultOutsideLine);
+}
+
+.gridTopTable {
+    grid-template-columns: repeat(2, 9rem) 6rem;
+}
+
+.gridBottom {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: .6rem;
+    align-items: center;
+}
+
+.gridPrice {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: .4rem;
+    justify-content: left;
+}
+
+.gridBottomTable {
+    padding: .8rem 0;
+    display: grid;
+    gap: .4rem;
+    font-size: 1.3rem;
+}
+
+.price {
+    font-size: 1.8rem;
+}
+
+.pre {
+    font-size: 1.3rem;
+}
+
+.contPre {
+    text-align: center;
+    font-size: 1.5rem;
+    display: grid;
+    gap: .2rem;
+}
+
+.contLeft {
+    text-align: left;
+    font-size: 1.4rem;
+    display: grid;
+    gap: .2rem;
+}
+
+.contRight {
+    text-align: center;
+    font-size: 1.5rem;
+    display: grid;
+    gap: .2rem;
+}
+
+.gridRange {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: .4rem;
+    align-items: center;
+}
+
+.resaleBorder {
+    border-left: .4rem solid var(--resaleColor);
+}
+
+.standardBorder {
+    border-left: .4rem solid var(--availableColor);
+}
+
+.close {
+    width: 2.6rem;
+    aspect-ratio: 1/1;
+    background: white;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: var(--defaultBosShadow);
+    border: var(--defaultOutsideLine);
+}
+
+.close:before, .close:after {
+    content: "";
+    background: var(--colorMiddleSpix);
+    width: .2rem;
+    height: 1.2rem;
+    position: absolute;
+    top: .6rem;
+    left: 1.1rem;
+    rotate: 45deg;
+}
+
+.close:after {
+    rotate: -45deg;
+}
+
+.close:hover {
+    text-decoration: underline;
+}
+
+.contDelete {
+    position: absolute;
+    width: max-content;
+    top: 0;
+    right: 0;
+    height: 100%;
+    z-index: 1000;
+    transition: .4s;
+    background: transparent;
+    display: grid;
+    align-items: start;
+    justify-items: end;
+    padding: .8rem;
+}
+
+.contDelete:hover {
+    opacity: 1;
+}
+
+.show {
+    transform: translateY(0);
+}
+
+.contProducts {
+    padding-top: .8rem;
+    border-top: var(--defaultOutsideLine);
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 6% max-content 1fr;
+    overflow: hidden;
+    --colorBorders: var(--backgroundMenu);
+    --borderTicket2: .1rem solid var(--backgroundMenu);
+    --borderTicket2: .1rem solid #d1d7dc;
+    --borderTicket: .1rem solid var(--colorBorders);
+    --borderTicketDash: .1rem dashed #c2c2c2;
+    /* box-shadow: .2rem .2rem .4rem #e9eaec;*/
+    border-radius: .8rem;
+}
+
+.dec {
+    width: 100%;
+    height: 100%;
+    background: var(--backgroundMenu);
+    position: relative;
+    padding: 0 0 0 80%;
+    border-radius: .8rem 0 0 .8rem;
+    z-index: 1000;
+}
+
+.dec:after {
+    width: 1.2rem;
+    background: white;
+    content: "";
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: calc(50% - .8rem);
+    left: -.6rem;
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+/*
+.dec:before {
+    width: 2.4rem;
+    background: white;
+    content: "";
+    aspect-ratio: 1/1;
+    position: absolute;
+    bottom: -1.2rem;
+    left: -1.2rem;
+    border-radius: 50%;
+    z-index: 10000;
+}
+*/
+
+.decIn {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    border-left: var(--borderTicketDash);
+    /*    border-top: var(--borderTicketDash);
+        border-bottom: var(--borderTicketDash);*/
+    /*border-radius: .6rem 0 0 .6rem;*/
+}
+
+.dash {
+    height: 100%;
+    /* border-right: 0rem dashed var(--colorBorders);*/
+    position: relative;
+}
+
+.contDash {
+    padding: 1.2rem 0;
+    border-top: var(--borderTicket2);
+    border-right: var(--borderTicket2);
+    border-bottom: var(--borderTicket2);
+    border-radius: 0 .8rem .8rem 0;
+    position: relative;
+}
+
+.contDash:before {
+    content: "";
+    width: 1.2rem;
+    aspect-ratio: 1/1;
+    position: absolute;
+    right: -.6rem;
+    top: calc(50% - .6rem);
+    border-radius: 50%;
+    background: white;
+    z-index: 1000;
+    border: var(--borderTicket2);
+}
+
+/*.contDash:before {
+    content: "";
+    width: 2.4rem;
+    aspect-ratio: 1/1;
+    position: absolute;
+    right: -1.2rem;
+    top: -1.2rem;
+    border-radius: 50%;
+    background: white;
+    z-index: 1000;
+    border: var(--borderTicket2);
+}
+
+.contDash:after {
+    content: "";
+    width: 2.4rem;
+    aspect-ratio: 1/1;
+    position: absolute;
+    right: -1.2rem;
+    bottom: -1.2rem;
+    border-radius: 50%;
+    background: white;
+    z-index: 1000;
+    border: var(--borderTicket2);
+}*/
+
+.contPopUp {
+    width: 56rem;
+    height: 90vh;
+    max-height: 54rem;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+}
+
+.header {
+    background: var(--gradientMenu);
+    color: white;
+    height: 6.4rem;
+    display: grid;
+    place-items: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    box-shadow: 0 .2rem .4rem #b9b9b9;
+    z-index: 1000;
+    position: relative;
+}
+
+.subContPop{
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    background: white;
+    padding: 1.6rem 2.4rem .3rem 2.4rem;
+    gap: 1.6rem 2rem;
+    display: grid;
+    align-content: start;
+}
+
+.gridProducts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 16rem);
+    justify-content: space-between;
+    gap: 2.4rem 1.6rem;
+    align-content: start;
+}
+
+.product {
+    width: 100%;
+    aspect-ratio: 1/1;
+    padding: .8rem;
+    display: grid;
+    grid-template-rows: 1fr max-content;
+    border: var(--borderForBoxShadow);
+    box-shadow: var(--boxShadowMainCardMobileTiny);
+    text-align: center;
+    gap: .6rem;
+    border-radius: .8rem;
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.amount {
+    position: absolute;
+    top: -.8rem;
+    left: -.8rem;
+    z-index: 10000;
+    font-size: 1.1rem;
+    width: max-content;
+    aspect-ratio: 1/1;
+    background: forestgreen;
+    color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: .6rem;
+}
+
+.contButton {
+    padding: 2.4rem;
+    background: white;
+}
+
+.newPrice {
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+.span {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}

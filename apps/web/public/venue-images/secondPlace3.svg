@@ -1,0 +1,335 @@
+<svg id="primer-piso" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1984.25 1701.29">
+    <defs>
+        <style>
+            .cls-1{fill:#bac1e3;stroke:#36a9e1;}.cls-1,.cls-15,.cls-16,.cls-17,.cls-6{stroke-miterlimit:10;}.cls-1,.cls-6{stroke-width:3px;}.cls-2{fill:#009fe3;}.cls-3{font-size:48px;fill:#fff;}.cls-3,.cls-4{font-family:MyriadPro-Regular,
+            Myriad
+            Pro;}.cls-17,.cls-4{font-size:72px;}.cls-4{fill:#1d1d1b;}.cls-5{letter-spacing:0.01em;}.cls-10,.cls-6{fill:#cde4c8;}.cls-6{stroke:#009640;}.cls-7{letter-spacing:-0.01em;}.cls-8{fill:#676767;}.cls-9{fill:#72af5c;}.cls-11{fill:#70507f;}.cls-12{fill:#5bbca8;}.cls-13{fill:#e98049;}.cls-14{fill:#af3b77;}.cls-15{fill:#c6c6c6;}.cls-15,.cls-16,.cls-17{stroke:#1d1d1b;}.cls-16,.cls-21{fill:#dadada;}.cls-17{fill:#5a5a59;stroke-width:0.25px;font-family:MicrosoftSansSerif,
+            Microsoft Sans Serif;}.cls-18{fill:#706f6f;}.cls-19{fill:#3c3c3b;}.cls-20{fill:none;}
+        </style>
+    </defs>
+    <g id="seccion_mesas_2" data-name="seccion mesas 2" section-name="Seccion posterior" section-type="tables">
+        <rect is-background="true" class="cls-1" x="28.35" y="440.98" width="1927.56" height="566.93"/>
+        <g id="mesa_1" data-name="mesa 1" table-name="1">
+            <rect class="cls-2" x="127.79" y="689.63" width="141.73" height="141.73"/>
+            <circle class="cls-2" cx="198.66" cy="639.65" r="28.35"/>
+            <circle class="cls-2" cx="198.66" cy="881.34" r="28.35"/>
+            <circle class="cls-2" cx="314.93" cy="760.49" r="28.35"/>
+            <circle class="cls-2" cx="81.92" cy="760.49" r="28.35"/>
+            <text class="cls-3" transform="translate(170.31 778.09)">M1</text>
+        </g>
+        <g id="mesa_2" data-name="mesa 2" table-name="2">
+            <rect class="cls-2" x="550.15" y="689.63" width="141.73" height="141.73"/>
+            <circle class="cls-2" cx="621.02" cy="639.65" r="28.35"/>
+            <circle class="cls-2" cx="621.02" cy="881.34" r="28.35"/>
+            <circle class="cls-2" cx="737.29" cy="760.49" r="28.35"/>
+            <circle class="cls-2" cx="504.29" cy="760.49" r="28.35"/>
+            <text class="cls-3" transform="translate(592.67 778.09)">M2</text>
+        </g>
+        <g id="mesa_3" data-name="mesa 3" table-name="3">
+            <rect class="cls-2" x="943.47" y="689.63" width="141.73" height="141.73"/>
+            <circle class="cls-2" cx="1014.33" cy="639.65" r="28.35"/>
+            <circle class="cls-2" cx="1014.33" cy="881.34" r="28.35"/>
+            <circle class="cls-2" cx="1130.6" cy="760.49" r="28.35"/>
+            <circle class="cls-2" cx="897.6" cy="760.49" r="28.35"/>
+            <text class="cls-3" transform="translate(985.99 778.09)">M3</text>
+        </g>
+        <g id="mesa_4" data-name="mesa 4" table-name="4">
+            <rect class="cls-2" x="1318.34" y="689.63" width="141.73" height="141.73"/>
+            <circle class="cls-2" cx="1389.21" cy="639.65" r="28.35"/>
+            <circle class="cls-2" cx="1389.21" cy="881.34" r="28.35"/>
+            <circle class="cls-2" cx="1505.48" cy="760.49" r="28.35"/>
+            <circle class="cls-2" cx="1272.48" cy="760.49" r="28.35"/>
+            <text class="cls-3" transform="translate(1360.86 778.09)">M4</text>
+        </g>
+        <g id="mesa_5" data-name="mesa 5" table-name="5">
+            <rect class="cls-2" x="1715.19" y="689.63" width="141.73" height="141.73"/>
+            <circle class="cls-2" cx="1786.06" cy="639.65" r="28.35"/>
+            <circle class="cls-2" cx="1786.06" cy="881.34" r="28.35"/>
+            <circle class="cls-2" cx="1902.33" cy="760.49" r="28.35"/>
+            <circle class="cls-2" cx="1669.33" cy="760.49" r="28.35"/>
+            <text class="cls-3" transform="translate(1757.71 778.09)">M5</text>
+        </g>
+        <text class="cls-4" transform="translate(923.3 553.54)">
+            <tspan class="cls-5">M</tspan>
+            <tspan x="58.32" y="0">esas</tspan>
+        </text>
+    </g>
+    <g id="seccion_abierta" data-name="seccion abierta" section-name="Espacio libre" section-type="open-space">
+        <rect is-background="true" class="cls-6" x="28.35" y="1091.98" width="1927.56" height="566.93"/>
+        <g id="espacio_libre" data-name="espacio libre" capacity="50"/>
+        <text class="cls-4" transform="translate(803.53 1248.87)">Espacio lib
+            <tspan class="cls-7" x="318.31" y="0">r</tspan>
+            <tspan x="341.13" y="0">e</tspan>
+        </text>
+        <g id="layer1">
+            <g id="g1576">
+                <ellipse id="path897" class="cls-8" cx="402.13" cy="1488.62" rx="47.35" ry="3.43"/>
+                <g id="g1532">
+                    <g id="g1177">
+                        <ellipse id="circle1167" class="cls-9" cx="570.61" cy="1274.86" rx="20.84" ry="22.43"/>
+                        <path id="path1169" class="cls-9" d="M544.64,1366.62l5.42,72.7,41.89-.2,6.08-72.25Z"/>
+                        <path id="rect1171" class="cls-9"
+                              d="M533.79,1305h74.14a2.25,2.25,0,0,1,2.16,2.33v64.18a2.25,2.25,0,0,1-2.16,2.33H533.79a2.25,2.25,0,0,1-2.16-2.33v-64.18A2.25,2.25,0,0,1,533.79,1305Z"/>
+                        <path id="path1173" class="cls-9" d="M533.11,1305.45l37.73-3.91,37.24,3.8"/>
+                        <path id="rect1175" class="cls-9"
+                              d="M551.88,1384.63h38.18a2.12,2.12,0,0,1,2,2.19V1439a2.11,2.11,0,0,1-2,2.18H551.88a2.11,2.11,0,0,1-2-2.18v-52.17A2.11,2.11,0,0,1,551.88,1384.63Z"/>
+                    </g>
+                    <g id="g1494">
+                        <path id="rect1267" class="cls-10"
+                              d="M443.24,1281.2h95.55a6.43,6.43,0,0,1,6.18,6.65v81.57a6.43,6.43,0,0,1-6.18,6.65H443.24a6.43,6.43,0,0,1-6.18-6.65v-81.57A6.43,6.43,0,0,1,443.24,1281.2Z"/>
+                        <g id="g1165">
+                            <ellipse id="circle1155" class="cls-11" cx="490.74" cy="1249.33" rx="26.05" ry="28.04"/>
+                            <path id="path1157" class="cls-11" d="M458.27,1364l6.77,90.89,52.37-.26,7.6-90.32Z"/>
+                            <path id="rect1159" class="cls-11"
+                                  d="M444.7,1287h92.68a2.81,2.81,0,0,1,2.71,2.91v80.24a2.81,2.81,0,0,1-2.71,2.9H444.7a2.81,2.81,0,0,1-2.7-2.9V1289.9A2.81,2.81,0,0,1,444.7,1287Z"/>
+                            <path id="path1161" class="cls-11" d="M443.86,1287.57l47.16-4.9,46.55,4.75"/>
+                            <path id="rect1163" class="cls-11"
+                                  d="M467.32,1386.55h47.73a2.65,2.65,0,0,1,2.54,2.74v65.21a2.64,2.64,0,0,1-2.54,2.73H467.32a2.64,2.64,0,0,1-2.54-2.73v-65.21A2.65,2.65,0,0,1,467.32,1386.55Z"/>
+                        </g>
+                    </g>
+                    <g id="g1201">
+                        <ellipse id="circle1191" class="cls-12" cx="223.69" cy="1275.86" rx="20.74" ry="22.32"/>
+                        <path id="path1193" class="cls-12" d="M197.84,1367.16l5.4,72.35,41.68-.2,6.05-71.9Z"/>
+                        <path id="rect1195" class="cls-12"
+                              d="M187,1305.84h73.78a2.23,2.23,0,0,1,2.15,2.31V1372a2.24,2.24,0,0,1-2.15,2.32H187a2.25,2.25,0,0,1-2.15-2.32v-63.87A2.24,2.24,0,0,1,187,1305.84Z"/>
+                        <path id="path1197" class="cls-12" d="M186.37,1306.3l37.54-3.9,37.06,3.78"/>
+                        <path id="rect1199" class="cls-12"
+                              d="M205.05,1385.09h38a2.1,2.1,0,0,1,2,2.18v51.91a2.1,2.1,0,0,1-2,2.17h-38a2.1,2.1,0,0,1-2-2.17v-51.91A2.1,2.1,0,0,1,205.05,1385.09Z"/>
+                    </g>
+                    <g id="g1485">
+                        <path id="rect1269" class="cls-10"
+                              d="M255.89,1279.19h94.8a6.48,6.48,0,0,1,6.23,6.71v82.25a6.48,6.48,0,0,1-6.23,6.71h-94.8a6.48,6.48,0,0,1-6.23-6.71V1285.9A6.48,6.48,0,0,1,255.89,1279.19Z"/>
+                        <g id="g1189">
+                            <ellipse id="circle1179" class="cls-13" cx="303.2" cy="1248.87" rx="25.47" ry="27.42"/>
+                            <path id="path1181" class="cls-13" d="M271.45,1361l6.63,88.87,51.2-.26,7.43-88.3Z"/>
+                            <path id="rect1183" class="cls-13"
+                                  d="M258.2,1285.69h90.61a2.74,2.74,0,0,1,2.64,2.84V1367a2.75,2.75,0,0,1-2.64,2.85H258.2a2.76,2.76,0,0,1-2.65-2.85v-78.45A2.75,2.75,0,0,1,258.2,1285.69Z"/>
+                            <path id="path1185" class="cls-13" d="M257.37,1286.26l46.11-4.79,45.51,4.64"/>
+                            <path id="rect1187" class="cls-13"
+                                  d="M280.31,1383H327a2.59,2.59,0,0,1,2.49,2.68v63.76a2.58,2.58,0,0,1-2.49,2.67H280.31a2.58,2.58,0,0,1-2.48-2.67v-63.76A2.59,2.59,0,0,1,280.31,1383Z"/>
+                        </g>
+                    </g>
+                    <g id="g1476">
+                        <path id="rect1235" class="cls-10"
+                              d="M348.26,1270.76h107c6.83,0,12.36,6,12.36,13.3v89.68c0,7.34-5.53,13.3-12.36,13.3h-107c-6.83,0-12.36-6-12.36-13.3v-89.68C335.9,1276.71,341.43,1270.76,348.26,1270.76Z"/>
+                        <g id="g895">
+                            <ellipse id="path880" class="cls-14" cx="401.43" cy="1232.05" rx="31.29" ry="33.68"/>
+                            <path id="path888" class="cls-14" d="M362.43,1369.83,370.57,1479l62.9-.31,9.12-108.49Z"/>
+                            <path id="rect882" class="cls-14"
+                                  d="M346.14,1277.29H457.46a3.38,3.38,0,0,1,3.25,3.49v96.38a3.38,3.38,0,0,1-3.25,3.49H346.14a3.38,3.38,0,0,1-3.25-3.49v-96.38A3.38,3.38,0,0,1,346.14,1277.29Z"/>
+                            <path id="path884" class="cls-14" d="M345.12,1278l56.65-5.88,55.92,5.71"/>
+                            <path id="rect886" class="cls-14"
+                                  d="M373.31,1396.88h57.33a3.18,3.18,0,0,1,3.05,3.28v78.33a3.18,3.18,0,0,1-3.05,3.29H373.31a3.17,3.17,0,0,1-3.05-3.29v-78.33A3.17,3.17,0,0,1,373.31,1396.88Z"/>
+                        </g>
+                    </g>
+                </g>
+                <ellipse id="ellipse1271" class="cls-8" cx="492.19" cy="1463.01" rx="33.49" ry="2.61"/>
+                <ellipse id="ellipse1273" class="cls-8" cx="572.29" cy="1445.5" rx="27.68" ry="2.39"/>
+                <ellipse id="ellipse1275" class="cls-8" cx="305.15" cy="1458.63" rx="31.87" ry="2.65"/>
+                <ellipse id="ellipse1277" class="cls-8" cx="223.83" cy="1446.49" rx="29.36" ry="1.96"/>
+            </g>
+        </g>
+        <g id="Capa_22" data-name="Capa 22">
+            <g id="layer1-2" data-name="layer1">
+                <g id="g1576-2" data-name="g1576">
+                    <ellipse id="path897-2" data-name="path897" class="cls-8" cx="996.76" cy="1631.54" rx="47.35"
+                             ry="3.43"/>
+                    <g id="g1532-2" data-name="g1532">
+                        <g id="g1177-2" data-name="g1177">
+                            <ellipse id="circle1167-2" data-name="circle1167" class="cls-9" cx="1165.25" cy="1417.78"
+                                     rx="20.84" ry="22.43"/>
+                            <path id="path1169-2" data-name="path1169" class="cls-9"
+                                  d="M1139.27,1509.54l5.43,72.7,41.88-.2,6.08-72.25Z"/>
+                            <path id="rect1171-2" data-name="rect1171" class="cls-9"
+                                  d="M1128.43,1447.91h74.13a2.24,2.24,0,0,1,2.16,2.33v64.18a2.24,2.24,0,0,1-2.16,2.33h-74.13a2.25,2.25,0,0,1-2.17-2.33v-64.18A2.25,2.25,0,0,1,1128.43,1447.91Z"/>
+                            <path id="path1173-2" data-name="path1173" class="cls-9"
+                                  d="M1127.75,1448.37l37.72-3.91,37.24,3.8"/>
+                            <path id="rect1175-2" data-name="rect1175" class="cls-9"
+                                  d="M1146.52,1527.55h38.18a2.11,2.11,0,0,1,2,2.19v52.17a2.11,2.11,0,0,1-2,2.18h-38.18a2.11,2.11,0,0,1-2-2.18v-52.17A2.11,2.11,0,0,1,1146.52,1527.55Z"/>
+                        </g>
+                        <g id="g1494-2" data-name="g1494">
+                            <path id="rect1267-2" data-name="rect1267" class="cls-10"
+                                  d="M1037.88,1424.12h95.54a6.43,6.43,0,0,1,6.18,6.65v81.57a6.43,6.43,0,0,1-6.18,6.65h-95.54a6.42,6.42,0,0,1-6.18-6.65v-81.57A6.43,6.43,0,0,1,1037.88,1424.12Z"/>
+                            <g id="g1165-2" data-name="g1165">
+                                <ellipse id="circle1155-2" data-name="circle1155" class="cls-11" cx="1085.37"
+                                         cy="1392.25" rx="26.05" ry="28.04"/>
+                                <path id="path1157-2" data-name="path1157" class="cls-11"
+                                      d="M1052.9,1507l6.78,90.89,52.36-.26,7.6-90.32Z"/>
+                                <path id="rect1159-2" data-name="rect1159" class="cls-11"
+                                      d="M1039.34,1429.91H1132a2.81,2.81,0,0,1,2.7,2.91v80.23a2.81,2.81,0,0,1-2.7,2.91h-92.68a2.81,2.81,0,0,1-2.7-2.91v-80.23A2.81,2.81,0,0,1,1039.34,1429.91Z"/>
+                                <path id="path1161-2" data-name="path1161" class="cls-11"
+                                      d="M1038.49,1430.49l47.16-4.9,46.56,4.75"/>
+                                <path id="rect1163-2" data-name="rect1163" class="cls-11"
+                                      d="M1062,1529.47h47.73a2.64,2.64,0,0,1,2.54,2.74v65.21a2.63,2.63,0,0,1-2.54,2.73H1062a2.63,2.63,0,0,1-2.53-2.73v-65.21A2.64,2.64,0,0,1,1062,1529.47Z"/>
+                            </g>
+                        </g>
+                        <g id="g1201-2" data-name="g1201">
+                            <ellipse id="circle1191-2" data-name="circle1191" class="cls-12" cx="818.32" cy="1418.78"
+                                     rx="20.74" ry="22.32"/>
+                            <path id="path1193-2" data-name="path1193" class="cls-12"
+                                  d="M792.47,1510.08l5.4,72.35,41.68-.2,6.05-71.9Z"/>
+                            <path id="rect1195-2" data-name="rect1195" class="cls-12"
+                                  d="M781.68,1448.76h73.77a2.23,2.23,0,0,1,2.15,2.31v63.87a2.24,2.24,0,0,1-2.15,2.32H781.68a2.24,2.24,0,0,1-2.15-2.32v-63.87A2.23,2.23,0,0,1,781.68,1448.76Z"/>
+                            <path id="path1197-2" data-name="path1197" class="cls-12"
+                                  d="M781,1449.22l37.54-3.9,37.06,3.78"/>
+                            <path id="rect1199-2" data-name="rect1199" class="cls-12"
+                                  d="M799.68,1528h38a2.11,2.11,0,0,1,2,2.18v51.91a2.1,2.1,0,0,1-2,2.17h-38a2.1,2.1,0,0,1-2-2.17v-51.91A2.1,2.1,0,0,1,799.68,1528Z"/>
+                        </g>
+                        <g id="g1485-2" data-name="g1485">
+                            <path id="rect1269-2" data-name="rect1269" class="cls-10"
+                                  d="M850.52,1422.11h94.8a6.48,6.48,0,0,1,6.23,6.71v82.25a6.48,6.48,0,0,1-6.23,6.71h-94.8a6.48,6.48,0,0,1-6.23-6.71v-82.25A6.48,6.48,0,0,1,850.52,1422.11Z"/>
+                            <g id="g1189-2" data-name="g1189">
+                                <ellipse id="circle1179-2" data-name="circle1179" class="cls-13" cx="897.83"
+                                         cy="1391.79" rx="25.47" ry="27.42"/>
+                                <path id="path1181-2" data-name="path1181" class="cls-13"
+                                      d="M866.09,1503.93l6.63,88.87,51.19-.26,7.43-88.3Z"/>
+                                <path id="rect1183-2" data-name="rect1183" class="cls-13"
+                                      d="M852.83,1428.61h90.61a2.74,2.74,0,0,1,2.64,2.84v78.45a2.75,2.75,0,0,1-2.64,2.85H852.83a2.75,2.75,0,0,1-2.64-2.85v-78.45A2.74,2.74,0,0,1,852.83,1428.61Z"/>
+                                <path id="path1185-2" data-name="path1185" class="cls-13"
+                                      d="M852,1429.18l46.11-4.79,45.52,4.64"/>
+                                <path id="rect1187-2" data-name="rect1187" class="cls-13"
+                                      d="M874.94,1526h46.67a2.59,2.59,0,0,1,2.48,2.68v63.76a2.58,2.58,0,0,1-2.48,2.67H874.94a2.58,2.58,0,0,1-2.48-2.67v-63.76A2.59,2.59,0,0,1,874.94,1526Z"/>
+                            </g>
+                        </g>
+                        <g id="g1476-2" data-name="g1476">
+                            <path id="rect1235-2" data-name="rect1235" class="cls-10"
+                                  d="M942.89,1413.68h107c6.82,0,12.36,6,12.36,13.3v89.68c0,7.34-5.54,13.3-12.36,13.3h-107c-6.82,0-12.36-6-12.36-13.3V1427C930.53,1419.63,936.07,1413.68,942.89,1413.68Z"/>
+                            <g id="g895-2" data-name="g895">
+                                <ellipse id="path880-2" data-name="path880" class="cls-14" cx="996.06" cy="1374.97"
+                                         rx="31.29" ry="33.68"/>
+                                <path id="path888-2" data-name="path888" class="cls-14"
+                                      d="M957.06,1512.75l8.15,109.17,62.89-.31,9.13-108.49Z"/>
+                                <path id="rect882-2" data-name="rect882" class="cls-14"
+                                      d="M940.77,1420.21H1052.1a3.37,3.37,0,0,1,3.24,3.49v96.38a3.37,3.37,0,0,1-3.24,3.49H940.77a3.37,3.37,0,0,1-3.24-3.49V1423.7A3.37,3.37,0,0,1,940.77,1420.21Z"/>
+                                <path id="path884-2" data-name="path884" class="cls-14"
+                                      d="M939.76,1420.9,996.4,1415l55.92,5.71"/>
+                                <path id="rect886-2" data-name="rect886" class="cls-14"
+                                      d="M967.94,1539.8h57.33a3.18,3.18,0,0,1,3,3.28v78.33a3.18,3.18,0,0,1-3,3.29H967.94a3.18,3.18,0,0,1-3.05-3.29v-78.33A3.18,3.18,0,0,1,967.94,1539.8Z"/>
+                            </g>
+                        </g>
+                    </g>
+                    <ellipse id="ellipse1271-2" data-name="ellipse1271" class="cls-8" cx="1086.82" cy="1605.93"
+                             rx="33.49" ry="2.61"/>
+                    <ellipse id="ellipse1273-2" data-name="ellipse1273" class="cls-8" cx="1166.92" cy="1588.42"
+                             rx="27.68" ry="2.39"/>
+                    <ellipse id="ellipse1275-2" data-name="ellipse1275" class="cls-8" cx="899.79" cy="1601.55"
+                             rx="31.87" ry="2.65"/>
+                    <ellipse id="ellipse1277-2" data-name="ellipse1277" class="cls-8" cx="818.47" cy="1589.41"
+                             rx="29.36" ry="1.96"/>
+                </g>
+            </g>
+        </g>
+        <g id="layer2">
+            <g id="g1576-3" data-name="g1576">
+                <ellipse id="path897-3" data-name="path897" class="cls-8" cx="1572.81" cy="1487.21" rx="47.35"
+                         ry="3.43"/>
+                <g id="g1532-3" data-name="g1532">
+                    <g id="g1177-3" data-name="g1177">
+                        <ellipse id="circle1167-3" data-name="circle1167" class="cls-9" cx="1741.3" cy="1273.46"
+                                 rx="20.84" ry="22.43"/>
+                        <path id="path1169-3" data-name="path1169" class="cls-9"
+                              d="M1715.32,1365.21l5.43,72.71,41.88-.21,6.08-72.25Z"/>
+                        <path id="rect1171-3" data-name="rect1171" class="cls-9"
+                              d="M1704.47,1303.58h74.14a2.26,2.26,0,0,1,2.16,2.33v64.19a2.25,2.25,0,0,1-2.16,2.32h-74.14a2.25,2.25,0,0,1-2.16-2.32v-64.19A2.26,2.26,0,0,1,1704.47,1303.58Z"/>
+                        <path id="path1173-3" data-name="path1173" class="cls-9"
+                              d="M1703.8,1304.05l37.72-3.92,37.24,3.8"/>
+                        <path id="rect1175-3" data-name="rect1175" class="cls-9"
+                              d="M1722.57,1383.23h38.18a2.11,2.11,0,0,1,2,2.18v52.17a2.11,2.11,0,0,1-2,2.19h-38.18a2.12,2.12,0,0,1-2-2.19v-52.17A2.11,2.11,0,0,1,1722.57,1383.23Z"/>
+                    </g>
+                    <g id="g1494-3" data-name="g1494">
+                        <path id="rect1267-3" data-name="rect1267" class="cls-10"
+                              d="M1613.92,1279.79h95.55a6.43,6.43,0,0,1,6.18,6.65V1368a6.43,6.43,0,0,1-6.18,6.65h-95.55a6.42,6.42,0,0,1-6.17-6.65v-81.58A6.42,6.42,0,0,1,1613.92,1279.79Z"/>
+                        <g id="g1165-3" data-name="g1165">
+                            <ellipse id="circle1155-3" data-name="circle1155" class="cls-11" cx="1661.42" cy="1247.92"
+                                     rx="26.05" ry="28.04"/>
+                            <path id="path1157-3" data-name="path1157" class="cls-11"
+                                  d="M1629,1362.63l6.78,90.88,52.36-.25,7.6-90.32Z"/>
+                            <path id="rect1159-3" data-name="rect1159" class="cls-11"
+                                  d="M1615.38,1285.58h92.69a2.81,2.81,0,0,1,2.7,2.91v80.24a2.81,2.81,0,0,1-2.7,2.91h-92.69a2.81,2.81,0,0,1-2.7-2.91v-80.24A2.81,2.81,0,0,1,1615.38,1285.58Z"/>
+                            <path id="path1161-3" data-name="path1161" class="cls-11"
+                                  d="M1614.54,1286.16l47.16-4.89,46.55,4.75"/>
+                            <path id="rect1163-3" data-name="rect1163" class="cls-11"
+                                  d="M1638,1385.15h47.73a2.64,2.64,0,0,1,2.54,2.73v65.22a2.65,2.65,0,0,1-2.54,2.73H1638a2.65,2.65,0,0,1-2.54-2.73v-65.22A2.64,2.64,0,0,1,1638,1385.15Z"/>
+                        </g>
+                    </g>
+                    <g id="g1201-3" data-name="g1201">
+                        <ellipse id="circle1191-3" data-name="circle1191" class="cls-12" cx="1394.37" cy="1274.45"
+                                 rx="20.74" ry="22.32"/>
+                        <path id="path1193-3" data-name="path1193" class="cls-12"
+                              d="M1368.52,1365.76l5.4,72.35,41.68-.21,6.05-71.89Z"/>
+                        <path id="rect1195-3" data-name="rect1195" class="cls-12"
+                              d="M1357.73,1304.43h73.77a2.24,2.24,0,0,1,2.15,2.32v63.87a2.23,2.23,0,0,1-2.15,2.31h-73.77a2.23,2.23,0,0,1-2.15-2.31v-63.87A2.24,2.24,0,0,1,1357.73,1304.43Z"/>
+                        <path id="path1197-3" data-name="path1197" class="cls-12"
+                              d="M1357.05,1304.89l37.54-3.89,37.06,3.78"/>
+                        <path id="rect1199-3" data-name="rect1199" class="cls-12"
+                              d="M1375.73,1383.68h38a2.1,2.1,0,0,1,2,2.18v51.91a2.1,2.1,0,0,1-2,2.18h-38a2.1,2.1,0,0,1-2-2.18v-51.91A2.1,2.1,0,0,1,1375.73,1383.68Z"/>
+                    </g>
+                    <g id="g1485-3" data-name="g1485">
+                        <path id="rect1269-3" data-name="rect1269" class="cls-10"
+                              d="M1426.57,1277.79h94.8a6.48,6.48,0,0,1,6.23,6.7v82.26a6.48,6.48,0,0,1-6.23,6.7h-94.8a6.48,6.48,0,0,1-6.23-6.7v-82.26A6.48,6.48,0,0,1,1426.57,1277.79Z"/>
+                        <g id="g1189-3" data-name="g1189">
+                            <ellipse id="circle1179-3" data-name="circle1179" class="cls-13" cx="1473.88" cy="1247.46"
+                                     rx="25.47" ry="27.42"/>
+                            <path id="path1181-3" data-name="path1181" class="cls-13"
+                                  d="M1442.14,1359.61l6.63,88.86,51.19-.25,7.43-88.31Z"/>
+                            <path id="rect1183-3" data-name="rect1183" class="cls-13"
+                                  d="M1428.88,1284.28h90.61a2.75,2.75,0,0,1,2.64,2.85v78.45a2.74,2.74,0,0,1-2.64,2.84h-90.61a2.74,2.74,0,0,1-2.64-2.84v-78.45A2.75,2.75,0,0,1,1428.88,1284.28Z"/>
+                            <path id="path1185-3" data-name="path1185" class="cls-13"
+                                  d="M1428.05,1284.85l46.11-4.79,45.52,4.65"/>
+                            <path id="rect1187-3" data-name="rect1187" class="cls-13"
+                                  d="M1451,1381.63h46.67a2.58,2.58,0,0,1,2.48,2.67v63.76a2.58,2.58,0,0,1-2.48,2.67H1451a2.58,2.58,0,0,1-2.48-2.67V1384.3A2.58,2.58,0,0,1,1451,1381.63Z"/>
+                        </g>
+                    </g>
+                    <g id="g1476-3" data-name="g1476">
+                        <path id="rect1235-3" data-name="rect1235" class="cls-10"
+                              d="M1518.94,1269.35h107c6.82,0,12.36,6,12.36,13.31v89.67c0,7.35-5.54,13.3-12.36,13.3h-107c-6.82,0-12.36-6-12.36-13.3v-89.67C1506.58,1275.31,1512.12,1269.35,1518.94,1269.35Z"/>
+                        <g id="g895-3" data-name="g895">
+                            <ellipse id="path880-3" data-name="path880" class="cls-14" cx="1572.11" cy="1230.65"
+                                     rx="31.29" ry="33.68"/>
+                            <path id="path888-3" data-name="path888" class="cls-14"
+                                  d="M1533.11,1368.42l8.14,109.17,62.9-.31,9.13-108.49Z"/>
+                            <path id="rect882-3" data-name="rect882" class="cls-14"
+                                  d="M1516.82,1275.88h111.32a3.38,3.38,0,0,1,3.25,3.5v96.37a3.38,3.38,0,0,1-3.25,3.5H1516.82a3.38,3.38,0,0,1-3.24-3.5v-96.37A3.38,3.38,0,0,1,1516.82,1275.88Z"/>
+                            <path id="path884-3" data-name="path884" class="cls-14"
+                                  d="M1515.8,1276.58l56.65-5.88,55.92,5.7"/>
+                            <path id="rect886-3" data-name="rect886" class="cls-14"
+                                  d="M1544,1395.47h57.33a3.18,3.18,0,0,1,3,3.29v78.33a3.18,3.18,0,0,1-3,3.28H1544a3.17,3.17,0,0,1-3-3.28v-78.33A3.17,3.17,0,0,1,1544,1395.47Z"/>
+                        </g>
+                    </g>
+                </g>
+                <ellipse id="ellipse1271-3" data-name="ellipse1271" class="cls-8" cx="1662.87" cy="1461.61" rx="33.49"
+                         ry="2.61"/>
+                <ellipse id="ellipse1273-3" data-name="ellipse1273" class="cls-8" cx="1742.97" cy="1444.1" rx="27.68"
+                         ry="2.39"/>
+                <ellipse id="ellipse1275-3" data-name="ellipse1275" class="cls-8" cx="1475.83" cy="1457.23" rx="31.87"
+                         ry="2.65"/>
+                <ellipse id="ellipse1277-3" data-name="ellipse1277" class="cls-8" cx="1394.51" cy="1445.08" rx="29.36"
+                         ry="1.96"/>
+            </g>
+        </g>
+    </g>
+    <g id="escenario">
+        <rect id="escenario_princ" data-name="escenario princ" class="cls-15" x="283.46" y="0.5" width="1417.32"
+              height="300.61"/>
+        <rect id="escenario_princ-2" data-name="escenario princ" class="cls-16" x="311.81" y="23.21" width="1360.63"
+              height="255.2"/>
+        <text class="cls-17" transform="translate(859.56 183.78)">Escenario</text>
+        <g id="parlanteIz">
+            <rect class="cls-16" x="1749.03" y="0.5" width="232.22" height="300.61"/>
+            <circle class="cls-18" cx="1866.11" cy="81.29" r="55.14"/>
+            <circle class="cls-18" cx="1866.11" cy="220.95" r="55.14"/>
+            <circle class="cls-19" cx="1866.11" cy="80.97" r="34.91"/>
+            <circle class="cls-19" cx="1866.11" cy="220.95" r="34.91"/>
+        </g>
+        <g id="parlanteDer">
+            <rect class="cls-16" x="3" y="0.5" width="232.22" height="300.61"/>
+            <circle class="cls-18" cx="119.11" cy="80.97" r="55.14"/>
+            <circle class="cls-18" cx="119.11" cy="220.63" r="55.14"/>
+            <circle class="cls-19" cx="119.11" cy="80.82" r="34.91"/>
+            <circle class="cls-19" cx="119.11" cy="220.79" r="34.91"/>
+        </g>
+    </g>
+    <rect class="cls-20" y="1680.48" width="1984.25" height="20.81"/>
+    <rect id="valla" class="cls-21" x="28.35" y="349.35" width="1927.56" height="56.69"/>
+    <rect id="valla-2" data-name="valla" class="cls-21" x="28.35" y="1035.77" width="1927.56" height="28.35"/>
+</svg>

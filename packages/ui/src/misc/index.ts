@@ -8,6 +8,8 @@ export * from "./image-delete-view/image-delete-view";
 export * from "./image-component/image-component";
 export * from "./color-picker/color-picker";
 export * from "./desplegable-container/desplegable-container";
+export * from "./dropdown/dropdow";
+export * from "./rating/rating-star";
 
 //@ts-ignore
 import cssUtilities from "./utilities.module.css";

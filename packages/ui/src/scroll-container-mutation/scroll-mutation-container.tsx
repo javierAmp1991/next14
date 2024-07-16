@@ -70,7 +70,7 @@ export const ScrollMutationContainerMobile = ({props, children}: { props: IScrol
                 {/* {props.OnReturn !== undefined && <MainButton props={returnButton}/>} */}
                 <div className={style.contButton}><MainButton props={buttonApply}/></div>
             </div>
-            </div>
+        </div>
     )
 
     function handleReturn() {

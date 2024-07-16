@@ -1,0 +1,17 @@
+.main {
+    display: grid;
+    gap: .8rem;
+    border-bottom: var(--defaultOutsideLine);
+    padding: 1.6rem 2rem;
+}
+
+.gridImages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .8rem;
+}
+
+.images {
+    width: 100%;
+    aspect-ratio: 1/1;
+}

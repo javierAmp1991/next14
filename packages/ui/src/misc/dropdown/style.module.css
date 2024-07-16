@@ -1,0 +1,94 @@
+.main {
+    display: grid;
+    transition: .1s;
+    align-content: start;
+    height: max-content;
+    overflow: hidden;
+    position: relative;
+}
+
+.titleXl {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.titleL {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.titleM {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.gap {
+    gap: .8rem;
+}
+
+.gapMini {
+    gap: .8rem;
+}
+
+.open {
+    height: 0;
+    overflow: hidden;
+}
+
+.gridTitleArrow, .gridTitleArrowSpace {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: .6rem;
+    align-items: center;
+    height: 24px;
+    z-index: 100;
+}
+
+.gridTitleArrowSpace{
+    grid-template-columns: 1fr max-content !important;
+}
+
+.arrow {
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+    transition: var(--defaultTransition);
+    margin-top: .2rem;
+}
+
+.optional{
+    color: var(--colorTextDetails);
+}
+
+.rotate0 {
+    rotate: 0;
+}
+
+.rotate90 {
+    rotate: 90deg;
+}
+
+.option {
+    animation: test .4s;
+}
+
+.linkColor{
+    color: var(--colorMiddleSpix) !important;
+}
+
+.grid {
+    display: grid;
+    gap: 1.6rem;
+    align-content: start;
+    height: max-content;
+}
+
+@keyframes test {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
