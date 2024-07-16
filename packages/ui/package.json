@@ -45,7 +45,8 @@
     "ulid": "^2.3.0",
     "react-zoom-pan-pinch": "^3.3.0",
     "react-inlinesvg": "^4.1.0",
-    "moment": "^2.29.4"
+    "moment": "^2.29.4",
+    "date-fns": "^2.30.0"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

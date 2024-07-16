@@ -2,8 +2,8 @@ import {CalendarDesktop} from "@repo/ui/calendar";
 import style from "./calendar.module.css";
 import {useState} from "react";
 import HourView from "../hour-view";
-import {isSameDay, startOfDay} from 'date-fns';
 import {useLayoutContext, EventDate} from "../../../../index";
+import {isSameDayFn} from "@repo/ui/functions";
 
 
 export default function Calendar({onClose}: { onClose: Function }) {
@@ -46,7 +46,7 @@ export default function Calendar({onClose}: { onClose: Function }) {
             if (DatesAvailable) {
                 let newList: any[] = []
                 DatesAvailable.forEach(e => {
-                    if (isSameDay(startOfDay(e.Date), startOfDay(date))) newList = [...newList, e]
+                    if (isSameDayFn(e.Date, date)) newList = [...newList, e]
                 })
                 setShow(true)
                 setHoursAvailable(newList)

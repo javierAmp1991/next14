@@ -1,4 +1,5 @@
 import moment from "moment";
+import {isSameDay, startOfDay} from 'date-fns';
 
 export function getUpperFirst(name: string) {
     return name[0]!.toUpperCase() + name.substring(1);
@@ -34,4 +35,9 @@ export function convertToDate(d: Date){
 
 export function isSameDate(d: Date, fD: string, startOf: 'day' | 'month' | 'year'){
     return moment(d).isSame(moment(fD), startOf )
+}
+
+export function isSameDayFn(sDate: Date, lDate: Date){
+    return isSameDay(startOfDay(sDate), startOfDay(lDate))
+
 }
