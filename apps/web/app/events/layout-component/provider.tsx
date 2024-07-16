@@ -511,11 +511,11 @@ export const LayoutProvider = ({children, props}:{children: ReactNode, props: IL
     function addClassToObjectItem(el: Element, section: string, name: string) {
         const findItemsObject = ticketsRef.current.filter(e => e.SectionName === section && e.File === name);
         const isOneDisable = findItemsObject.filter(e => e.StateSeat === EnumStateSeat.Disable);
-        if (isOneDisable.length >= 1) updateElementClasses(el, style.disable);
+        if (isOneDisable.length >= 1) updateElementClasses(el, style.disable!);
         else {
             const findItemsSelected = ticketsRef.current.filter(e => e.SectionName === section && e.File === name && e.State);
-            if (findItemsSelected.length >= 1) updateElementClasses(el, style.selected);
-            else updateElementClasses(el, style.available);
+            if (findItemsSelected.length >= 1) updateElementClasses(el, style.selected!);
+            else updateElementClasses(el, style.available!);
             el.classList.add(style.cursor!);
         }
     }
