@@ -16,8 +16,7 @@ export default function InputNumberTicket({onConfirm}: { onConfirm: Function }) 
     };
     const confirmButton: IMainButton = {
         Text: "Confirmar",
-        OnClick: handleConfirm,
-        Style: style.button
+        OnClick: handleConfirm
     };
     return (
         <>
