@@ -1,7 +1,6 @@
 import style from "./style.module.css";
 import References from "./reference-images/reference-images";
 import Atributes from "./atributes/atributes";
-import SectionInformation from "./section-info/section-info";
 import Tickets from "./info-ticket/info-ticket";
 import {HeaderContainer} from "../../header-container";
 
@@ -17,7 +16,6 @@ export default function Main({onReturn, areAllSame}:{onReturn: Function, areAllS
                 areAllSame ?
                 <div className={style.main}>
                     <References/>
-                    <SectionInformation/>
                     <Atributes/>
                     <Tickets/>
                 </div>
