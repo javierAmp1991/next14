@@ -8,7 +8,7 @@ import {useEffect, useRef, useState} from "react";
 import u, {DesplegableContainerPortal, IDesplegableContainerPortal} from "@repo/ui/misc";
 import Areas from "../left/main";
 import Image from "next/image";
-import {EDIT_ICON_BLUE} from "@repo/ui/localIcons";
+import {FILTER_ICON_BLUE} from "@repo/ui/localIcons";
 
 export default function Main(){
     const {Tickets: T} = useLayoutContext();
@@ -60,8 +60,8 @@ export default function Main(){
                         <button onClick={handleResale} className={`${sBase} ${!state && sSelected}`}>
                             Reventa
                         </button>
-                        <button onClick={handleFilters}>
-                            <Image width={14} height={14} alt="" src={EDIT_ICON_BLUE}/>
+                        <button className={css.filterCont} onClick={handleFilters}>
+                            <Image className={css.iconFilter} width={16} height={16} alt="" src={FILTER_ICON_BLUE}/>
                         </button>
                         <div className={`${css.line} ${state && css.lineResale}`}/>
                     </div>

@@ -69,7 +69,7 @@ export default function SvgComponent({props}: { props: SvgViewProps }) {
                 size.IsReady ?
                     <>
                         <Controls props={controlsProps}/>
-                        <TransformWrapper onTransformed={onTransformed} maxScale={maxScale} ref={ref}>
+                        <TransformWrapper   onTransformed={onTransformed} maxScale={maxScale} ref={ref}>
                             <TransformComponent>
                                 <SVG src={props.Src} height={size.Height} width={size.Width} onLoad={onLoad}/>
                             </TransformComponent>

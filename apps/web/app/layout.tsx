@@ -17,7 +17,7 @@ export default function RootLayout({
   const { RangeView } = useWindowDimensions();
   return (
     <html lang="en">
-      <head content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <head content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <Script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js" />
         <link
           href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"

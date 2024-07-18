@@ -1,11 +1,12 @@
 .gridTabs {
     display: grid;
-    grid-template-columns: repeat(2, 1fr) 3rem;
+    grid-template-columns: repeat(2, 1fr) 3.5rem;
     border-bottom: var(--defaultOutsideLine);
     font-size: 1.3rem;
     position: relative;
     height: 3.6rem;
     width: 100%;
+    overflow:hidden;
 }
 
 .tabs {
@@ -34,4 +35,15 @@
 
 .lineResale {
     left: calc(50% - 3rem);
+}
+
+.filterCont{
+    width: 3.5rem;
+    height: 3.5rem;
+    box-shadow: 0 0 .8rem rgb(167, 167, 167);
+    z-index: 1000;
+}
+
+.iconFilter{
+    filter: brightness(0);
 }
