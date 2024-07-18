@@ -40,7 +40,7 @@
 .filterCont{
     width: 3.5rem;
     height: 3.5rem;
-    box-shadow: 0 0 .8rem rgb(167, 167, 167);
+    box-shadow: 0 0 .5rem rgb(209, 208, 208);
     z-index: 1000;
 }
 
