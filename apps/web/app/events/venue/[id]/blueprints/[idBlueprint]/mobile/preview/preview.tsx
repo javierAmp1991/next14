@@ -164,6 +164,20 @@ export default function Preview(){
                     ]
                 }
             ]
+        },
+        Event:{
+            Banner: "/venue-images/test2.jpg",
+            Dates: [
+                {
+                    Id: "idDate001",
+                    Date: new Date(2024, 8, 10, 22,0,0)
+                },
+                {
+                    Id: "idDate001",
+                    Date: new Date(2024, 9, 10, 14,0,0)
+                }
+            ],
+            Title: "Musica electronica"
         }
     }
     return <div><LayoutComponent props={props}/></div>

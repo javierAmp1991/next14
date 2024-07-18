@@ -31,7 +31,6 @@
 
 .mainTabs{
     overflow: hidden!important;
-    grid-template-rows: max-content 1fr;
 }
 
 .number, .numberSelected, .numberDisable {

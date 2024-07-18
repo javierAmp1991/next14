@@ -4,12 +4,18 @@ import Sections from "./sections/sections";
 import {IMainButton, MainButton} from "@repo/ui/mainButton";
 import {useLayoutContext} from "../../index";
 import Tickets from "./tickets/main";
-import {useEffect, useState} from "react";
-import u, {DesplegableContainer} from "@repo/ui/misc";
+import {useEffect, useRef, useState} from "react";
+import u, {DesplegableContainerPortal, IDesplegableContainerPortal} from "@repo/ui/misc";
+import Areas from "../left/main";
+import Image from "next/image";
+import {EDIT_ICON_BLUE} from "@repo/ui/localIcons";
 
 export default function Main(){
     const {Tickets: T} = useLayoutContext();
     const [showTickets, setShowTickets] = useState(false);
+    const [isFirstLoad, setIsFirstLoad] = useState(true);
+    const [showFilters, setShowFilters] = useState(false);
+    const contRef = useRef<HTMLDivElement>(null);
     const [state, setState] = useState(false);
     const sBase = `${css.tabs} ${u.subtitle}`;
     const sSelected = `${css.tabSelected}`;
@@ -21,36 +27,60 @@ export default function Main(){
         OnClick: toggle,
         UseTiny: true
     };
+    const desplegableProps: IDesplegableContainerPortal = {
+        State: showFilters,
+        OnClose: handleFilters
+    };
 
     useEffect(()=>{
         setShowTickets(hasTicketSelected)
+        if(!showTickets && contRef.current && !isFirstLoad){
+            contRef.current.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
     }, [T])
+
+    useEffect(()=>{
+        setIsFirstLoad(false)
+    },[])
+
     return(
-        <div className={style.right}>
-            <div className={style.mainTabs}>
-                <div className={css.gridTabs}>
-                    <button onClick={handleStandart} className={`${sBase} ${state && sSelected}`}>
-                        Estandar
-                    </button>
-                    <button onClick={handleResale} className={`${sBase} ${!state && sSelected}`}>
-                        Reventa
-                    </button>
-                    <div className={`${css.line} ${state && css.lineResale}`}/>
-                </div>
+        <>
+        <div ref={contRef} className={style.right}>
+            {
+                showTickets ?
+                <Tickets onReturn={handleHideTickets} areAllSame={areAllSame}/>
+                :
+                <div className={style.mainTabs}>
+                    <div className={css.gridTabs}>
+                        <button onClick={handleStandart} className={`${sBase} ${state && sSelected}`}>
+                            Estandar
+                        </button>
+                        <button onClick={handleResale} className={`${sBase} ${!state && sSelected}`}>
+                            Reventa
+                        </button>
+                        <button onClick={handleFilters}>
+                            <Image width={14} height={14} alt="" src={EDIT_ICON_BLUE}/>
+                        </button>
+                        <div className={`${css.line} ${state && css.lineResale}`}/>
+                    </div>
 
-                <div className={style.left}>
-                    <Sections/>
+                    <div className={style.left}>
+                        <Sections/>
+                    </div>
                 </div>
-
-                <DesplegableContainer s={showTickets && hasTicketSelected}>
-                    <Tickets onReturn={handleHideTickets} areAllSame={areAllSame}/>
-                </DesplegableContainer>
-            </div>
+            }
 
             {/* <div className={u.defaultContainerButtons}> */}
                 {/* <MainButton props={buttonProps}/> */}
             {/* </div> */}
         </div>
+
+        <DesplegableContainerPortal props={desplegableProps}>
+            <Areas/>
+        </DesplegableContainerPortal>
+        </>
     )
 
     function handleStandart(){
@@ -71,5 +101,9 @@ export default function Main(){
 
     function toggle(){
         setShowTickets(!showTickets)
+    }
+
+    function handleFilters(){
+        setShowFilters(!showFilters)
     }
 }
