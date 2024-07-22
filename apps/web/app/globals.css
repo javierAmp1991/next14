@@ -84,6 +84,7 @@ body {
   zoom: 1 !important;
   background: white;
   overscroll-behavior: none !important;
+  touch-action: none;
 }
 
 body {
