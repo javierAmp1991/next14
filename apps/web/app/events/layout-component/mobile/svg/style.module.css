@@ -110,6 +110,6 @@
 
 .contSvg{
     width: 100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 2/1;
     overflow: hidden;
 }

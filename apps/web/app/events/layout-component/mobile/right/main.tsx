@@ -1,7 +1,7 @@
 import style from "../style.module.css";
 import css from "./style.module.css";
 import Sections from "./sections/sections";
-import {IMainButton, MainButton} from "@repo/ui/mainButton";
+import {IMainButton} from "@repo/ui/mainButton";
 import {useLayoutContext} from "../../index";
 import Tickets from "./tickets/main";
 import {useEffect, useRef, useState} from "react";
@@ -34,16 +34,16 @@ export default function Main(){
 
     useEffect(()=>{
         setShowTickets(hasTicketSelected)
-        if(!showTickets && contRef.current && !isFirstLoad){
+        {/*if(!showTickets && contRef.current && !isFirstLoad){
             contRef.current.scrollIntoView({
                 behavior: "smooth"
             });
-        }
+        }*/}
     }, [T])
 
-    useEffect(()=>{
+    /*useEffect(()=>{
         setIsFirstLoad(false)
-    },[])
+    },[])*/
 
     return(
         <>
@@ -66,15 +66,11 @@ export default function Main(){
                         <div className={`${css.line} ${state && css.lineResale}`}/>
                     </div>
 
-                    <div className={style.left}>
+                    <div className={style.leftTabs}>
                         <Sections/>
                     </div>
                 </div>
             }
-
-            {/* <div className={u.defaultContainerButtons}> */}
-                {/* <MainButton props={buttonProps}/> */}
-            {/* </div> */}
         </div>
 
         <DesplegableContainerPortal props={desplegableProps}>

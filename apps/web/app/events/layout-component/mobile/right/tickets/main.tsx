@@ -8,7 +8,8 @@ export default function Main({onReturn, areAllSame}:{onReturn: Function, areAllS
     const props = {
         Title: areAllSame? "Tickets Seleccionados" : "Informacion de la Seccion",
         Action: "Volver a secciones",
-        OnAction: onReturn
+        OnAction: onReturn,
+        UseMaxContent: true
     }
     return(
         <HeaderContainer props={props}>

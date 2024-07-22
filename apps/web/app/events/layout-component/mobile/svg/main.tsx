@@ -9,9 +9,10 @@ export default function Main(){
     const props: SvgViewProps = {
         Src: AreaSelected.Image,
         OnLoad: OnFirstLoad
-    }
+    };
+    const t = false;
     return (
-        IsPublic?
+        t?
         <div className={style.main}>
             <Banner/>
             <div className={style.contSvg}>

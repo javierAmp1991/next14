@@ -180,5 +180,9 @@ export default function Preview(){
             Title: "Musica electronica"
         }
     }
-    return <div><LayoutComponent props={props}/></div>
+    return (
+    <div className={style.main}>
+        <LayoutComponent props={props}/>
+    </div>
+    )
 }
