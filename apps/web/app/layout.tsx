@@ -5,7 +5,7 @@ import { HeaderPage, HeaderPageMobile } from "@repo/ui/mainHeader";
 import { ID_PORTAL } from "@repo/ui/const";
 import Script from "next/script";
 import { EnumTypeView, useWindowDimensions } from "@repo/ui/windowDimention";
-import Head from "next/head";
+import Head from 'next/head'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
         <Script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js" />
         <link
           href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"
