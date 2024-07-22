@@ -52,7 +52,7 @@ export default function Main(){
                 showTickets ?
                 <Tickets onReturn={handleHideTickets} areAllSame={areAllSame}/>
                 :
-                <div className={style.mainTabs}>
+                <>
                     <div className={css.gridTabs}>
                         <button onClick={handleStandart} className={`${sBase} ${state && sSelected}`}>
                             Estandar
@@ -65,9 +65,8 @@ export default function Main(){
                         </button>
                         <div className={`${css.line} ${state && css.lineResale}`}/>
                     </div>
-
                     <Sections/>
-                </div>
+                </>
             }
         </div>
 

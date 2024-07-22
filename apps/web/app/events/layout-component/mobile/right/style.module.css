@@ -7,6 +7,10 @@
     height: 3.6rem;
     width: 100%;
     overflow:hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+
 }
 
 .tabs {
