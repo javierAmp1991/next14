@@ -1,4 +1,23 @@
 .main{
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+
+.top{
+    width: 100%;
+    aspect-ratio: 2/1;
+    background: rebeccapurple;
+}
+
+.bottom{
+    width: 100%;
+    height: 100%;
+    background: blue;
+    overflow: scroll;
+}
+
+.contBottom{
+    height: 800px;
+    background: linear-gradient(180deg, green 0%, pink 100%);
 }

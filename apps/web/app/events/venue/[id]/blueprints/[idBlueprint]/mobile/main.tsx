@@ -49,7 +49,8 @@ export default function Main(){
                 OnClick: handleCreateArea,
                 Position: TABS_BLUEPRINT.Preview.Position
             }
-        ]
+        ],
+        OverFlowHidden: Position === TABS_BLUEPRINT.Preview.Position
     };
 
     return(

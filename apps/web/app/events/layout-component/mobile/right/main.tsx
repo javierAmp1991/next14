@@ -66,9 +66,7 @@ export default function Main(){
                         <div className={`${css.line} ${state && css.lineResale}`}/>
                     </div>
 
-                    <div className={style.leftTabs}>
-                        <Sections/>
-                    </div>
+                    <Sections/>
                 </div>
             }
         </div>

@@ -182,6 +182,14 @@ export default function Preview(){
     }
     return (
     <div className={style.main}>
+        {/*<div className={style.top}>
+            top
+        </div>
+        <div className={style.bottom}>
+            <div className={style.contBottom}> 
+                Bottom
+            </div>
+        </div>*/}
         <LayoutComponent props={props}/>
     </div>
     )

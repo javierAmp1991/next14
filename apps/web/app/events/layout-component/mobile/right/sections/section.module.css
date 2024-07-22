@@ -3,6 +3,7 @@
     align-content: start;
     gap: 1.6rem;
     padding: 1.6rem;
+    height: max-content;
 }
 
 .main {

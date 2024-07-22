@@ -15,6 +15,7 @@ export interface IScrollMutationContainerMobile {
   OnAlternative?: Function;
   OnAlternativeText?: string;
   Style?: string;
+  OverFlowHidden?: boolean
   UseDefaultGrid?: boolean
   Buttons?: ButtonScrollMutation[]
 }
@@ -44,7 +45,7 @@ export const ScrollMutationContainerMobile = ({props, children}: { props: IScrol
     };
     const refContainer = useRef<HTMLDivElement>(null);
     const {handleScroll, config} = useScrollHook({ref: refContainer});
-    const mainStyle = `${style.main} ${props.UseDefaultGrid && style.defaultGRid} ${props.Style}`;
+    const mainStyle = `${style.main} ${props.OverFlowHidden ? style.hidden : style.overflow} ${props.UseDefaultGrid && style.defaultGRid} ${props.Style}`;
     const buttonSelected: ButtonScrollMutation | undefined = props.Buttons?.find(b=>b.Position === props.Dependency);
     const defaultButtonProps: IMainButton = {
         OnClick: handleClick,
