@@ -81,7 +81,8 @@ body {
   overflow-x: hidden;
   font-family: sans-serif!important;
   font-size: 62.5%;
-  zoom: 1 !important;
+  zoom: 1!important;
+  -ms-zoom: 1!important;
   background: white;
   overscroll-behavior: none !important;
 }
