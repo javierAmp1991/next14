@@ -21,6 +21,7 @@ export interface ITicketHandlers{
 export interface ILayoutComponet {
     Event?: ILayoutEvent
     Layout: ILayout
+    IsDesktop?: boolean
 }
 
 export interface IAreaHandlers{

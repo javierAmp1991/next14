@@ -28,10 +28,6 @@
     background: white;
 }
 
-.button:hover {
-    background: #eaeaea;
-}
-
 .mainInfo {
     position: absolute;
     bottom: 1.2rem;
@@ -91,6 +87,11 @@
     background: var(--resaleColor);
 }
 
+@media (min-width: 1280px) {
+    .button:hover {
+        background: #eaeaea;
+    }
+}
 
 
 

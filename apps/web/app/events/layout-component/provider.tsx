@@ -161,9 +161,11 @@ export const LayoutProvider = ({children, props}:{children: ReactNode, props: IL
     }
 
     function onFirstLoad() {
+        if(props.Event !== undefined){
         const sections = document.querySelectorAll(`[${sectionName}]`);
         handleAddClassToDetails(true)
         handleAddEventListenersToDetails(sections)
+    }
     }
 
     function handleAddClassToDetails(addListener?: boolean) {

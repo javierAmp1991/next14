@@ -116,7 +116,8 @@ export default function Preview(){
                     ]
                 }
             ]
-        }
+        },
+        IsDesktop: true
     }
     return <div className={style.main}><LayoutComponent props={props}/></div>
 }

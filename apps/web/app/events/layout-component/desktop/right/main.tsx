@@ -8,7 +8,7 @@ import {useEffect, useState} from "react";
 import u, {DesplegableContainer} from "@repo/ui/misc";
 
 export default function Main(){
-    const {Tickets: T} = useLayoutContext();
+    const {Tickets: T, IsPublic} = useLayoutContext();
     const [showTickets, setShowTickets] = useState(false);
     const [state, setState] = useState(false);
     const sBase = `${css.tabs} ${u.subtitle}`;
@@ -28,15 +28,21 @@ export default function Main(){
     return(
         <div className={style.right}>
             <div className={style.mainTabs}>
-                <div className={css.gridTabs}>
-                    <button onClick={handleStandart} className={`${sBase} ${state && sSelected}`}>
-                        Estandar
-                    </button>
-                    <button onClick={handleResale} className={`${sBase} ${!state && sSelected}`}>
-                        Reventa
-                    </button>
-                    <div className={`${css.line} ${state && css.lineResale}`}/>
-                </div>
+                {
+                    IsPublic ?
+                    <div/>
+                    :
+                    <div className={css.gridTabs}>
+                        <button onClick={handleStandart} className={`${sBase} ${state && sSelected}`}>
+                            Estandar
+                        </button>
+                        <button onClick={handleResale} className={`${sBase} ${!state && sSelected}`}>
+                            Reventa
+                        </button>
+                        <div className={`${css.line} ${state && css.lineResale}`}/>
+                    </div>
+                }
+
 
                 <div className={style.left}>
                     <Sections/>

@@ -17,16 +17,16 @@ export default function Main(){
     }
     return(
         IsPublic ?
+        <div className={style.left}>
+            <Areas initialState={true}/>
+        </div>
+        :
         <HeaderContainer props={props}>
             <Areas initialState={false}/>
             <NumberTickets/>
             <Order/>
             <RangePrice/>
             <Functions/>
-        </HeaderContainer>
-        :
-        <div className={style.left}>
-            <Areas initialState={true}/>
-        </div>
+        </HeaderContainer>        
     )
 }

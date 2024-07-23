@@ -11,7 +11,7 @@ import Image from "next/image";
 import {FILTER_ICON_BLUE} from "@repo/ui/localIcons";
 
 export default function Main(){
-    const {Tickets: T} = useLayoutContext();
+    const {Tickets: T, IsPublic} = useLayoutContext();
     const [showTickets, setShowTickets] = useState(false);
     const [isFirstLoad, setIsFirstLoad] = useState(true);
     const [showFilters, setShowFilters] = useState(false);
@@ -53,17 +53,26 @@ export default function Main(){
                 <Tickets onReturn={handleHideTickets} areAllSame={areAllSame}/>
                 :
                 <>
-                    <div className={css.gridTabs}>
-                        <button onClick={handleStandart} className={`${sBase} ${state && sSelected}`}>
-                            Estandar
-                        </button>
-                        <button onClick={handleResale} className={`${sBase} ${!state && sSelected}`}>
-                            Reventa
-                        </button>
+                    <div className={`${css.gridTabs} ${IsPublic && css.gridTabsPublic}`}>
+                        {
+                            IsPublic ?
+                            <>
+                            <button onClick={handleStandart} className={`${sBase} ${state && sSelected}`}>
+                                Estandar
+                            </button>
+                            <button onClick={handleResale} className={`${sBase} ${!state && sSelected}`}>
+                                 Reventa
+                            </button>
+                            </>
+                            :
+                            <button className={sBase}>
+                                Secciones
+                            </button>                            
+                        }
                         <button className={css.filterCont} onClick={handleFilters}>
                             <Image className={css.iconFilter} width={16} height={16} alt="" src={FILTER_ICON_BLUE}/>
                         </button>
-                        <div className={`${css.line} ${state && css.lineResale}`}/>
+                        {IsPublic && <div className={`${css.line} ${state && css.lineResale}`}/>}
                     </div>
                     <Sections/>
                 </>

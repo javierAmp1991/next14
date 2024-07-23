@@ -165,7 +165,8 @@ export default function Preview(){
                 }
             ]
         },
-        Event:{
+        IsDesktop: true,
+        /*Event:{
             Banner: "/venue-images/test2.jpg",
             Dates: [
                 {
@@ -178,7 +179,7 @@ export default function Preview(){
                 }
             ],
             Title: "Musica electronica"
-        }
+        }*/
     }
     return <div className={style.main}><LayoutComponent props={props}/></div>
 }

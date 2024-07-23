@@ -5,7 +5,7 @@ import utilities from "@repo/ui/misc";
 import {GetNameAndIconTypeSection} from "../../../index";
 
 export default function SectionComp({props}: { props: Sections }) {
-    const {} = useLayoutContext();
+    const {IsPublic} = useLayoutContext();
     //const totalAvailable = ListFileAndSeat.filter(e => e.SectionName === prop.Name && !e.State).length;
     const totalAvailable = 10;
     //const isSelected = SectionSelected === undefined ? false : SectionSelected.Name === prop.Name;
@@ -23,7 +23,7 @@ export default function SectionComp({props}: { props: Sections }) {
             <div className={style.mainGrid}>
                 <div className={style.gridAtributes}>
                     <b className={utilities.subtitle}>{props.Name}</b>
-                    <span>{totalAvailable} entradas disponibles</span>
+                    {!IsPublic && <span>{totalAvailable} entradas disponibles</span> }
                     <span className={utilities.details}>{name}</span>
                 </div>
 

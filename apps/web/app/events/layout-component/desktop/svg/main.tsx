@@ -12,11 +12,11 @@ export default function Main(){
     }
     return (
         IsPublic?
+        <SvgViewDesktop props={props} key={AreaSelected.Id}/>
+        :
         <div className={style.main}>
             <Banner/>
             <SvgViewDesktop props={props} key={AreaSelected.Id}/>
         </div>
-        :
-        <SvgViewDesktop props={props} key={AreaSelected.Id}/>
     )
 }

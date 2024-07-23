@@ -165,7 +165,7 @@ export default function Preview(){
                 }
             ]
         },
-        Event:{
+        /*Event:{
             Banner: "/venue-images/test2.jpg",
             Dates: [
                 {
@@ -178,18 +178,10 @@ export default function Preview(){
                 }
             ],
             Title: "Musica electronica"
-        }
+        }*/
     }
     return (
     <div className={style.main}>
-        {/*<div className={style.top}>
-            top
-        </div>
-        <div className={style.bottom}>
-            <div className={style.contBottom}> 
-                Bottom
-            </div>
-        </div>*/}
         <LayoutComponent props={props}/>
     </div>
     )
