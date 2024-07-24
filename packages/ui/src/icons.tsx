@@ -29,4 +29,6 @@ export const ZOOM_IN_OUT: string = "/icons/zoomInOutIcon.png";
 export const RATING_STAR: string = "/icons/ratingStarIconFull.png";
 export const RATING_STAR_EMPTY: string = "/icons/ratingStarIconEmpty.png";
 export const FILTER_ICON_BLUE: string = "/icons/filterIconPointBlue.png";
+export const LOCK_ICON_CIRCLE_BLUE = "/icons/lockIconCircleBlue.png";
+export const UNLOCK_ICON_CIRCLE_BLUE = "/icons/unlockIconCircleBlue.png";
 

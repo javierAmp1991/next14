@@ -1,7 +1,8 @@
+"use client";
 import React, { createContext, useContext, useState } from "react";
-import { useRouter } from "next/navigation";
-import { ENCLOSURE_OPTIONS } from "../data";
-import {  IUseSearch,  useSearch} from "@repo/ui/searchBar";
+import {useRouter } from "next/navigation";
+import {ENCLOSURE_OPTIONS } from "../data";
+import {IUseSearch,  useSearch} from "@repo/ui/searchBar";
 import {addInitialPositionTabs} from "@repo/ui/navTabs";
 import {INITIAL_POSITION_MUTATION} from "../const";
 

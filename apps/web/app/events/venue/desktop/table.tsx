@@ -3,7 +3,7 @@ import { TableDesktop, Row, EmptyRow, TableProps } from "@repo/ui/tableDesktop";
 import EnclosureColumns from "./enclosure-columns";
 import { CSSProperties } from "react";
 import { useRouter } from "next/navigation";
-import { VenueRowTable, useVenueProvider } from "../provider";
+import { useVenueProvider } from "../provider";
 
 export const VenueTable = () => {
   const { Venues } = useVenueProvider();

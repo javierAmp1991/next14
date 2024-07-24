@@ -1,11 +1,11 @@
-'use client'
+"use client";
 import {usePathname } from "next/navigation";
 import {NavProps, NavDesktop} from "@repo/ui/navDesktop";
 import {NavMobile} from "@repo/ui/navMobile";
-import {useWindowDimensions, EnumTypeView} from "@repo/ui/windowDimention";
 import {ChargingPage} from "@repo/ui/chargingPage";
+import {EnumTypeView, useMainContext} from "../layout";
 
-const LINK_BASE = "/events"
+const LINK_BASE = "/events";
 
 export const Url = {
     Enclosure: {
@@ -17,8 +17,8 @@ export const Url = {
         UseEnclosure: "use-enclosure"
     },
     Events: {
-        Link: `${LINK_BASE}/event`,
-        Key: "event",
+        Link: `${LINK_BASE}/events`,
+        Key: "events",
         Name: "Eventos",
         Image: "/nav-icons/eventPeopleIcon.png",
         Create: "create-event",
@@ -54,7 +54,8 @@ export const TITLE_NAV: string = "Eventos";
 
 
 export default function RootLayout({children}: { children: React.ReactNode }): JSX.Element {
-    const {RangeView} = useWindowDimensions();
+    const {WindowDimension} = useMainContext();
+    const {RangeView} = WindowDimension;
     const props: NavProps = {
     SectionOptions: [
         {
@@ -95,17 +96,19 @@ export default function RootLayout({children}: { children: React.ReactNode }): J
         }
     ],
     Title: TITLE_NAV
-};
+    };
 
   const pathname = usePathname();
   const actualOption: string | undefined = getActualOption();
 
   return (
-    (pathname === undefined || actualOption === undefined || RangeView === EnumTypeView.Loading ) ? <ChargingPage/>:
-     RangeView === EnumTypeView.Desktop ?
-     <NavDesktop link={actualOption} props={props}>{children}</NavDesktop>
-      :
-    <NavMobile props={props} link={actualOption}>{children}</NavMobile>
+    (pathname === undefined || actualOption === undefined || RangeView === EnumTypeView.Loading ) ? 
+        <ChargingPage/>
+        :
+        RangeView === EnumTypeView.Desktop ?
+            <NavDesktop link={actualOption} props={props}>{children}</NavDesktop>
+            :
+            <NavMobile props={props} link={actualOption}>{children}</NavMobile>
   )
   
   function getActualOption() {

@@ -1,3 +1,4 @@
+"use client";
 import React, {createContext, useContext, useEffect, useState} from "react";
 import {useHandlePosition, useCreateEditHook, IUseHandlePositionReturn, ICreateEditReturn, EnumCreateEdit} from "@repo/ui/custom-hook";
 import {INITIAL_POSITION_MUTATION} from "../const";
